@@ -35,3 +35,31 @@
 2019-11-14T21:54:48.672147Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
 2019-11-14T21:54:48.736917Z 0 [System] [MY-010931] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld: ready for connections. Version: '8.0.18'  socket: ''  port: 3306  MySQL Community Server - GPL.
 2019-11-14T21:54:48.975675Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2019-11-14T22:45:50.649158Z 0 [System] [MY-010116] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8112
+2019-11-14T22:45:50.687239Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:45:50.689265Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:45:50.691267Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-14T22:45:50.693316Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-14T22:45:50.694791Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-14T22:45:50.696500Z 0 [System] [MY-010910] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-14T22:46:24.733184Z 0 [System] [MY-010116] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9572
+2019-11-14T22:46:24.766367Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:46:24.767785Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:46:24.769673Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-14T22:46:24.771852Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-14T22:46:24.773499Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-14T22:46:24.775703Z 0 [System] [MY-010910] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-14T22:48:08.461854Z 0 [System] [MY-010116] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11204
+2019-11-14T22:48:08.497434Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:48:08.499470Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:48:08.501871Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-14T22:48:08.504084Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-14T22:48:08.505816Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-14T22:48:08.512498Z 0 [System] [MY-010910] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-14T22:55:18.627267Z 0 [System] [MY-010116] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 16368
+2019-11-14T22:55:18.674716Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:55:18.677002Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-14T22:55:18.678787Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-14T22:55:18.680444Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-14T22:55:18.681959Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-14T22:55:18.684547Z 0 [System] [MY-010910] [Server] C:\Users\micha\IdeaProjects\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.

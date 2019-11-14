@@ -6,16 +6,16 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class DataBaseImpl implements DataBase {
-    private static String mySqlPath = System.getenv("MY_SQL_PATH");
-    private static Process mySql;
+    private static final String mySql = "\\DB\\MySQLServer\\bin\\mysqld";
+    private static Process mySqlTask; // todo - if error occures should shut down
     private static final Logger logger = Logger.getLogger(DataBaseImpl.class);
 
 
     public DataBaseImpl(){
         try{
-            mySql = Runtime.getRuntime().exec(mySqlPath + "bin\\mysqld");
+            mySqlTask = Runtime.getRuntime().exec(System.getProperty("user.dir") + mySql);
         } catch (IOException e) {
-            String errorMessage = "Couldn't start mysql from path " + mySqlPath;
+            String errorMessage = "Couldn't start mysql from path " + System.getProperty("user.dir") + mySql;
             logger.error(errorMessage, e);
             throw new RuntimeException("errorMessage", e);
         }
