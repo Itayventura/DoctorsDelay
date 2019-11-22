@@ -41,6 +41,11 @@ public final class Communication {
      * <code>optional .C2S.Report report = 2;</code>
      */
     Communication.C2S.ReportOrBuilder getReportOrBuilder();
+
+    /**
+     * <code>optional bool finish = 3;</code>
+     */
+    boolean getFinish();
   }
   /**
    * Protobuf type {@code C2S}
@@ -54,6 +59,7 @@ public final class Communication {
       super(builder);
     }
     private C2S() {
+      finish_ = false;
     }
 
     @java.lang.Override
@@ -105,6 +111,11 @@ public final class Communication {
                 report_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 24: {
+
+              finish_ = input.readBool();
               break;
             }
           }
@@ -931,9 +942,9 @@ public final class Communication {
           getDoctorsNameBytes();
 
       /**
-       * <code>optional int32 current_delay = 2;</code>
+       * <code>optional int32 current_delay_minutes = 2;</code>
        */
-      int getCurrentDelay();
+      int getCurrentDelayMinutes();
     }
     /**
      * Protobuf type {@code C2S.Report}
@@ -948,7 +959,7 @@ public final class Communication {
       }
       private Report() {
         doctorsName_ = "";
-        currentDelay_ = 0;
+        currentDelayMinutes_ = 0;
       }
 
       @java.lang.Override
@@ -984,7 +995,7 @@ public final class Communication {
               }
               case 16: {
 
-                currentDelay_ = input.readInt32();
+                currentDelayMinutes_ = input.readInt32();
                 break;
               }
             }
@@ -1044,13 +1055,13 @@ public final class Communication {
         }
       }
 
-      public static final int CURRENT_DELAY_FIELD_NUMBER = 2;
-      private int currentDelay_;
+      public static final int CURRENT_DELAY_MINUTES_FIELD_NUMBER = 2;
+      private int currentDelayMinutes_;
       /**
-       * <code>optional int32 current_delay = 2;</code>
+       * <code>optional int32 current_delay_minutes = 2;</code>
        */
-      public int getCurrentDelay() {
-        return currentDelay_;
+      public int getCurrentDelayMinutes() {
+        return currentDelayMinutes_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1068,8 +1079,8 @@ public final class Communication {
         if (!getDoctorsNameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, doctorsName_);
         }
-        if (currentDelay_ != 0) {
-          output.writeInt32(2, currentDelay_);
+        if (currentDelayMinutes_ != 0) {
+          output.writeInt32(2, currentDelayMinutes_);
         }
       }
 
@@ -1081,9 +1092,9 @@ public final class Communication {
         if (!getDoctorsNameBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, doctorsName_);
         }
-        if (currentDelay_ != 0) {
+        if (currentDelayMinutes_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, currentDelay_);
+            .computeInt32Size(2, currentDelayMinutes_);
         }
         memoizedSize = size;
         return size;
@@ -1103,8 +1114,8 @@ public final class Communication {
         boolean result = true;
         result = result && getDoctorsName()
             .equals(other.getDoctorsName());
-        result = result && (getCurrentDelay()
-            == other.getCurrentDelay());
+        result = result && (getCurrentDelayMinutes()
+            == other.getCurrentDelayMinutes());
         return result;
       }
 
@@ -1117,8 +1128,8 @@ public final class Communication {
         hash = (19 * hash) + getDescriptorForType().hashCode();
         hash = (37 * hash) + DOCTORS_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getDoctorsName().hashCode();
-        hash = (37 * hash) + CURRENT_DELAY_FIELD_NUMBER;
-        hash = (53 * hash) + getCurrentDelay();
+        hash = (37 * hash) + CURRENT_DELAY_MINUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getCurrentDelayMinutes();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1239,7 +1250,7 @@ public final class Communication {
           super.clear();
           doctorsName_ = "";
 
-          currentDelay_ = 0;
+          currentDelayMinutes_ = 0;
 
           return this;
         }
@@ -1264,7 +1275,7 @@ public final class Communication {
         public Communication.C2S.Report buildPartial() {
           Communication.C2S.Report result = new Communication.C2S.Report(this);
           result.doctorsName_ = doctorsName_;
-          result.currentDelay_ = currentDelay_;
+          result.currentDelayMinutes_ = currentDelayMinutes_;
           onBuilt();
           return result;
         }
@@ -1310,8 +1321,8 @@ public final class Communication {
             doctorsName_ = other.doctorsName_;
             onChanged();
           }
-          if (other.getCurrentDelay() != 0) {
-            setCurrentDelay(other.getCurrentDelay());
+          if (other.getCurrentDelayMinutes() != 0) {
+            setCurrentDelayMinutes(other.getCurrentDelayMinutes());
           }
           onChanged();
           return this;
@@ -1408,28 +1419,28 @@ public final class Communication {
           return this;
         }
 
-        private int currentDelay_ ;
+        private int currentDelayMinutes_ ;
         /**
-         * <code>optional int32 current_delay = 2;</code>
+         * <code>optional int32 current_delay_minutes = 2;</code>
          */
-        public int getCurrentDelay() {
-          return currentDelay_;
+        public int getCurrentDelayMinutes() {
+          return currentDelayMinutes_;
         }
         /**
-         * <code>optional int32 current_delay = 2;</code>
+         * <code>optional int32 current_delay_minutes = 2;</code>
          */
-        public Builder setCurrentDelay(int value) {
+        public Builder setCurrentDelayMinutes(int value) {
           
-          currentDelay_ = value;
+          currentDelayMinutes_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional int32 current_delay = 2;</code>
+         * <code>optional int32 current_delay_minutes = 2;</code>
          */
-        public Builder clearCurrentDelay() {
+        public Builder clearCurrentDelayMinutes() {
           
-          currentDelay_ = 0;
+          currentDelayMinutes_ = 0;
           onChanged();
           return this;
         }
@@ -1524,6 +1535,15 @@ public final class Communication {
       return getReport();
     }
 
+    public static final int FINISH_FIELD_NUMBER = 3;
+    private boolean finish_;
+    /**
+     * <code>optional bool finish = 3;</code>
+     */
+    public boolean getFinish() {
+      return finish_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1542,6 +1562,9 @@ public final class Communication {
       if (report_ != null) {
         output.writeMessage(2, getReport());
       }
+      if (finish_ != false) {
+        output.writeBool(3, finish_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1556,6 +1579,10 @@ public final class Communication {
       if (report_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getReport());
+      }
+      if (finish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, finish_);
       }
       memoizedSize = size;
       return size;
@@ -1583,6 +1610,8 @@ public final class Communication {
         result = result && getReport()
             .equals(other.getReport());
       }
+      result = result && (getFinish()
+          == other.getFinish());
       return result;
     }
 
@@ -1601,6 +1630,9 @@ public final class Communication {
         hash = (37 * hash) + REPORT_FIELD_NUMBER;
         hash = (53 * hash) + getReport().hashCode();
       }
+      hash = (37 * hash) + FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1731,6 +1763,8 @@ public final class Communication {
           report_ = null;
           reportBuilder_ = null;
         }
+        finish_ = false;
+
         return this;
       }
 
@@ -1763,6 +1797,7 @@ public final class Communication {
         } else {
           result.report_ = reportBuilder_.build();
         }
+        result.finish_ = finish_;
         onBuilt();
         return result;
       }
@@ -1809,6 +1844,9 @@ public final class Communication {
         }
         if (other.hasReport()) {
           mergeReport(other.getReport());
+        }
+        if (other.getFinish() != false) {
+          setFinish(other.getFinish());
         }
         onChanged();
         return this;
@@ -2069,6 +2107,32 @@ public final class Communication {
         }
         return reportBuilder_;
       }
+
+      private boolean finish_ ;
+      /**
+       * <code>optional bool finish = 3;</code>
+       */
+      public boolean getFinish() {
+        return finish_;
+      }
+      /**
+       * <code>optional bool finish = 3;</code>
+       */
+      public Builder setFinish(boolean value) {
+        
+        finish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool finish = 3;</code>
+       */
+      public Builder clearFinish() {
+        
+        finish_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2121,6 +2185,24 @@ public final class Communication {
   public interface S2COrBuilder extends
       // @@protoc_insertion_point(interface_extends:S2C)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    boolean hasResponse();
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    Communication.S2C.Response getResponse();
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    Communication.S2C.ResponseOrBuilder getResponseOrBuilder();
+
+    /**
+     * <code>optional bool finish = 2;</code>
+     */
+    boolean getFinish();
   }
   /**
    * Protobuf type {@code S2C}
@@ -2134,6 +2216,7 @@ public final class Communication {
       super(builder);
     }
     private S2C() {
+      finish_ = false;
     }
 
     @java.lang.Override
@@ -2146,6 +2229,7 @@ public final class Communication {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -2158,6 +2242,24 @@ public final class Communication {
               if (!input.skipField(tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              Communication.S2C.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(Communication.S2C.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              finish_ = input.readBool();
               break;
             }
           }
@@ -3499,6 +3601,36 @@ public final class Communication {
 
     }
 
+    public static final int RESPONSE_FIELD_NUMBER = 1;
+    private Communication.S2C.Response response_;
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    public boolean hasResponse() {
+      return response_ != null;
+    }
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    public Communication.S2C.Response getResponse() {
+      return response_ == null ? Communication.S2C.Response.getDefaultInstance() : response_;
+    }
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    public Communication.S2C.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
+    }
+
+    public static final int FINISH_FIELD_NUMBER = 2;
+    private boolean finish_;
+    /**
+     * <code>optional bool finish = 2;</code>
+     */
+    public boolean getFinish() {
+      return finish_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3511,6 +3643,12 @@ public final class Communication {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (response_ != null) {
+        output.writeMessage(1, getResponse());
+      }
+      if (finish_ != false) {
+        output.writeBool(2, finish_);
+      }
     }
 
     public int getSerializedSize() {
@@ -3518,6 +3656,14 @@ public final class Communication {
       if (size != -1) return size;
 
       size = 0;
+      if (response_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResponse());
+      }
+      if (finish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, finish_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -3534,6 +3680,13 @@ public final class Communication {
       Communication.S2C other = (Communication.S2C) obj;
 
       boolean result = true;
+      result = result && (hasResponse() == other.hasResponse());
+      if (hasResponse()) {
+        result = result && getResponse()
+            .equals(other.getResponse());
+      }
+      result = result && (getFinish()
+          == other.getFinish());
       return result;
     }
 
@@ -3544,6 +3697,13 @@ public final class Communication {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3662,6 +3822,14 @@ public final class Communication {
       }
       public Builder clear() {
         super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        finish_ = false;
+
         return this;
       }
 
@@ -3684,6 +3852,12 @@ public final class Communication {
 
       public Communication.S2C buildPartial() {
         Communication.S2C result = new Communication.S2C(this);
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.finish_ = finish_;
         onBuilt();
         return result;
       }
@@ -3725,6 +3899,12 @@ public final class Communication {
 
       public Builder mergeFrom(Communication.S2C other) {
         if (other == Communication.S2C.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getFinish() != false) {
+          setFinish(other.getFinish());
+        }
         onChanged();
         return this;
       }
@@ -3748,6 +3928,149 @@ public final class Communication {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private Communication.S2C.Response response_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder> responseBuilder_;
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public boolean hasResponse() {
+        return responseBuilder_ != null || response_ != null;
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Communication.S2C.Response getResponse() {
+        if (responseBuilder_ == null) {
+          return response_ == null ? Communication.S2C.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Builder setResponse(Communication.S2C.Response value) {
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Builder setResponse(
+          Communication.S2C.Response.Builder builderForValue) {
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Builder mergeResponse(Communication.S2C.Response value) {
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              Communication.S2C.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Communication.S2C.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      public Communication.S2C.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              Communication.S2C.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>optional .S2C.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private boolean finish_ ;
+      /**
+       * <code>optional bool finish = 2;</code>
+       */
+      public boolean getFinish() {
+        return finish_;
+      }
+      /**
+       * <code>optional bool finish = 2;</code>
+       */
+      public Builder setFinish(boolean value) {
+        
+        finish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool finish = 2;</code>
+       */
+      public Builder clearFinish() {
+        
+        finish_ = false;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -3838,19 +4161,21 @@ public final class Communication {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023Communication.proto\"\366\001\n\003C2S\022\035\n\007request" +
+      "\n\023Communication.proto\"\216\002\n\003C2S\022\035\n\007request" +
       "\030\001 \001(\0132\014.C2S.Request\022\033\n\006report\030\002 \001(\0132\013.C" +
-      "2S.Report\032|\n\007Request\022\037\n\004type\030\001 \001(\0162\021.C2S" +
-      ".Request.Type\022\024\n\014doctors_name\030\002 \001(\t\022\021\n\tt" +
-      "imestamp\030\003 \001(\003\"\'\n\004Type\022\007\n\003NOW\020\000\022\014\n\010ESTIM" +
-      "ATE\020\001\022\010\n\004SOME\020\003\0325\n\006Report\022\024\n\014doctors_nam" +
-      "e\030\001 \001(\t\022\025\n\rcurrent_delay\030\002 \001(\005\"\317\001\n\003S2C\032\307" +
-      "\001\n\010Response\022)\n\013status_code\030\001 \001(\0162\024.S2C.R" +
-      "esponse.Status\022\025\n\rerror_message\030\002 \001(\t\0223\n" +
-      "\016expected_delay\030\003 \001(\0132\033.S2C.Response.Exp",
-      "ectedDelay\032\035\n\rExpectedDelay\022\014\n\004time\030\001 \001(" +
-      "\005\"%\n\006Status\022\016\n\nSUCCESSFUL\020\000\022\013\n\007FAILURE\020\001" +
-      "b\006proto3"
+      "2S.Report\022\016\n\006finish\030\003 \001(\010\032|\n\007Request\022\037\n\004" +
+      "type\030\001 \001(\0162\021.C2S.Request.Type\022\024\n\014doctors" +
+      "_name\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"\'\n\004Type\022\007" +
+      "\n\003NOW\020\000\022\014\n\010ESTIMATE\020\001\022\010\n\004SOME\020\003\032=\n\006Repor" +
+      "t\022\024\n\014doctors_name\030\001 \001(\t\022\035\n\025current_delay" +
+      "_minutes\030\002 \001(\005\"\200\002\n\003S2C\022\037\n\010response\030\001 \001(\013" +
+      "2\r.S2C.Response\022\016\n\006finish\030\002 \001(\010\032\307\001\n\010Resp" +
+      "onse\022)\n\013status_code\030\001 \001(\0162\024.S2C.Response",
+      ".Status\022\025\n\rerror_message\030\002 \001(\t\0223\n\016expect" +
+      "ed_delay\030\003 \001(\0132\033.S2C.Response.ExpectedDe" +
+      "lay\032\035\n\rExpectedDelay\022\014\n\004time\030\001 \001(\005\"%\n\006St" +
+      "atus\022\016\n\nSUCCESSFUL\020\000\022\013\n\007FAILURE\020\001b\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3869,7 +4194,7 @@ public final class Communication {
     internal_static_C2S_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_descriptor,
-        new java.lang.String[] { "Request", "Report", });
+        new java.lang.String[] { "Request", "Report", "Finish", });
     internal_static_C2S_Request_descriptor =
       internal_static_C2S_descriptor.getNestedTypes().get(0);
     internal_static_C2S_Request_fieldAccessorTable = new
@@ -3881,13 +4206,13 @@ public final class Communication {
     internal_static_C2S_Report_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2S_Report_descriptor,
-        new java.lang.String[] { "DoctorsName", "CurrentDelay", });
+        new java.lang.String[] { "DoctorsName", "CurrentDelayMinutes", });
     internal_static_S2C_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_S2C_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Response", "Finish", });
     internal_static_S2C_Response_descriptor =
       internal_static_S2C_descriptor.getNestedTypes().get(0);
     internal_static_S2C_Response_fieldAccessorTable = new
