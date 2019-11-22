@@ -10,17 +10,19 @@ public class Server {
     private static final Logger logger = Logger.getLogger(Main.class);
     private int listeningPort;
     private int numThreads;
+    private Algorithms algorithms;
 
-    public Server(int listeningPort, int numThreads) {
+    public Server(int listeningPort, int numThreads, Algorithms algorithms) {
         this.listeningPort = listeningPort;
         this.numThreads = numThreads;
+        this.algorithms = algorithms;
     }
 
     public void start() throws IOException {
         ExecutorService pool =  Executors.newFixedThreadPool(numThreads);
         try (ServerSocket serverSocket = new ServerSocket(listeningPort)) {
             for(;;){
-                pool.execute(new ClientHandler(serverSocket.accept()));
+                pool.execute(new ClientHandler(serverSocket.accept(), algorithms));
             }
         }
     }

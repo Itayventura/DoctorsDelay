@@ -58,15 +58,15 @@ public class ClientHandler extends Communicator implements Runnable{
                 break;
         }
         
-
+        return null; //todo
     }
 
     private Communication.S2C toClientResponse(Algorithms.Response algorithmResponse) {
-
+        return null; //todo
     }
 
     private Communication.S2C handleReport(Communication.C2S.Report report){
-
+        return null; //todo
     }
 
     private LocalDateTime epochToDateTime(long milliSinceEpoch) {
