@@ -14,13 +14,13 @@ public class AlgorithmsImpl implements Algorithms {
     }
 
     @Override
-    public Response getCurrentDelay(String doctorsName) {
-        return null; //TODO - implement
+    public int getCurrentDelay(String doctorsName) {
+        return -1; //TODO - implement
     }
 
     @Override
-    public Response getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) {
-        return null; //TODO - implement
+    public int getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) {
+        return -1; //TODO - implement
     }
 
     @Override
