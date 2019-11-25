@@ -1,10 +1,6 @@
-import org.apache.log4j.Logger;
+import org.apache.commons.cli.*;
 
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * The heart of the server.
@@ -14,12 +10,44 @@ import java.util.concurrent.Executors;
  */
 
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class);
-    private static final int LISTENING_PORT = 80;
-    private static final int NUM_THREADS = 4;
+    private static final String listeningPortArg = "listeningPort";
+    protected static int listeningPort = 80;
+    private static final String numThreadsArg = "numThreads";
+    protected static int numThreads = 4;
+    private static Options options = createOptions();
 
     public static void main(String[] args){
+        Server server = null;
+        try{
+            CommandLineParser parser = new DefaultParser();
+            CommandLine cmd = parser.parse( options, args);
+            if (cmd.hasOption("help")) {
+                HelpFormatter formatter = new HelpFormatter();
+                formatter.printHelp( "ant", options, true );
+                return;
+            }
+            if (cmd.hasOption(listeningPortArg))
+                listeningPort = Integer.parseInt(cmd.getOptionValue(listeningPortArg));
+            if (cmd.hasOption(numThreadsArg))
+                numThreads = Integer.parseInt(cmd.getOptionValue(numThreadsArg));
 
+            server = new Server(listeningPort, numThreads, new AlgorithmsImpl(new DataBaseImpl()));
+            server.start();
+        } catch (ParseException e) {
+            System.out.println("Wrong argument given, use --help, " + e.getMessage());
+        } catch (IOException e) {
+            server.stop();
+            System.out.println("Server failed, " + e.getMessage());
+        }
+    }
 
+    private static Options createOptions() {
+        Options options = new Options();
+        options.addOption("h", "help", false, "Arguments description");
+        options.addOption("p", listeningPortArg,
+                true, "The port that the server will be listening on");
+        options.addOption("n", numThreadsArg,
+                true, "Number of threads to handle clients");
+        return options;
     }
 }

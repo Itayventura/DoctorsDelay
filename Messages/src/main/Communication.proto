@@ -28,6 +28,7 @@ message S2C{
         }
         message ExpectedDelay{
             int32 time = 1;
+            bool is_estimated = 2;
         }
         Status status_code = 1;
         string error_message = 2;

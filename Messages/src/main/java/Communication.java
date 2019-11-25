@@ -268,10 +268,6 @@ public final class Communication {
          * <code>ESTIMATE = 1;</code>
          */
         ESTIMATE(1),
-        /**
-         * <code>SOME = 3;</code>
-         */
-        SOME(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -283,10 +279,6 @@ public final class Communication {
          * <code>ESTIMATE = 1;</code>
          */
         public static final int ESTIMATE_VALUE = 1;
-        /**
-         * <code>SOME = 3;</code>
-         */
-        public static final int SOME_VALUE = 3;
 
 
         public final int getNumber() {
@@ -309,7 +301,6 @@ public final class Communication {
           switch (value) {
             case 0: return NOW;
             case 1: return ESTIMATE;
-            case 3: return SOME;
             default: return null;
           }
         }
@@ -2516,6 +2507,11 @@ public final class Communication {
          * <code>optional int32 time = 1;</code>
          */
         int getTime();
+
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        boolean getIsEstimated();
       }
       /**
        * Protobuf type {@code S2C.Response.ExpectedDelay}
@@ -2530,6 +2526,7 @@ public final class Communication {
         }
         private ExpectedDelay() {
           time_ = 0;
+          isEstimated_ = false;
         }
 
         @java.lang.Override
@@ -2560,6 +2557,11 @@ public final class Communication {
                 case 8: {
 
                   time_ = input.readInt32();
+                  break;
+                }
+                case 16: {
+
+                  isEstimated_ = input.readBool();
                   break;
                 }
               }
@@ -2594,6 +2596,15 @@ public final class Communication {
           return time_;
         }
 
+        public static final int IS_ESTIMATED_FIELD_NUMBER = 2;
+        private boolean isEstimated_;
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        public boolean getIsEstimated() {
+          return isEstimated_;
+        }
+
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
@@ -2609,6 +2620,9 @@ public final class Communication {
           if (time_ != 0) {
             output.writeInt32(1, time_);
           }
+          if (isEstimated_ != false) {
+            output.writeBool(2, isEstimated_);
+          }
         }
 
         public int getSerializedSize() {
@@ -2619,6 +2633,10 @@ public final class Communication {
           if (time_ != 0) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(1, time_);
+          }
+          if (isEstimated_ != false) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeBoolSize(2, isEstimated_);
           }
           memoizedSize = size;
           return size;
@@ -2638,6 +2656,8 @@ public final class Communication {
           boolean result = true;
           result = result && (getTime()
               == other.getTime());
+          result = result && (getIsEstimated()
+              == other.getIsEstimated());
           return result;
         }
 
@@ -2650,6 +2670,9 @@ public final class Communication {
           hash = (19 * hash) + getDescriptorForType().hashCode();
           hash = (37 * hash) + TIME_FIELD_NUMBER;
           hash = (53 * hash) + getTime();
+          hash = (37 * hash) + IS_ESTIMATED_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getIsEstimated());
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -2770,6 +2793,8 @@ public final class Communication {
             super.clear();
             time_ = 0;
 
+            isEstimated_ = false;
+
             return this;
           }
 
@@ -2793,6 +2818,7 @@ public final class Communication {
           public Communication.S2C.Response.ExpectedDelay buildPartial() {
             Communication.S2C.Response.ExpectedDelay result = new Communication.S2C.Response.ExpectedDelay(this);
             result.time_ = time_;
+            result.isEstimated_ = isEstimated_;
             onBuilt();
             return result;
           }
@@ -2836,6 +2862,9 @@ public final class Communication {
             if (other == Communication.S2C.Response.ExpectedDelay.getDefaultInstance()) return this;
             if (other.getTime() != 0) {
               setTime(other.getTime());
+            }
+            if (other.getIsEstimated() != false) {
+              setIsEstimated(other.getIsEstimated());
             }
             onChanged();
             return this;
@@ -2885,6 +2914,32 @@ public final class Communication {
           public Builder clearTime() {
             
             time_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private boolean isEstimated_ ;
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public boolean getIsEstimated() {
+            return isEstimated_;
+          }
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public Builder setIsEstimated(boolean value) {
+            
+            isEstimated_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public Builder clearIsEstimated() {
+            
+            isEstimated_ = false;
             onChanged();
             return this;
           }
@@ -4161,21 +4216,21 @@ public final class Communication {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023Communication.proto\"\216\002\n\003C2S\022\035\n\007request" +
+      "\n\023Communication.proto\"\204\002\n\003C2S\022\035\n\007request" +
       "\030\001 \001(\0132\014.C2S.Request\022\033\n\006report\030\002 \001(\0132\013.C" +
-      "2S.Report\022\016\n\006finish\030\003 \001(\010\032|\n\007Request\022\037\n\004" +
+      "2S.Report\022\016\n\006finish\030\003 \001(\010\032r\n\007Request\022\037\n\004" +
       "type\030\001 \001(\0162\021.C2S.Request.Type\022\024\n\014doctors" +
-      "_name\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"\'\n\004Type\022\007" +
-      "\n\003NOW\020\000\022\014\n\010ESTIMATE\020\001\022\010\n\004SOME\020\003\032=\n\006Repor" +
-      "t\022\024\n\014doctors_name\030\001 \001(\t\022\035\n\025current_delay" +
-      "_minutes\030\002 \001(\005\"\200\002\n\003S2C\022\037\n\010response\030\001 \001(\013" +
-      "2\r.S2C.Response\022\016\n\006finish\030\002 \001(\010\032\307\001\n\010Resp" +
-      "onse\022)\n\013status_code\030\001 \001(\0162\024.S2C.Response",
-      ".Status\022\025\n\rerror_message\030\002 \001(\t\0223\n\016expect" +
-      "ed_delay\030\003 \001(\0132\033.S2C.Response.ExpectedDe" +
-      "lay\032\035\n\rExpectedDelay\022\014\n\004time\030\001 \001(\005\"%\n\006St" +
-      "atus\022\016\n\nSUCCESSFUL\020\000\022\013\n\007FAILURE\020\001b\006proto" +
-      "3"
+      "_name\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"\035\n\004Type\022\007" +
+      "\n\003NOW\020\000\022\014\n\010ESTIMATE\020\001\032=\n\006Report\022\024\n\014docto" +
+      "rs_name\030\001 \001(\t\022\035\n\025current_delay_minutes\030\002" +
+      " \001(\005\"\226\002\n\003S2C\022\037\n\010response\030\001 \001(\0132\r.S2C.Res" +
+      "ponse\022\016\n\006finish\030\002 \001(\010\032\335\001\n\010Response\022)\n\013st" +
+      "atus_code\030\001 \001(\0162\024.S2C.Response.Status\022\025\n",
+      "\rerror_message\030\002 \001(\t\0223\n\016expected_delay\030\003" +
+      " \001(\0132\033.S2C.Response.ExpectedDelay\0323\n\rExp" +
+      "ectedDelay\022\014\n\004time\030\001 \001(\005\022\024\n\014is_estimated" +
+      "\030\002 \001(\010\"%\n\006Status\022\016\n\nSUCCESSFUL\020\000\022\013\n\007FAIL" +
+      "URE\020\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4224,7 +4279,7 @@ public final class Communication {
     internal_static_S2C_Response_ExpectedDelay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_S2C_Response_ExpectedDelay_descriptor,
-        new java.lang.String[] { "Time", });
+        new java.lang.String[] { "Time", "IsEstimated", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
