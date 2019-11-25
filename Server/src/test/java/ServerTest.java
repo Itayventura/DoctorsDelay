@@ -32,7 +32,7 @@ public class ServerTest {
                         TestBase.getValidRequest(TestBase.doctors.get(0),
                                 Communication.C2S.Request.Type.NOW)).build());
         runClient(clientMocker);
-        System.out.println(clientMocker.getResponse());
+        TestBase.assertSuccessfulResponse(clientMocker.getResponse());
     }
 
     private void runClient(ClientMocker clientMocker) throws InterruptedException{
