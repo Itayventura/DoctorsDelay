@@ -1,0 +1,845 @@
+2019-11-17T14:03:41.107955Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5636
+2019-11-17T14:03:49.745804Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-11-17T14:03:49.765590Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-11-17T14:03:57.000991Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-17T14:03:58.192061Z 0 [System] [MY-010931] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: ready for connections. Version: '8.0.18'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2019-11-17T14:03:58.522270Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2019-11-17T14:04:36.755660Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6404
+2019-11-17T14:04:38.119389Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-17T14:04:38.119940Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-17T14:04:38.294510Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-17T14:04:38.295562Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-17T14:04:38.296262Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-17T14:04:39.093018Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T18:46:42.087246Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld.exe (mysqld 8.0.18) starting as process 9256
+2019-11-20T19:44:38.091121Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10264
+2019-11-20T19:45:19.436569Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-11-20T19:45:19.449663Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-11-20T19:45:21.571936Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T19:45:21.631486Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T19:45:21.632548Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T19:45:21.633465Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T19:45:24.412133Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T20:21:37.674338Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7232
+2019-11-20T20:21:42.917119Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T20:21:42.919684Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T20:21:42.921061Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T20:21:42.922165Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T20:21:44.208763Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T20:29:25.408553Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7148
+2019-11-20T20:29:29.804596Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T20:29:29.807580Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T20:29:29.808593Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T20:29:29.809503Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T20:29:31.280792Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T20:29:46.759430Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10436
+2019-11-20T20:29:54.848866Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T20:29:54.853076Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T20:29:54.854169Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T20:29:54.855130Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T20:29:56.141405Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T20:31:12.090106Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5060
+2019-11-20T20:31:28.052972Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T20:31:28.059147Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T20:31:28.060369Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T20:31:28.061958Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T20:31:28.767545Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-20T20:31:30.888303Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10972
+2019-11-20T20:31:39.349301Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-20T20:31:39.351995Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+2019-11-20T20:31:39.352999Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-11-20T20:31:39.353892Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-20T20:31:40.374536Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:01:23.349130Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10320
+2019-11-26T09:01:31.282231Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-26T09:01:31.586829Z 0 [System] [MY-010931] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: ready for connections. Version: '8.0.18'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2019-11-26T09:01:31.800391Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2019-11-26T09:02:10.893087Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7944
+2019-11-26T09:02:11.031240Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:02:11.032435Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:02:11.033263Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:02:11.034343Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:02:11.035129Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:02:11.158693Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:04:29.403640Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10300
+2019-11-26T09:04:29.435856Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:04:29.436724Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:04:29.437549Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:04:29.438584Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:04:29.439379Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:04:29.440931Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:04:42.386876Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9176
+2019-11-26T09:04:42.428285Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:04:42.429118Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:04:42.429931Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:04:42.430958Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:04:42.431731Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:04:42.433173Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:06:45.547482Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10488
+2019-11-26T09:06:45.644185Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:06:45.645317Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:06:45.646137Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:06:45.647159Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:06:45.647954Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:06:45.649377Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:07:02.546966Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4536
+2019-11-26T09:07:02.655669Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:07:02.656830Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:07:02.657704Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:07:02.658814Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:07:02.659611Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:07:02.661083Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:07:09.231117Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8224
+2019-11-26T09:07:09.345883Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:07:09.346590Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:07:09.347155Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:07:09.347852Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:07:09.348381Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:07:09.349365Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:08:39.689955Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10692
+2019-11-26T09:08:39.796770Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:08:39.797310Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:08:39.797841Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:08:39.798536Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:08:39.799021Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:08:39.799990Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:08:52.925169Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9564
+2019-11-26T09:08:53.019866Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:08:53.020775Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:08:53.021700Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:08:53.022759Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:08:53.023557Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:08:53.025022Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:11:13.069575Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11088
+2019-11-26T09:11:13.139344Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:11:13.140175Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:11:13.140983Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:11:13.142009Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:11:13.142787Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:11:13.144220Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:13:31.469861Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4792
+2019-11-26T09:13:31.509384Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:13:31.510249Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:13:31.511123Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:13:31.512187Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:13:31.513076Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:13:31.514616Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:13:44.033097Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6452
+2019-11-26T09:13:44.105895Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:13:44.106873Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:13:44.107751Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:13:44.111287Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:13:44.112095Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:13:44.113573Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:32:44.383003Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8608
+2019-11-26T09:32:44.464564Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:32:44.466163Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:32:44.466978Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:32:44.468166Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:32:44.469548Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:32:44.471140Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:40:27.703793Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10408
+2019-11-26T09:40:27.954107Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:40:27.954971Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:40:27.955811Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:40:27.956903Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:40:27.957680Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:40:27.959226Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:44:42.850845Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7944
+2019-11-26T09:44:42.906104Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:44:42.906942Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:44:42.907743Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:44:42.909086Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:44:42.909851Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:44:42.911334Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:51:51.738953Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10368
+2019-11-26T09:51:51.815384Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:51:51.816223Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:51:51.817112Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:51:51.818074Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:51:51.818582Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:51:51.819516Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:53:07.934945Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9564
+2019-11-26T09:53:08.004289Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:08.005120Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:08.005941Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:53:08.006997Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:53:08.007745Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:53:08.009187Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:53:27.348482Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8880
+2019-11-26T09:53:27.377063Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:27.377883Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:27.378695Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:53:27.379701Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:53:27.380453Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:53:27.381886Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:53:40.342053Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 3088
+2019-11-26T09:53:40.410609Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:40.411454Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:40.412265Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:53:40.413312Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:53:40.414114Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:53:40.415601Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:53:56.521094Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8108
+2019-11-26T09:53:56.591991Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:56.592828Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:53:56.593785Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:53:56.594810Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:53:56.595574Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:53:56.597019Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:54:26.178525Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4892
+2019-11-26T09:54:26.262907Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:54:26.263757Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:54:26.264580Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:54:26.265625Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:54:26.266384Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:54:26.267866Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T09:57:46.715492Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9808
+2019-11-26T09:57:46.770398Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:57:46.771231Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T09:57:46.772048Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T09:57:46.773104Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T09:57:46.773881Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T09:57:46.775304Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:10:00.681000Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9380
+2019-11-26T10:10:00.712236Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:10:00.713096Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:10:00.713950Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:10:00.715007Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:10:00.715798Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:10:00.717276Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:21:14.102128Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11068
+2019-11-26T10:21:14.196625Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:21:14.197452Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:21:14.197992Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:21:14.198675Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:21:14.199159Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:21:14.200333Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:27:15.328320Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 3640
+2019-11-26T10:27:15.425843Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:27:15.428817Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:27:15.429669Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:27:15.431019Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:27:15.432450Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:27:15.433928Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:30:00.633589Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4456
+2019-11-26T10:30:00.703998Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:30:00.704819Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:30:00.705629Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:30:00.706689Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:30:00.707454Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:30:00.708905Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:30:27.705312Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7192
+2019-11-26T10:30:27.847490Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:30:27.848400Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:30:27.849260Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:30:27.850404Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:30:27.851199Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:30:27.852656Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:31:11.522195Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10740
+2019-11-26T10:31:11.593402Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:31:11.594201Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:31:11.594779Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:31:11.595481Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:31:11.595989Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:31:11.596999Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:32:44.196285Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10928
+2019-11-26T10:32:44.285397Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:32:44.286230Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:32:44.287037Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:32:44.288023Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:32:44.288707Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:32:44.290022Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T10:49:43.337380Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 2900
+2019-11-26T10:49:43.461315Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:49:43.463468Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T10:49:43.464386Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T10:49:43.465707Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T10:49:43.466503Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T10:49:43.467964Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T13:57:44.093280Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7208
+2019-11-26T13:57:44.186514Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T13:57:44.187381Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T13:57:44.188204Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T13:57:44.189276Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T13:57:44.190055Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T13:57:44.191614Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:00:18.164762Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10960
+2019-11-26T14:00:18.222393Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:00:18.223231Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:00:18.224103Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:00:18.225150Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:00:18.225943Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:00:18.227424Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:00:48.916603Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4836
+2019-11-26T14:00:48.983309Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:00:48.984920Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:00:48.985955Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:00:48.987937Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:00:48.988776Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:00:48.990299Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:05:19.819121Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11364
+2019-11-26T14:05:19.880071Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:05:19.880917Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:05:19.881728Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:05:19.882721Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:05:19.883443Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:05:19.884810Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:06:01.642262Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9676
+2019-11-26T14:06:01.718630Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:06:01.719178Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:06:01.719745Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:06:01.720702Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:06:01.721461Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:06:01.722436Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:06:53.487178Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9940
+2019-11-26T14:06:53.561786Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:06:53.562731Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:06:53.563585Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:06:53.564636Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:06:53.565403Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:06:53.566857Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:11:32.539334Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9756
+2019-11-26T14:11:32.585629Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:11:32.586489Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:11:32.587332Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:11:32.588422Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:11:32.589202Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:11:32.590692Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:12:38.116591Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12260
+2019-11-26T14:12:38.230647Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:12:38.231197Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:12:38.231713Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:12:38.232399Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:12:38.233163Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:12:38.234748Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:14:56.177976Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8708
+2019-11-26T14:14:56.211661Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:14:56.212509Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:14:56.213346Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:14:56.214446Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:14:56.215245Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:14:56.216770Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:15:13.281321Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12184
+2019-11-26T14:15:13.414649Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:15:13.415516Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:15:13.416371Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:15:13.419751Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:15:13.420537Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:15:13.422293Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:17:02.603697Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12108
+2019-11-26T14:17:02.696189Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:17:02.696999Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:17:02.697820Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:17:02.698827Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:17:02.699587Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:17:02.701115Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:17:22.965396Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9776
+2019-11-26T14:17:23.009722Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:17:23.010868Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:17:23.011704Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:17:23.012748Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:17:23.016803Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:17:23.018332Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:18:13.811963Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 2424
+2019-11-26T14:18:13.913360Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:13.914205Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:13.915265Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:18:13.916528Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:18:13.923833Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:18:13.925341Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:18:47.158629Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 2836
+2019-11-26T14:18:47.324888Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:47.325779Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:47.326678Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:18:47.327702Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:18:47.328505Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:18:47.329943Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:18:58.229427Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6608
+2019-11-26T14:18:58.257485Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:58.258349Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:18:58.259170Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:18:58.260121Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:18:58.260619Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:18:58.261979Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:20:10.768289Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10632
+2019-11-26T14:20:10.873260Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:10.874153Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:10.874993Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:20:10.876671Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:20:10.877446Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:20:10.878915Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:20:40.101160Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6020
+2019-11-26T14:20:40.218366Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:40.219194Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:40.220012Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:20:40.221102Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:20:40.222003Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:20:40.223503Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:20:53.576109Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10152
+2019-11-26T14:20:53.636969Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:53.637878Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:20:53.638751Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:20:53.639771Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:20:53.640551Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:20:53.641991Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:21:43.777056Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11588
+2019-11-26T14:21:43.824814Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:21:43.826161Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:21:43.827117Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:21:43.828156Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:21:43.828926Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:21:43.830331Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:21:59.905600Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6224
+2019-11-26T14:22:00.073251Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:22:00.074079Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:22:00.074893Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:22:00.076127Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:22:00.076887Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:22:00.078303Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:22:13.896669Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9960
+2019-11-26T14:22:15.345403Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:22:15.346253Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:22:15.347064Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:22:15.349273Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:22:15.350131Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:22:15.351806Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:27:09.977430Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9224
+2019-11-26T14:27:10.143314Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:27:10.144079Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:27:10.144805Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:27:10.145723Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:27:10.146551Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:27:10.148008Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:29:52.544221Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6028
+2019-11-26T14:29:52.694832Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:29:52.695748Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:29:52.696582Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:29:52.697300Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:29:52.697797Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:29:52.698851Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:30:17.428139Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 80
+2019-11-26T14:30:17.514785Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:30:17.515664Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:30:17.516824Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:30:17.517935Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:30:17.518751Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:30:17.520307Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:31:18.525908Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12100
+2019-11-26T14:31:18.568985Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:31:18.569911Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:31:18.570771Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:31:18.571838Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:31:18.572644Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:31:18.574145Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:33:11.840092Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5000
+2019-11-26T14:33:11.921449Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:33:11.922285Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:33:11.923106Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:33:11.924146Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:33:11.924918Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:33:11.926361Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:34:03.575119Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10712
+2019-11-26T14:34:03.663943Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:34:03.664785Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:34:03.665598Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:34:03.666629Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:34:03.667415Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:34:03.668888Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:34:58.892444Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10092
+2019-11-26T14:34:58.927626Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:34:58.928460Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:34:58.929889Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:34:58.930965Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:34:58.931734Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:34:58.933267Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:35:46.753930Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11864
+2019-11-26T14:35:46.810256Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:35:46.811135Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:35:46.811977Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:35:46.813022Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:35:46.813826Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:35:46.815291Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:41:38.212420Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4788
+2019-11-26T14:41:38.372924Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:41:38.373744Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:41:38.374548Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:41:38.375605Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:41:38.376369Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:41:38.377877Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:42:05.660323Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7240
+2019-11-26T14:42:06.079104Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:42:06.079962Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:42:06.080788Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:42:06.081878Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:42:06.082701Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:42:06.084185Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:42:39.371634Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11972
+2019-11-26T14:42:39.419150Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:42:39.419923Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:42:39.420704Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:42:39.421450Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:42:39.421940Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:42:39.422904Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:43:09.151721Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11976
+2019-11-26T14:43:09.185779Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:09.186688Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:09.187598Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:43:09.188701Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:43:09.189493Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:43:09.191009Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:43:17.603775Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5272
+2019-11-26T14:43:17.776276Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:17.777144Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:17.778006Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:43:17.779075Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:43:17.780046Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:43:17.785147Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:43:42.294347Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7712
+2019-11-26T14:43:42.400586Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:42.401124Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:43:42.401656Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:43:42.402320Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:43:42.402813Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:43:42.404165Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:44:07.774907Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 2632
+2019-11-26T14:44:07.806013Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:07.806856Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:07.808136Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:44:07.809186Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:44:07.809895Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:44:07.811268Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:44:30.922409Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8656
+2019-11-26T14:44:31.018216Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:31.018996Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:31.019750Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:44:31.020668Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:44:31.021424Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:44:31.022902Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:44:51.984828Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12016
+2019-11-26T14:44:52.039815Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:52.040643Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:44:52.041451Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:44:52.042470Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:44:52.043239Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:44:52.044652Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:45:52.637129Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11236
+2019-11-26T14:45:52.673929Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:45:52.674820Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:45:52.675666Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:45:52.677208Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:45:52.678038Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:45:52.679506Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:46:04.803172Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4068
+2019-11-26T14:46:04.955969Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:46:04.956899Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:46:04.957799Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:46:04.958957Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:46:04.959730Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:46:04.961183Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:51:12.713482Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5620
+2019-11-26T14:51:12.746150Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:51:12.746951Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:51:12.747624Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:51:12.748309Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:51:12.748991Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:51:12.750412Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:51:42.685317Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7068
+2019-11-26T14:51:42.740136Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:51:42.740971Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:51:42.741876Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:51:42.742872Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:51:42.743640Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:51:42.745056Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:53:28.297260Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9648
+2019-11-26T14:53:28.347510Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:53:28.350081Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:53:28.350943Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:53:28.351998Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:53:28.352796Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:53:28.354244Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:53:35.182650Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11596
+2019-11-26T14:53:35.216766Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:53:35.217634Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:53:35.218485Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:53:35.219572Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:53:35.220316Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:53:35.221678Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:57:58.526919Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9912
+2019-11-26T14:57:58.598325Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:57:58.599232Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:57:58.600126Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:57:58.601174Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:57:58.601950Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:57:58.603449Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:58:57.359546Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11740
+2019-11-26T14:58:57.430052Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:58:57.431155Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:58:57.432005Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:58:57.433036Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:58:57.433820Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:58:57.435279Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T14:59:17.796554Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11012
+2019-11-26T14:59:17.896365Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:59:17.897218Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T14:59:17.898066Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T14:59:17.899099Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T14:59:17.899807Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T14:59:17.901409Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:01:54.996913Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8188
+2019-11-26T15:01:55.043312Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:01:55.044189Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:01:55.045005Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:01:55.046051Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:01:55.046839Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:01:55.048401Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:04:08.724442Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6080
+2019-11-26T15:04:08.767090Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:04:08.767954Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:04:08.768822Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:04:08.769931Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:04:08.771405Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:04:08.773025Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:05:07.137586Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11468
+2019-11-26T15:05:07.205807Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:05:07.206636Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:05:07.207465Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:05:07.208604Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:05:07.209389Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:05:07.210912Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:05:30.513046Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11312
+2019-11-26T15:05:30.546760Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:05:30.547801Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:05:30.549135Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:05:30.550224Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:05:30.551011Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:05:30.552441Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:06:32.997411Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7224
+2019-11-26T15:06:33.121116Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:06:33.122012Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:06:33.122821Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:06:33.123836Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:06:33.124593Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:06:33.126010Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:06:47.378246Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12248
+2019-11-26T15:06:47.416075Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:06:47.417317Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:06:47.418187Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:06:47.419308Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:06:47.420094Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:06:47.421650Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:08:03.417829Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11388
+2019-11-26T15:08:03.499071Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:08:03.499958Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:08:03.500849Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:08:03.501851Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:08:03.503165Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:08:03.504725Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-26T15:08:25.865639Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6332
+2019-11-26T15:08:25.951307Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:08:25.952141Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-26T15:08:25.952972Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-26T15:08:25.953984Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-26T15:08:25.954756Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-26T15:08:25.956164Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T05:59:18.678483Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10152
+2019-11-29T05:59:21.538897Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T05:59:21.539388Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T05:59:21.565890Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T05:59:21.566622Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T05:59:21.567104Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T05:59:22.062562Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T05:59:44.081361Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11352
+2019-11-29T05:59:44.166063Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T05:59:44.166624Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T05:59:44.167170Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T05:59:44.167874Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T05:59:44.168371Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T05:59:44.169350Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T06:18:09.201142Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4284
+2019-11-29T06:18:10.976578Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:18:10.977152Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:18:10.977732Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T06:18:10.978546Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T06:18:10.979270Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T06:18:10.980257Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T06:27:07.891915Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 6976
+2019-11-29T06:27:07.987932Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:27:07.988813Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:27:07.989712Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T06:27:07.990786Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T06:27:07.991579Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T06:27:07.993074Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T06:29:19.022843Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5500
+2019-11-29T06:29:19.112701Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:29:19.113273Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T06:29:19.113851Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T06:29:19.114604Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T06:29:19.115380Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T06:29:19.116657Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:01:24.059517Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 13048
+2019-11-29T07:01:24.099400Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:01:24.100295Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:01:24.105784Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:01:24.106911Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:01:24.107726Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:01:24.109316Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:08:51.680123Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12344
+2019-11-29T07:08:51.738070Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:08:51.739018Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:08:51.739900Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:08:51.741100Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:08:51.741953Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:08:51.743555Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:11:06.885702Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12548
+2019-11-29T07:11:06.961989Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:11:06.962834Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:11:06.963673Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:11:06.965416Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:11:06.966839Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:11:06.968415Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:15:04.710820Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5832
+2019-11-29T07:15:04.759981Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:04.760672Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:04.761230Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:15:04.761957Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:15:04.762473Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:15:04.763547Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:15:33.718861Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11112
+2019-11-29T07:15:33.828659Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:33.829526Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:33.830412Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:15:33.831494Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:15:33.832180Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:15:33.833676Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:15:46.314349Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8096
+2019-11-29T07:15:46.345739Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:46.346619Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:46.347469Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:15:46.348594Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:15:46.349414Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:15:46.350923Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:15:55.375935Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7336
+2019-11-29T07:15:55.404695Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:55.405271Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:15:55.405802Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:15:55.406526Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:15:55.407018Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:15:55.408029Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:16:10.046077Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11036
+2019-11-29T07:16:10.084505Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:16:10.085401Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:16:10.094208Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:16:10.096813Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:16:10.097699Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:16:10.099239Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:17:01.334941Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11128
+2019-11-29T07:17:01.383857Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:17:01.384457Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:17:01.385020Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:17:01.385711Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:17:01.386211Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:17:01.387205Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:18:02.810649Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11864
+2019-11-29T07:18:02.880809Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:18:02.881675Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:18:02.882514Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:18:02.883682Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:18:02.884456Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:18:02.885909Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:23:55.371609Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5160
+2019-11-29T07:23:55.445354Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:23:55.446323Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:23:55.447248Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:23:55.454573Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:23:55.455446Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:23:55.457365Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:25:36.063652Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8744
+2019-11-29T07:25:36.113483Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:25:36.114414Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:25:36.115307Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:25:36.116427Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:25:36.117284Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:25:36.118841Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:36:48.096917Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 12356
+2019-11-29T07:36:48.182823Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:36:48.183786Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:36:48.184727Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:36:48.187919Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:36:48.188757Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:36:48.190307Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T07:37:39.978327Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10868
+2019-11-29T07:37:40.107693Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:37:40.108615Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T07:37:40.109505Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T07:37:40.110598Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T07:37:40.111389Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T07:37:40.112864Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T08:49:45.794894Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 4148
+2019-11-29T08:49:53.133718Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-11-29T08:49:53.145747Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-11-29T08:49:54.272230Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-11-29T08:49:54.934876Z 0 [System] [MY-010931] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: ready for connections. Version: '8.0.18'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2019-11-29T08:49:55.172383Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2019-11-29T08:50:07.629877Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 10024
+2019-11-29T08:50:07.928593Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:50:07.929440Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:50:07.930273Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T08:50:07.931319Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T08:50:07.932117Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T08:50:07.994250Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T08:53:17.733836Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 7668
+2019-11-29T08:53:18.125298Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:53:18.126239Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:53:18.127133Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T08:53:18.128421Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T08:53:18.129273Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T08:53:18.130757Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T08:54:08.871189Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11080
+2019-11-29T08:54:08.906196Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:08.907028Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:08.907859Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T08:54:08.908900Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T08:54:08.909673Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T08:54:08.911099Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T08:54:35.667317Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8708
+2019-11-29T08:54:35.726645Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:35.727477Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:35.728288Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T08:54:35.730140Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T08:54:35.731144Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T08:54:35.733600Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T08:54:57.136796Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 8740
+2019-11-29T08:54:57.184498Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:57.185296Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T08:54:57.185828Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T08:54:57.186525Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T08:54:57.187094Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T08:54:57.188487Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T09:12:34.518520Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 9896
+2019-11-29T09:12:34.574685Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:12:34.578487Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:12:34.579456Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T09:12:34.580705Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T09:12:34.581508Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T09:12:34.583027Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T09:21:45.229352Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 5336
+2019-11-29T09:21:45.283385Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:21:45.284237Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:21:45.285114Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T09:21:45.286176Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T09:21:45.286975Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T09:21:45.288511Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
+2019-11-29T09:33:28.336236Z 0 [System] [MY-010116] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld (mysqld 8.0.18) starting as process 11968
+2019-11-29T09:33:28.540285Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:33:28.541913Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2019-11-29T09:33:28.542748Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2019-11-29T09:33:28.544381Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2019-11-29T09:33:28.545192Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-11-29T09:33:28.546607Z 0 [System] [MY-010910] [Server] C:\Users\Itay\Desktop\DoctorsDelays\DoctorsDelay\DB\MySQLServer\bin\mysqld: Shutdown complete (mysqld 8.0.18)  MySQL Community Server - GPL.
