@@ -1,3 +1,5 @@
+import java.sql.Statement;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -8,14 +10,19 @@ public interface DataBase {
 
     abstract class DelayReport{
         private int reportedDelay; //the expected delay that the client reported
-        private int reportTimestamp; //the time of the report (when client reported)
+        private Timestamp reportTimestamp;
+        private String doctorsName;
+
+        //public void setReportedDelay(int delay){reportedDelay = delay;}
+        //public void setTimestamp(Timestamp timestamp){reportTimestamp = timestamp;}
 
         abstract public int getReportedDelay();
+        abstract public Timestamp getReportTimestamp();
+        abstract public String getDoctorsName();
 
-        abstract public int getReportTimestamp();
     }
 
-    List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime);
+    List<DelayReport> getReports(String doctorsName, Timestamp startTime, Timestamp endTime);
 
     boolean doctorExists(String doctorsName);
 
