@@ -13,8 +13,8 @@
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>3.10.0-rc-1</version>
+            <artifactId>protobuf-lite</artifactId>
+            <version>3.0.1</version>
         </dependency>
     </dependencies>
 
