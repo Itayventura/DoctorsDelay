@@ -8,11 +8,10 @@ public interface DataBase {
 
     abstract class DelayReport{
         private int reportedDelay; //the expected delay that the client reported
-        private int reportTimestamp; //the time of the report (when client reported)
+        private LocalDateTime reportTimestamp; //the time of the report (when client reported)
 
         abstract public int getReportedDelay();
-
-        abstract public int getReportTimestamp();
+        abstract public LocalDateTime getReportTimestamp();
     }
 
     List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime);

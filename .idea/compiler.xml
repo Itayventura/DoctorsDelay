@@ -9,8 +9,8 @@
         <module name="Algorithms" />
         <module name="Server" />
         <module name="DB" />
-        <module name="Messages" />
         <module name="Client" />
+        <module name="Messages" />
       </profile>
     </annotationProcessing>
   </component>
