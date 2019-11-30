@@ -38,11 +38,11 @@ public class AlgorithmsHandler {
             switch (e.getReason()) {
                 case DOCTOR_NOT_EXISTS:
                     logger.warn(String.format("doctor %s does not exist", request.getDoctorsName()));
-                    setFailure(response, "Doctor not found");
+                    setFailure(response, Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND);
                     break;
                 case NO_DATA_FOUND:
                     logger.warn(String.format("There's no data on doctor %s", request.getDoctorsName()));
-                    setFailure(response, "Data does not exist");
+                    setFailure(response, Communication.S2C.Response.ErrorCode.NO_DATA);
                     break;
             }
         }
@@ -61,9 +61,9 @@ public class AlgorithmsHandler {
                         .setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL)).build();
     }
 
-    private void setFailure(Communication.S2C.Response.Builder response, String error) {
+    private void setFailure(Communication.S2C.Response.Builder response, Communication.S2C.Response.ErrorCode error) {
         response.setStatusCode(Communication.S2C.Response.Status.FAILURE);
-        response.setErrorMessage(error);
+        response.setErrorCode(error);
     }
 
     private void getEstimatedDelay(Communication.S2C.Response.ExpectedDelay.Builder delay, Communication.C2S.Request request) throws Algorithms.AlgorithmException {

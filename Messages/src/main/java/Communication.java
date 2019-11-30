@@ -1515,14 +1515,13 @@ public final class Communication {
       Communication.S2C.Response.Status getStatusCode();
 
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      java.lang.String getErrorMessage();
+      int getErrorCodeValue();
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      com.google.protobuf.ByteString
-      getErrorMessageBytes();
+      Communication.S2C.Response.ErrorCode getErrorCode();
 
       /**
        * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
@@ -1542,7 +1541,6 @@ public final class Communication {
             // @@protoc_insertion_point(message_implements:S2C.Response)
             ResponseOrBuilder {
       private Response() {
-        errorMessage_ = "";
       }
       /**
        * Protobuf enum {@code S2C.Response.Status}
@@ -1609,6 +1607,73 @@ public final class Communication {
         }
 
         // @@protoc_insertion_point(enum_scope:S2C.Response.Status)
+      }
+
+      /**
+       * Protobuf enum {@code S2C.Response.ErrorCode}
+       */
+      public enum ErrorCode
+              implements com.google.protobuf.Internal.EnumLite {
+        /**
+         * <code>DOCTOR_NOT_FOUND = 0;</code>
+         */
+        DOCTOR_NOT_FOUND(0),
+        /**
+         * <code>NO_DATA = 1;</code>
+         */
+        NO_DATA(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <code>DOCTOR_NOT_FOUND = 0;</code>
+         */
+        public static final int DOCTOR_NOT_FOUND_VALUE = 0;
+        /**
+         * <code>NO_DATA = 1;</code>
+         */
+        public static final int NO_DATA_VALUE = 1;
+
+
+        public final int getNumber() {
+          return value;
+        }
+
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ErrorCode valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ErrorCode forNumber(int value) {
+          switch (value) {
+            case 0: return DOCTOR_NOT_FOUND;
+            case 1: return NO_DATA;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ErrorCode>
+        internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                ErrorCode> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ErrorCode>() {
+                  public ErrorCode findValueByNumber(int number) {
+                    return ErrorCode.forNumber(number);
+                  }
+                };
+
+        private final int value;
+
+        private ErrorCode(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:S2C.Response.ErrorCode)
       }
 
       public interface ExpectedDelayOrBuilder extends
@@ -1980,50 +2045,43 @@ public final class Communication {
         statusCode_ = 0;
       }
 
-      public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-      private java.lang.String errorMessage_;
+      public static final int ERROR_CODE_FIELD_NUMBER = 2;
+      private int errorCode_;
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      public java.lang.String getErrorMessage() {
-        return errorMessage_;
+      public int getErrorCodeValue() {
+        return errorCode_;
       }
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      public com.google.protobuf.ByteString
-      getErrorMessageBytes() {
-        return com.google.protobuf.ByteString.copyFromUtf8(errorMessage_);
+      public Communication.S2C.Response.ErrorCode getErrorCode() {
+        Communication.S2C.Response.ErrorCode result = Communication.S2C.Response.ErrorCode.forNumber(errorCode_);
+        return result == null ? Communication.S2C.Response.ErrorCode.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      private void setErrorMessage(
-              java.lang.String value) {
+      private void setErrorCodeValue(int value) {
+        errorCode_ = value;
+      }
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      private void setErrorCode(Communication.S2C.Response.ErrorCode value) {
         if (value == null) {
           throw new NullPointerException();
         }
 
-        errorMessage_ = value;
+        errorCode_ = value.getNumber();
       }
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      private void clearErrorMessage() {
+      private void clearErrorCode() {
 
-        errorMessage_ = getDefaultInstance().getErrorMessage();
-      }
-      /**
-       * <code>optional string error_message = 2;</code>
-       */
-      private void setErrorMessageBytes(
-              com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        errorMessage_ = value.toStringUtf8();
+        errorCode_ = 0;
       }
 
       public static final int EXPECTED_DELAY_FIELD_NUMBER = 3;
@@ -2083,8 +2141,8 @@ public final class Communication {
         if (statusCode_ != Communication.S2C.Response.Status.SUCCESSFUL.getNumber()) {
           output.writeEnum(1, statusCode_);
         }
-        if (!errorMessage_.isEmpty()) {
-          output.writeString(2, getErrorMessage());
+        if (errorCode_ != Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND.getNumber()) {
+          output.writeEnum(2, errorCode_);
         }
         if (expectedDelay_ != null) {
           output.writeMessage(3, getExpectedDelay());
@@ -2100,9 +2158,9 @@ public final class Communication {
           size += com.google.protobuf.CodedOutputStream
                   .computeEnumSize(1, statusCode_);
         }
-        if (!errorMessage_.isEmpty()) {
+        if (errorCode_ != Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-                  .computeStringSize(2, getErrorMessage());
+                  .computeEnumSize(2, errorCode_);
         }
         if (expectedDelay_ != null) {
           size += com.google.protobuf.CodedOutputStream
@@ -2232,42 +2290,39 @@ public final class Communication {
         }
 
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public java.lang.String getErrorMessage() {
-          return instance.getErrorMessage();
+        public int getErrorCodeValue() {
+          return instance.getErrorCodeValue();
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public com.google.protobuf.ByteString
-        getErrorMessageBytes() {
-          return instance.getErrorMessageBytes();
-        }
-        /**
-         * <code>optional string error_message = 2;</code>
-         */
-        public Builder setErrorMessage(
-                java.lang.String value) {
+        public Builder setErrorCodeValue(int value) {
           copyOnWrite();
-          instance.setErrorMessage(value);
+          instance.setErrorCodeValue(value);
           return this;
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public Builder clearErrorMessage() {
+        public Communication.S2C.Response.ErrorCode getErrorCode() {
+          return instance.getErrorCode();
+        }
+        /**
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+         */
+        public Builder setErrorCode(Communication.S2C.Response.ErrorCode value) {
           copyOnWrite();
-          instance.clearErrorMessage();
+          instance.setErrorCode(value);
           return this;
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public Builder setErrorMessageBytes(
-                com.google.protobuf.ByteString value) {
+        public Builder clearErrorCode() {
           copyOnWrite();
-          instance.setErrorMessageBytes(value);
+          instance.clearErrorCode();
           return this;
         }
 
@@ -2338,8 +2393,7 @@ public final class Communication {
             Visitor visitor = (Visitor) arg0;
             Communication.S2C.Response other = (Communication.S2C.Response) arg1;
             statusCode_ = visitor.visitInt(statusCode_ != 0, statusCode_,    other.statusCode_ != 0, other.statusCode_);
-            errorMessage_ = visitor.visitString(!errorMessage_.isEmpty(), errorMessage_,
-                    !other.errorMessage_.isEmpty(), other.errorMessage_);
+            errorCode_ = visitor.visitInt(errorCode_ != 0, errorCode_,    other.errorCode_ != 0, other.errorCode_);
             expectedDelay_ = visitor.visitMessage(expectedDelay_, other.expectedDelay_);
             if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
                     .INSTANCE) {
@@ -2371,10 +2425,10 @@ public final class Communication {
                     statusCode_ = rawValue;
                     break;
                   }
-                  case 18: {
-                    String s = input.readStringRequireUtf8();
+                  case 16: {
+                    int rawValue = input.readEnum();
 
-                    errorMessage_ = s;
+                    errorCode_ = rawValue;
                     break;
                   }
                   case 26: {

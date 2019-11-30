@@ -33,7 +33,6 @@ public class TestBase {
         Assert.assertFalse(s2c.getFinish());
         Communication.S2C.Response response = s2c.getResponse();
         Assert.assertEquals(Communication.S2C.Response.Status.SUCCESSFUL, response.getStatusCode());
-        Assert.assertEquals("", response.getErrorMessage());
         Assert.assertTrue(response.hasExpectedDelay());
     }
 

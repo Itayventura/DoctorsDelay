@@ -24,7 +24,7 @@ public class AlgorithmsHandlerTest {
                 Communication.C2S.Request.Type.ESTIMATE);
         Communication.S2C s2c = algorithmsHandler.handleRequest(request);
         TestBase.assertErrorResponse(s2c);
-        Assert.assertTrue(s2c.getResponse().getErrorMessage().contains("Doctor"));
+        Assert.assertEquals(s2c.getResponse().getErrorCode(), Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class AlgorithmsHandlerTest {
                 Communication.C2S.Request.Type.NOW);
         Communication.S2C s2c = algorithmsHandler.handleRequest(request);
         TestBase.assertErrorResponse(s2c);
-        Assert.assertTrue(s2c.getResponse().getErrorMessage().contains("Data"));
+        Assert.assertEquals(s2c.getResponse().getErrorCode(), Communication.S2C.Response.ErrorCode.NO_DATA);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class AlgorithmsHandlerTest {
                 Communication.C2S.Request.Type.ESTIMATE);
         Communication.S2C s2c = algorithmsHandler.handleRequest(request);
         TestBase.assertErrorResponse(s2c);
-        Assert.assertTrue(s2c.getResponse().getErrorMessage().contains("Data"));
+        Assert.assertEquals(s2c.getResponse().getErrorCode(), Communication.S2C.Response.ErrorCode.NO_DATA);
     }
 
 }
