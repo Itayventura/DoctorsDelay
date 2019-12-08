@@ -1,7 +1,9 @@
-import com.google.protobuf.Message;
+import com.google.protobuf.MessageLite;
 import com.google.protobuf.Parser;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 
 /**
@@ -21,14 +23,14 @@ public class Communicator {
         in.close();
     }
 
-    protected <T extends Message> T readMessage(Parser<T> parser) throws IOException {
+    protected <T extends MessageLite> T readMessage(Parser<T> parser) throws IOException {
         int c2sSize = in.readInt();
         byte[] buffer = new byte[c2sSize];
         in.readFully(buffer);
         return parser.parseFrom(buffer);
     }
 
-    protected void sendMessage(Message message) throws IOException {
+    protected void sendMessage(MessageLite message) throws IOException {
         out.writeInt(message.getSerializedSize());
         message.writeTo(out);
         out.flush();

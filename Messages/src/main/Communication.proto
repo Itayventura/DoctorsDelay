@@ -28,9 +28,14 @@ message S2C{
         }
         message ExpectedDelay{
             int32 time = 1;
+            bool is_estimated = 2;
+        }
+        enum ErrorCode{
+            DOCTOR_NOT_FOUND = 0;
+            NO_DATA = 1;
         }
         Status status_code = 1;
-        string error_message = 2;
+        ErrorCode error_code = 2;
         ExpectedDelay expected_delay = 3;
     }
     Response response = 1;

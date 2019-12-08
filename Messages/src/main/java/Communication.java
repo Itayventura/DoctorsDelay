@@ -4,17 +4,11 @@
 public final class Communication {
   private Communication() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+          com.google.protobuf.ExtensionRegistryLite registry) {
   }
   public interface C2SOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:C2S)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:C2S)
+          com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .C2S.Request request = 1;</code>
@@ -24,10 +18,6 @@ public final class Communication {
      * <code>optional .C2S.Request request = 1;</code>
      */
     Communication.C2S.Request getRequest();
-    /**
-     * <code>optional .C2S.Request request = 1;</code>
-     */
-    Communication.C2S.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional .C2S.Report report = 2;</code>
@@ -37,10 +27,6 @@ public final class Communication {
      * <code>optional .C2S.Report report = 2;</code>
      */
     Communication.C2S.Report getReport();
-    /**
-     * <code>optional .C2S.Report report = 2;</code>
-     */
-    Communication.C2S.ReportOrBuilder getReportOrBuilder();
 
     /**
      * <code>optional bool finish = 3;</code>
@@ -51,99 +37,15 @@ public final class Communication {
    * Protobuf type {@code C2S}
    */
   public  static final class C2S extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:C2S)
-      C2SOrBuilder {
-    // Use C2S.newBuilder() to construct.
-    private C2S(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
+          com.google.protobuf.GeneratedMessageLite<
+                  C2S, C2S.Builder> implements
+          // @@protoc_insertion_point(message_implements:C2S)
+          C2SOrBuilder {
     private C2S() {
-      finish_ = false;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private C2S(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              Communication.C2S.Request.Builder subBuilder = null;
-              if (request_ != null) {
-                subBuilder = request_.toBuilder();
-              }
-              request_ = input.readMessage(Communication.C2S.Request.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(request_);
-                request_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              Communication.C2S.Report.Builder subBuilder = null;
-              if (report_ != null) {
-                subBuilder = report_.toBuilder();
-              }
-              report_ = input.readMessage(Communication.C2S.Report.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(report_);
-                report_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              finish_ = input.readBool();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return Communication.internal_static_C2S_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return Communication.internal_static_C2S_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Communication.C2S.class, Communication.C2S.Builder.class);
-    }
-
     public interface RequestOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:C2S.Request)
-        com.google.protobuf.MessageOrBuilder {
+            // @@protoc_insertion_point(interface_extends:C2S.Request)
+            com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional .C2S.Request.Type type = 1;</code>
@@ -162,7 +64,7 @@ public final class Communication {
        * <code>optional string doctors_name = 2;</code>
        */
       com.google.protobuf.ByteString
-          getDoctorsNameBytes();
+      getDoctorsNameBytes();
 
       /**
        * <pre>
@@ -177,89 +79,18 @@ public final class Communication {
      * Protobuf type {@code C2S.Request}
      */
     public  static final class Request extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:C2S.Request)
-        RequestOrBuilder {
-      // Use Request.newBuilder() to construct.
-      private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
+            com.google.protobuf.GeneratedMessageLite<
+                    Request, Request.Builder> implements
+            // @@protoc_insertion_point(message_implements:C2S.Request)
+            RequestOrBuilder {
       private Request() {
-        type_ = 0;
         doctorsName_ = "";
-        timestamp_ = 0L;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private Request(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                doctorsName_ = s;
-                break;
-              }
-              case 24: {
-
-                timestamp_ = input.readInt64();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Communication.internal_static_C2S_Request_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Communication.internal_static_C2S_Request_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Communication.C2S.Request.class, Communication.C2S.Request.Builder.class);
-      }
-
       /**
        * Protobuf enum {@code C2S.Request.Type}
        */
       public enum Type
-          implements com.google.protobuf.ProtocolMessageEnum {
+              implements com.google.protobuf.Internal.EnumLite {
         /**
          * <code>NOW = 0;</code>
          */
@@ -268,10 +99,6 @@ public final class Communication {
          * <code>ESTIMATE = 1;</code>
          */
         ESTIMATE(1),
-        /**
-         * <code>SOME = 3;</code>
-         */
-        SOME(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -283,17 +110,9 @@ public final class Communication {
          * <code>ESTIMATE = 1;</code>
          */
         public static final int ESTIMATE_VALUE = 1;
-        /**
-         * <code>SOME = 3;</code>
-         */
-        public static final int SOME_VALUE = 3;
 
 
         public final int getNumber() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-          }
           return value;
         }
 
@@ -309,49 +128,21 @@ public final class Communication {
           switch (value) {
             case 0: return NOW;
             case 1: return ESTIMATE;
-            case 3: return SOME;
             default: return null;
           }
         }
 
         public static com.google.protobuf.Internal.EnumLiteMap<Type>
-            internalGetValueMap() {
+        internalGetValueMap() {
           return internalValueMap;
         }
         private static final com.google.protobuf.Internal.EnumLiteMap<
-            Type> internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-                public Type findValueByNumber(int number) {
-                  return Type.forNumber(number);
-                }
-              };
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          return getDescriptor().getValues().get(ordinal());
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return Communication.C2S.Request.getDescriptor().getEnumTypes().get(0);
-        }
-
-        private static final Type[] VALUES = values();
-
-        public static Type valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          if (desc.getIndex() == -1) {
-            return UNRECOGNIZED;
-          }
-          return VALUES[desc.getIndex()];
-        }
+                Type> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                  public Type findValueByNumber(int number) {
+                    return Type.forNumber(number);
+                  }
+                };
 
         private final int value;
 
@@ -374,42 +165,77 @@ public final class Communication {
        * <code>optional .C2S.Request.Type type = 1;</code>
        */
       public Communication.C2S.Request.Type getType() {
-        Communication.C2S.Request.Type result = Communication.C2S.Request.Type.valueOf(type_);
+        Communication.C2S.Request.Type result = Communication.C2S.Request.Type.forNumber(type_);
         return result == null ? Communication.C2S.Request.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .C2S.Request.Type type = 1;</code>
+       */
+      private void setTypeValue(int value) {
+        type_ = value;
+      }
+      /**
+       * <code>optional .C2S.Request.Type type = 1;</code>
+       */
+      private void setType(Communication.C2S.Request.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        type_ = value.getNumber();
+      }
+      /**
+       * <code>optional .C2S.Request.Type type = 1;</code>
+       */
+      private void clearType() {
+
+        type_ = 0;
       }
 
       public static final int DOCTORS_NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object doctorsName_;
+      private java.lang.String doctorsName_;
       /**
        * <code>optional string doctors_name = 2;</code>
        */
       public java.lang.String getDoctorsName() {
-        java.lang.Object ref = doctorsName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          doctorsName_ = s;
-          return s;
-        }
+        return doctorsName_;
       }
       /**
        * <code>optional string doctors_name = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getDoctorsNameBytes() {
-        java.lang.Object ref = doctorsName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          doctorsName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      getDoctorsNameBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(doctorsName_);
+      }
+      /**
+       * <code>optional string doctors_name = 2;</code>
+       */
+      private void setDoctorsName(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+
+        doctorsName_ = value;
+      }
+      /**
+       * <code>optional string doctors_name = 2;</code>
+       */
+      private void clearDoctorsName() {
+
+        doctorsName_ = getDefaultInstance().getDoctorsName();
+      }
+      /**
+       * <code>optional string doctors_name = 2;</code>
+       */
+      private void setDoctorsNameBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        doctorsName_ = value.toStringUtf8();
       }
 
       public static final int TIMESTAMP_FIELD_NUMBER = 3;
@@ -424,24 +250,36 @@ public final class Communication {
       public long getTimestamp() {
         return timestamp_;
       }
+      /**
+       * <pre>
+       *since epoch - client's future appointment
+       * </pre>
+       *
+       * <code>optional int64 timestamp = 3;</code>
+       */
+      private void setTimestamp(long value) {
 
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
+        timestamp_ = value;
+      }
+      /**
+       * <pre>
+       *since epoch - client's future appointment
+       * </pre>
+       *
+       * <code>optional int64 timestamp = 3;</code>
+       */
+      private void clearTimestamp() {
 
-        memoizedIsInitialized = 1;
-        return true;
+        timestamp_ = 0L;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+              throws java.io.IOException {
         if (type_ != Communication.C2S.Request.Type.NOW.getNumber()) {
           output.writeEnum(1, type_);
         }
-        if (!getDoctorsNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, doctorsName_);
+        if (!doctorsName_.isEmpty()) {
+          output.writeString(2, getDoctorsName());
         }
         if (timestamp_ != 0L) {
           output.writeInt64(3, timestamp_);
@@ -449,399 +287,185 @@ public final class Communication {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
         if (type_ != Communication.C2S.Request.Type.NOW.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, type_);
+                  .computeEnumSize(1, type_);
         }
-        if (!getDoctorsNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, doctorsName_);
+        if (!doctorsName_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+                  .computeStringSize(2, getDoctorsName());
         }
         if (timestamp_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(3, timestamp_);
+                  .computeInt64Size(3, timestamp_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof Communication.C2S.Request)) {
-          return super.equals(obj);
-        }
-        Communication.C2S.Request other = (Communication.C2S.Request) obj;
-
-        boolean result = true;
-        result = result && type_ == other.type_;
-        result = result && getDoctorsName()
-            .equals(other.getDoctorsName());
-        result = result && (getTimestamp()
-            == other.getTimestamp());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + type_;
-        hash = (37 * hash) + DOCTORS_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getDoctorsName().hashCode();
-        hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTimestamp());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
       public static Communication.C2S.Request parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.C2S.Request parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.C2S.Request parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.C2S.Request parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              byte[] data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.C2S.Request parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Request parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.C2S.Request parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Request parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.C2S.Request parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              com.google.protobuf.CodedInputStream input)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Request parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(Communication.C2S.Request prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code C2S.Request}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:C2S.Request)
-          Communication.C2S.RequestOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return Communication.internal_static_C2S_Request_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return Communication.internal_static_C2S_Request_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  Communication.C2S.Request.class, Communication.C2S.Request.Builder.class);
-        }
-
+              com.google.protobuf.GeneratedMessageLite.Builder<
+                      Communication.C2S.Request, Builder> implements
+              // @@protoc_insertion_point(builder_implements:C2S.Request)
+              Communication.C2S.RequestOrBuilder {
         // Construct using Communication.C2S.Request.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          type_ = 0;
 
-          doctorsName_ = "";
-
-          timestamp_ = 0L;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return Communication.internal_static_C2S_Request_descriptor;
-        }
-
-        public Communication.C2S.Request getDefaultInstanceForType() {
-          return Communication.C2S.Request.getDefaultInstance();
-        }
-
-        public Communication.C2S.Request build() {
-          Communication.C2S.Request result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public Communication.C2S.Request buildPartial() {
-          Communication.C2S.Request result = new Communication.C2S.Request(this);
-          result.type_ = type_;
-          result.doctorsName_ = doctorsName_;
-          result.timestamp_ = timestamp_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof Communication.C2S.Request) {
-            return mergeFrom((Communication.C2S.Request)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(Communication.C2S.Request other) {
-          if (other == Communication.C2S.Request.getDefaultInstance()) return this;
-          if (other.type_ != 0) {
-            setTypeValue(other.getTypeValue());
-          }
-          if (!other.getDoctorsName().isEmpty()) {
-            doctorsName_ = other.doctorsName_;
-            onChanged();
-          }
-          if (other.getTimestamp() != 0L) {
-            setTimestamp(other.getTimestamp());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Communication.C2S.Request parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (Communication.C2S.Request) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int type_ = 0;
         /**
          * <code>optional .C2S.Request.Type type = 1;</code>
          */
         public int getTypeValue() {
-          return type_;
+          return instance.getTypeValue();
         }
         /**
          * <code>optional .C2S.Request.Type type = 1;</code>
          */
         public Builder setTypeValue(int value) {
-          type_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTypeValue(value);
           return this;
         }
         /**
          * <code>optional .C2S.Request.Type type = 1;</code>
          */
         public Communication.C2S.Request.Type getType() {
-          Communication.C2S.Request.Type result = Communication.C2S.Request.Type.valueOf(type_);
-          return result == null ? Communication.C2S.Request.Type.UNRECOGNIZED : result;
+          return instance.getType();
         }
         /**
          * <code>optional .C2S.Request.Type type = 1;</code>
          */
         public Builder setType(Communication.C2S.Request.Type value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          
-          type_ = value.getNumber();
-          onChanged();
+          copyOnWrite();
+          instance.setType(value);
           return this;
         }
         /**
          * <code>optional .C2S.Request.Type type = 1;</code>
          */
         public Builder clearType() {
-          
-          type_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearType();
           return this;
         }
 
-        private java.lang.Object doctorsName_ = "";
         /**
          * <code>optional string doctors_name = 2;</code>
          */
         public java.lang.String getDoctorsName() {
-          java.lang.Object ref = doctorsName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            doctorsName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDoctorsName();
         }
         /**
          * <code>optional string doctors_name = 2;</code>
          */
         public com.google.protobuf.ByteString
-            getDoctorsNameBytes() {
-          java.lang.Object ref = doctorsName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            doctorsName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+        getDoctorsNameBytes() {
+          return instance.getDoctorsNameBytes();
         }
         /**
          * <code>optional string doctors_name = 2;</code>
          */
         public Builder setDoctorsName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          doctorsName_ = value;
-          onChanged();
+                java.lang.String value) {
+          copyOnWrite();
+          instance.setDoctorsName(value);
           return this;
         }
         /**
          * <code>optional string doctors_name = 2;</code>
          */
         public Builder clearDoctorsName() {
-          
-          doctorsName_ = getDefaultInstance().getDoctorsName();
-          onChanged();
+          copyOnWrite();
+          instance.clearDoctorsName();
           return this;
         }
         /**
          * <code>optional string doctors_name = 2;</code>
          */
         public Builder setDoctorsNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          doctorsName_ = value;
-          onChanged();
+                com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setDoctorsNameBytes(value);
           return this;
         }
 
-        private long timestamp_ ;
         /**
          * <pre>
          *since epoch - client's future appointment
@@ -850,7 +474,7 @@ public final class Communication {
          * <code>optional int64 timestamp = 3;</code>
          */
         public long getTimestamp() {
-          return timestamp_;
+          return instance.getTimestamp();
         }
         /**
          * <pre>
@@ -860,9 +484,8 @@ public final class Communication {
          * <code>optional int64 timestamp = 3;</code>
          */
         public Builder setTimestamp(long value) {
-          
-          timestamp_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setTimestamp(value);
           return this;
         }
         /**
@@ -873,63 +496,127 @@ public final class Communication {
          * <code>optional int64 timestamp = 3;</code>
          */
         public Builder clearTimestamp() {
-          
-          timestamp_ = 0L;
-          onChanged();
+          copyOnWrite();
+          instance.clearTimestamp();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:C2S.Request)
       }
+      protected final Object dynamicMethod(
+              com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+              Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new Communication.C2S.Request();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            Communication.C2S.Request other = (Communication.C2S.Request) arg1;
+            type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
+            doctorsName_ = visitor.visitString(!doctorsName_.isEmpty(), doctorsName_,
+                    !other.doctorsName_.isEmpty(), other.doctorsName_);
+            timestamp_ = visitor.visitLong(timestamp_ != 0L, timestamp_,
+                    other.timestamp_ != 0L, other.timestamp_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                    .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                    (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                    (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+                    int rawValue = input.readEnum();
+
+                    type_ = rawValue;
+                    break;
+                  }
+                  case 18: {
+                    String s = input.readStringRequireUtf8();
+
+                    doctorsName_ = s;
+                    break;
+                  }
+                  case 24: {
+
+                    timestamp_ = input.readInt64();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                      new com.google.protobuf.InvalidProtocolBufferException(
+                              e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (Communication.C2S.Request.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:C2S.Request)
       private static final Communication.C2S.Request DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Communication.C2S.Request();
+        DEFAULT_INSTANCE = new Request();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static Communication.C2S.Request getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Request>
-          PARSER = new com.google.protobuf.AbstractParser<Request>() {
-        public Request parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Request(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<Request> PARSER;
 
       public static com.google.protobuf.Parser<Request> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Request> getParserForType() {
-        return PARSER;
-      }
-
-      public Communication.C2S.Request getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface ReportOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:C2S.Report)
-        com.google.protobuf.MessageOrBuilder {
+            // @@protoc_insertion_point(interface_extends:C2S.Report)
+            com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional string doctors_name = 1;</code>
@@ -939,7 +626,7 @@ public final class Communication {
        * <code>optional string doctors_name = 1;</code>
        */
       com.google.protobuf.ByteString
-          getDoctorsNameBytes();
+      getDoctorsNameBytes();
 
       /**
        * <code>optional int32 current_delay_minutes = 2;</code>
@@ -950,109 +637,57 @@ public final class Communication {
      * Protobuf type {@code C2S.Report}
      */
     public  static final class Report extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:C2S.Report)
-        ReportOrBuilder {
-      // Use Report.newBuilder() to construct.
-      private Report(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
+            com.google.protobuf.GeneratedMessageLite<
+                    Report, Report.Builder> implements
+            // @@protoc_insertion_point(message_implements:C2S.Report)
+            ReportOrBuilder {
       private Report() {
         doctorsName_ = "";
-        currentDelayMinutes_ = 0;
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private Report(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                doctorsName_ = s;
-                break;
-              }
-              case 16: {
-
-                currentDelayMinutes_ = input.readInt32();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Communication.internal_static_C2S_Report_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Communication.internal_static_C2S_Report_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Communication.C2S.Report.class, Communication.C2S.Report.Builder.class);
-      }
-
       public static final int DOCTORS_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object doctorsName_;
+      private java.lang.String doctorsName_;
       /**
        * <code>optional string doctors_name = 1;</code>
        */
       public java.lang.String getDoctorsName() {
-        java.lang.Object ref = doctorsName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          doctorsName_ = s;
-          return s;
-        }
+        return doctorsName_;
       }
       /**
        * <code>optional string doctors_name = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getDoctorsNameBytes() {
-        java.lang.Object ref = doctorsName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          doctorsName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      getDoctorsNameBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(doctorsName_);
+      }
+      /**
+       * <code>optional string doctors_name = 1;</code>
+       */
+      private void setDoctorsName(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+
+        doctorsName_ = value;
+      }
+      /**
+       * <code>optional string doctors_name = 1;</code>
+       */
+      private void clearDoctorsName() {
+
+        doctorsName_ = getDefaultInstance().getDoctorsName();
+      }
+      /**
+       * <code>optional string doctors_name = 1;</code>
+       */
+      private void setDoctorsNameBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        doctorsName_ = value.toStringUtf8();
       }
 
       public static final int CURRENT_DELAY_MINUTES_FIELD_NUMBER = 2;
@@ -1063,21 +698,25 @@ public final class Communication {
       public int getCurrentDelayMinutes() {
         return currentDelayMinutes_;
       }
+      /**
+       * <code>optional int32 current_delay_minutes = 2;</code>
+       */
+      private void setCurrentDelayMinutes(int value) {
 
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
+        currentDelayMinutes_ = value;
+      }
+      /**
+       * <code>optional int32 current_delay_minutes = 2;</code>
+       */
+      private void clearCurrentDelayMinutes() {
 
-        memoizedIsInitialized = 1;
-        return true;
+        currentDelayMinutes_ = 0;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getDoctorsNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, doctorsName_);
+              throws java.io.IOException {
+        if (!doctorsName_.isEmpty()) {
+          output.writeString(1, getDoctorsName());
         }
         if (currentDelayMinutes_ != 0) {
           output.writeInt32(2, currentDelayMinutes_);
@@ -1085,412 +724,271 @@ public final class Communication {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!getDoctorsNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, doctorsName_);
+        if (!doctorsName_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+                  .computeStringSize(1, getDoctorsName());
         }
         if (currentDelayMinutes_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, currentDelayMinutes_);
+                  .computeInt32Size(2, currentDelayMinutes_);
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof Communication.C2S.Report)) {
-          return super.equals(obj);
-        }
-        Communication.C2S.Report other = (Communication.C2S.Report) obj;
-
-        boolean result = true;
-        result = result && getDoctorsName()
-            .equals(other.getDoctorsName());
-        result = result && (getCurrentDelayMinutes()
-            == other.getCurrentDelayMinutes());
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + DOCTORS_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getDoctorsName().hashCode();
-        hash = (37 * hash) + CURRENT_DELAY_MINUTES_FIELD_NUMBER;
-        hash = (53 * hash) + getCurrentDelayMinutes();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
       public static Communication.C2S.Report parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.C2S.Report parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.C2S.Report parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.C2S.Report parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              byte[] data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.C2S.Report parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Report parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.C2S.Report parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Report parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.C2S.Report parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              com.google.protobuf.CodedInputStream input)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.C2S.Report parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(Communication.C2S.Report prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code C2S.Report}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:C2S.Report)
-          Communication.C2S.ReportOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return Communication.internal_static_C2S_Report_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return Communication.internal_static_C2S_Report_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  Communication.C2S.Report.class, Communication.C2S.Report.Builder.class);
-        }
-
+              com.google.protobuf.GeneratedMessageLite.Builder<
+                      Communication.C2S.Report, Builder> implements
+              // @@protoc_insertion_point(builder_implements:C2S.Report)
+              Communication.C2S.ReportOrBuilder {
         // Construct using Communication.C2S.Report.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          doctorsName_ = "";
 
-          currentDelayMinutes_ = 0;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return Communication.internal_static_C2S_Report_descriptor;
-        }
-
-        public Communication.C2S.Report getDefaultInstanceForType() {
-          return Communication.C2S.Report.getDefaultInstance();
-        }
-
-        public Communication.C2S.Report build() {
-          Communication.C2S.Report result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public Communication.C2S.Report buildPartial() {
-          Communication.C2S.Report result = new Communication.C2S.Report(this);
-          result.doctorsName_ = doctorsName_;
-          result.currentDelayMinutes_ = currentDelayMinutes_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof Communication.C2S.Report) {
-            return mergeFrom((Communication.C2S.Report)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(Communication.C2S.Report other) {
-          if (other == Communication.C2S.Report.getDefaultInstance()) return this;
-          if (!other.getDoctorsName().isEmpty()) {
-            doctorsName_ = other.doctorsName_;
-            onChanged();
-          }
-          if (other.getCurrentDelayMinutes() != 0) {
-            setCurrentDelayMinutes(other.getCurrentDelayMinutes());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Communication.C2S.Report parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (Communication.C2S.Report) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private java.lang.Object doctorsName_ = "";
         /**
          * <code>optional string doctors_name = 1;</code>
          */
         public java.lang.String getDoctorsName() {
-          java.lang.Object ref = doctorsName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            doctorsName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+          return instance.getDoctorsName();
         }
         /**
          * <code>optional string doctors_name = 1;</code>
          */
         public com.google.protobuf.ByteString
-            getDoctorsNameBytes() {
-          java.lang.Object ref = doctorsName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            doctorsName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
+        getDoctorsNameBytes() {
+          return instance.getDoctorsNameBytes();
         }
         /**
          * <code>optional string doctors_name = 1;</code>
          */
         public Builder setDoctorsName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          doctorsName_ = value;
-          onChanged();
+                java.lang.String value) {
+          copyOnWrite();
+          instance.setDoctorsName(value);
           return this;
         }
         /**
          * <code>optional string doctors_name = 1;</code>
          */
         public Builder clearDoctorsName() {
-          
-          doctorsName_ = getDefaultInstance().getDoctorsName();
-          onChanged();
+          copyOnWrite();
+          instance.clearDoctorsName();
           return this;
         }
         /**
          * <code>optional string doctors_name = 1;</code>
          */
         public Builder setDoctorsNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          doctorsName_ = value;
-          onChanged();
+                com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setDoctorsNameBytes(value);
           return this;
         }
 
-        private int currentDelayMinutes_ ;
         /**
          * <code>optional int32 current_delay_minutes = 2;</code>
          */
         public int getCurrentDelayMinutes() {
-          return currentDelayMinutes_;
+          return instance.getCurrentDelayMinutes();
         }
         /**
          * <code>optional int32 current_delay_minutes = 2;</code>
          */
         public Builder setCurrentDelayMinutes(int value) {
-          
-          currentDelayMinutes_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setCurrentDelayMinutes(value);
           return this;
         }
         /**
          * <code>optional int32 current_delay_minutes = 2;</code>
          */
         public Builder clearCurrentDelayMinutes() {
-          
-          currentDelayMinutes_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearCurrentDelayMinutes();
           return this;
         }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:C2S.Report)
       }
+      protected final Object dynamicMethod(
+              com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+              Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new Communication.C2S.Report();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            Communication.C2S.Report other = (Communication.C2S.Report) arg1;
+            doctorsName_ = visitor.visitString(!doctorsName_.isEmpty(), doctorsName_,
+                    !other.doctorsName_.isEmpty(), other.doctorsName_);
+            currentDelayMinutes_ = visitor.visitInt(currentDelayMinutes_ != 0, currentDelayMinutes_,
+                    other.currentDelayMinutes_ != 0, other.currentDelayMinutes_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                    .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                    (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                    (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    doctorsName_ = s;
+                    break;
+                  }
+                  case 16: {
+
+                    currentDelayMinutes_ = input.readInt32();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                      new com.google.protobuf.InvalidProtocolBufferException(
+                              e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (Communication.C2S.Report.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:C2S.Report)
       private static final Communication.C2S.Report DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Communication.C2S.Report();
+        DEFAULT_INSTANCE = new Report();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static Communication.C2S.Report getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Report>
-          PARSER = new com.google.protobuf.AbstractParser<Report>() {
-        public Report parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Report(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<Report> PARSER;
 
       public static com.google.protobuf.Parser<Report> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Report> getParserForType() {
-        return PARSER;
-      }
-
-      public Communication.C2S.Report getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -1510,8 +1008,39 @@ public final class Communication {
     /**
      * <code>optional .C2S.Request request = 1;</code>
      */
-    public Communication.C2S.RequestOrBuilder getRequestOrBuilder() {
-      return getRequest();
+    private void setRequest(Communication.C2S.Request value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      request_ = value;
+
+    }
+    /**
+     * <code>optional .C2S.Request request = 1;</code>
+     */
+    private void setRequest(
+            Communication.C2S.Request.Builder builderForValue) {
+      request_ = builderForValue.build();
+
+    }
+    /**
+     * <code>optional .C2S.Request request = 1;</code>
+     */
+    private void mergeRequest(Communication.C2S.Request value) {
+      if (request_ != null &&
+              request_ != Communication.C2S.Request.getDefaultInstance()) {
+        request_ =
+                Communication.C2S.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+      } else {
+        request_ = value;
+      }
+
+    }
+    /**
+     * <code>optional .C2S.Request request = 1;</code>
+     */
+    private void clearRequest() {  request_ = null;
+
     }
 
     public static final int REPORT_FIELD_NUMBER = 2;
@@ -1531,8 +1060,39 @@ public final class Communication {
     /**
      * <code>optional .C2S.Report report = 2;</code>
      */
-    public Communication.C2S.ReportOrBuilder getReportOrBuilder() {
-      return getReport();
+    private void setReport(Communication.C2S.Report value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      report_ = value;
+
+    }
+    /**
+     * <code>optional .C2S.Report report = 2;</code>
+     */
+    private void setReport(
+            Communication.C2S.Report.Builder builderForValue) {
+      report_ = builderForValue.build();
+
+    }
+    /**
+     * <code>optional .C2S.Report report = 2;</code>
+     */
+    private void mergeReport(Communication.C2S.Report value) {
+      if (report_ != null &&
+              report_ != Communication.C2S.Report.getDefaultInstance()) {
+        report_ =
+                Communication.C2S.Report.newBuilder(report_).mergeFrom(value).buildPartial();
+      } else {
+        report_ = value;
+      }
+
+    }
+    /**
+     * <code>optional .C2S.Report report = 2;</code>
+     */
+    private void clearReport() {  report_ = null;
+
     }
 
     public static final int FINISH_FIELD_NUMBER = 3;
@@ -1543,19 +1103,23 @@ public final class Communication {
     public boolean getFinish() {
       return finish_;
     }
+    /**
+     * <code>optional bool finish = 3;</code>
+     */
+    private void setFinish(boolean value) {
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      finish_ = value;
+    }
+    /**
+     * <code>optional bool finish = 3;</code>
+     */
+    private void clearFinish() {
 
-      memoizedIsInitialized = 1;
-      return true;
+      finish_ = false;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
@@ -1568,623 +1132,350 @@ public final class Communication {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRequest());
+                .computeMessageSize(1, getRequest());
       }
       if (report_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getReport());
+                .computeMessageSize(2, getReport());
       }
       if (finish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, finish_);
+                .computeBoolSize(3, finish_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Communication.C2S)) {
-        return super.equals(obj);
-      }
-      Communication.C2S other = (Communication.C2S) obj;
-
-      boolean result = true;
-      result = result && (hasRequest() == other.hasRequest());
-      if (hasRequest()) {
-        result = result && getRequest()
-            .equals(other.getRequest());
-      }
-      result = result && (hasReport() == other.hasReport());
-      if (hasReport()) {
-        result = result && getReport()
-            .equals(other.getReport());
-      }
-      result = result && (getFinish()
-          == other.getFinish());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasRequest()) {
-        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
-        hash = (53 * hash) + getRequest().hashCode();
-      }
-      if (hasReport()) {
-        hash = (37 * hash) + REPORT_FIELD_NUMBER;
-        hash = (53 * hash) + getReport().hashCode();
-      }
-      hash = (37 * hash) + FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFinish());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
     public static Communication.C2S parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
     }
     public static Communication.C2S parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static Communication.C2S parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
     }
     public static Communication.C2S parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static Communication.C2S parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
     }
     public static Communication.C2S parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static Communication.C2S parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static Communication.C2S parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static Communication.C2S parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
     }
     public static Communication.C2S parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(Communication.C2S prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code C2S}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:C2S)
-        Communication.C2SOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Communication.internal_static_C2S_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Communication.internal_static_C2S_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Communication.C2S.class, Communication.C2S.Builder.class);
-      }
-
+            com.google.protobuf.GeneratedMessageLite.Builder<
+                    Communication.C2S, Builder> implements
+            // @@protoc_insertion_point(builder_implements:C2S)
+            Communication.C2SOrBuilder {
       // Construct using Communication.C2S.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (requestBuilder_ == null) {
-          request_ = null;
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-        if (reportBuilder_ == null) {
-          report_ = null;
-        } else {
-          report_ = null;
-          reportBuilder_ = null;
-        }
-        finish_ = false;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return Communication.internal_static_C2S_descriptor;
-      }
-
-      public Communication.C2S getDefaultInstanceForType() {
-        return Communication.C2S.getDefaultInstance();
-      }
-
-      public Communication.C2S build() {
-        Communication.C2S result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public Communication.C2S buildPartial() {
-        Communication.C2S result = new Communication.C2S(this);
-        if (requestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = requestBuilder_.build();
-        }
-        if (reportBuilder_ == null) {
-          result.report_ = report_;
-        } else {
-          result.report_ = reportBuilder_.build();
-        }
-        result.finish_ = finish_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Communication.C2S) {
-          return mergeFrom((Communication.C2S)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(Communication.C2S other) {
-        if (other == Communication.C2S.getDefaultInstance()) return this;
-        if (other.hasRequest()) {
-          mergeRequest(other.getRequest());
-        }
-        if (other.hasReport()) {
-          mergeReport(other.getReport());
-        }
-        if (other.getFinish() != false) {
-          setFinish(other.getFinish());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Communication.C2S parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Communication.C2S) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Communication.C2S.Request request_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.C2S.Request, Communication.C2S.Request.Builder, Communication.C2S.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return requestBuilder_ != null || request_ != null;
+        return instance.hasRequest();
       }
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
       public Communication.C2S.Request getRequest() {
-        if (requestBuilder_ == null) {
-          return request_ == null ? Communication.C2S.Request.getDefaultInstance() : request_;
-        } else {
-          return requestBuilder_.getMessage();
-        }
+        return instance.getRequest();
       }
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
       public Builder setRequest(Communication.C2S.Request value) {
-        if (requestBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          request_ = value;
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setRequest(value);
         return this;
       }
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
       public Builder setRequest(
-          Communication.C2S.Request.Builder builderForValue) {
-        if (requestBuilder_ == null) {
-          request_ = builderForValue.build();
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(builderForValue.build());
-        }
-
+              Communication.C2S.Request.Builder builderForValue) {
+        copyOnWrite();
+        instance.setRequest(builderForValue);
         return this;
       }
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
       public Builder mergeRequest(Communication.C2S.Request value) {
-        if (requestBuilder_ == null) {
-          if (request_ != null) {
-            request_ =
-              Communication.C2S.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-          } else {
-            request_ = value;
-          }
-          onChanged();
-        } else {
-          requestBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeRequest(value);
         return this;
       }
       /**
        * <code>optional .C2S.Request request = 1;</code>
        */
-      public Builder clearRequest() {
-        if (requestBuilder_ == null) {
-          request_ = null;
-          onChanged();
-        } else {
-          request_ = null;
-          requestBuilder_ = null;
-        }
-
+      public Builder clearRequest() {  copyOnWrite();
+        instance.clearRequest();
         return this;
       }
-      /**
-       * <code>optional .C2S.Request request = 1;</code>
-       */
-      public Communication.C2S.Request.Builder getRequestBuilder() {
-        
-        onChanged();
-        return getRequestFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .C2S.Request request = 1;</code>
-       */
-      public Communication.C2S.RequestOrBuilder getRequestOrBuilder() {
-        if (requestBuilder_ != null) {
-          return requestBuilder_.getMessageOrBuilder();
-        } else {
-          return request_ == null ?
-              Communication.C2S.Request.getDefaultInstance() : request_;
-        }
-      }
-      /**
-       * <code>optional .C2S.Request request = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.C2S.Request, Communication.C2S.Request.Builder, Communication.C2S.RequestOrBuilder> 
-          getRequestFieldBuilder() {
-        if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Communication.C2S.Request, Communication.C2S.Request.Builder, Communication.C2S.RequestOrBuilder>(
-                  getRequest(),
-                  getParentForChildren(),
-                  isClean());
-          request_ = null;
-        }
-        return requestBuilder_;
-      }
 
-      private Communication.C2S.Report report_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.C2S.Report, Communication.C2S.Report.Builder, Communication.C2S.ReportOrBuilder> reportBuilder_;
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
       public boolean hasReport() {
-        return reportBuilder_ != null || report_ != null;
+        return instance.hasReport();
       }
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
       public Communication.C2S.Report getReport() {
-        if (reportBuilder_ == null) {
-          return report_ == null ? Communication.C2S.Report.getDefaultInstance() : report_;
-        } else {
-          return reportBuilder_.getMessage();
-        }
+        return instance.getReport();
       }
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
       public Builder setReport(Communication.C2S.Report value) {
-        if (reportBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          report_ = value;
-          onChanged();
-        } else {
-          reportBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setReport(value);
         return this;
       }
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
       public Builder setReport(
-          Communication.C2S.Report.Builder builderForValue) {
-        if (reportBuilder_ == null) {
-          report_ = builderForValue.build();
-          onChanged();
-        } else {
-          reportBuilder_.setMessage(builderForValue.build());
-        }
-
+              Communication.C2S.Report.Builder builderForValue) {
+        copyOnWrite();
+        instance.setReport(builderForValue);
         return this;
       }
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
       public Builder mergeReport(Communication.C2S.Report value) {
-        if (reportBuilder_ == null) {
-          if (report_ != null) {
-            report_ =
-              Communication.C2S.Report.newBuilder(report_).mergeFrom(value).buildPartial();
-          } else {
-            report_ = value;
-          }
-          onChanged();
-        } else {
-          reportBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeReport(value);
         return this;
       }
       /**
        * <code>optional .C2S.Report report = 2;</code>
        */
-      public Builder clearReport() {
-        if (reportBuilder_ == null) {
-          report_ = null;
-          onChanged();
-        } else {
-          report_ = null;
-          reportBuilder_ = null;
-        }
-
+      public Builder clearReport() {  copyOnWrite();
+        instance.clearReport();
         return this;
       }
-      /**
-       * <code>optional .C2S.Report report = 2;</code>
-       */
-      public Communication.C2S.Report.Builder getReportBuilder() {
-        
-        onChanged();
-        return getReportFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .C2S.Report report = 2;</code>
-       */
-      public Communication.C2S.ReportOrBuilder getReportOrBuilder() {
-        if (reportBuilder_ != null) {
-          return reportBuilder_.getMessageOrBuilder();
-        } else {
-          return report_ == null ?
-              Communication.C2S.Report.getDefaultInstance() : report_;
-        }
-      }
-      /**
-       * <code>optional .C2S.Report report = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.C2S.Report, Communication.C2S.Report.Builder, Communication.C2S.ReportOrBuilder> 
-          getReportFieldBuilder() {
-        if (reportBuilder_ == null) {
-          reportBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Communication.C2S.Report, Communication.C2S.Report.Builder, Communication.C2S.ReportOrBuilder>(
-                  getReport(),
-                  getParentForChildren(),
-                  isClean());
-          report_ = null;
-        }
-        return reportBuilder_;
-      }
 
-      private boolean finish_ ;
       /**
        * <code>optional bool finish = 3;</code>
        */
       public boolean getFinish() {
-        return finish_;
+        return instance.getFinish();
       }
       /**
        * <code>optional bool finish = 3;</code>
        */
       public Builder setFinish(boolean value) {
-        
-        finish_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFinish(value);
         return this;
       }
       /**
        * <code>optional bool finish = 3;</code>
        */
       public Builder clearFinish() {
-        
-        finish_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearFinish();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:C2S)
     }
+    protected final Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Communication.C2S();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Communication.C2S other = (Communication.C2S) arg1;
+          request_ = visitor.visitMessage(request_, other.request_);
+          report_ = visitor.visitMessage(report_, other.report_);
+          finish_ = visitor.visitBoolean(finish_ != false, finish_,
+                  other.finish_ != false, other.finish_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                  .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+                  (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                  (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  Communication.C2S.Request.Builder subBuilder = null;
+                  if (request_ != null) {
+                    subBuilder = request_.toBuilder();
+                  }
+                  request_ = input.readMessage(Communication.C2S.Request.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(request_);
+                    request_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 18: {
+                  Communication.C2S.Report.Builder subBuilder = null;
+                  if (report_ != null) {
+                    subBuilder = report_.toBuilder();
+                  }
+                  report_ = input.readMessage(Communication.C2S.Report.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(report_);
+                    report_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 24: {
+
+                  finish_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                    new com.google.protobuf.InvalidProtocolBufferException(
+                            e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (Communication.C2S.class) {
+            if (PARSER == null) {
+              PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+            }
+          }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:C2S)
     private static final Communication.C2S DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Communication.C2S();
+      DEFAULT_INSTANCE = new C2S();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static Communication.C2S getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<C2S>
-        PARSER = new com.google.protobuf.AbstractParser<C2S>() {
-      public C2S parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new C2S(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<C2S> PARSER;
 
     public static com.google.protobuf.Parser<C2S> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<C2S> getParserForType() {
-      return PARSER;
-    }
-
-    public Communication.C2S getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public interface S2COrBuilder extends
-      // @@protoc_insertion_point(interface_extends:S2C)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:S2C)
+          com.google.protobuf.MessageLiteOrBuilder {
 
     /**
      * <code>optional .S2C.Response response = 1;</code>
@@ -2194,10 +1485,6 @@ public final class Communication {
      * <code>optional .S2C.Response response = 1;</code>
      */
     Communication.S2C.Response getResponse();
-    /**
-     * <code>optional .S2C.Response response = 1;</code>
-     */
-    Communication.S2C.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>optional bool finish = 2;</code>
@@ -2208,86 +1495,15 @@ public final class Communication {
    * Protobuf type {@code S2C}
    */
   public  static final class S2C extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:S2C)
-      S2COrBuilder {
-    // Use S2C.newBuilder() to construct.
-    private S2C(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
+          com.google.protobuf.GeneratedMessageLite<
+                  S2C, S2C.Builder> implements
+          // @@protoc_insertion_point(message_implements:S2C)
+          S2COrBuilder {
     private S2C() {
-      finish_ = false;
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-    }
-    private S2C(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              Communication.S2C.Response.Builder subBuilder = null;
-              if (response_ != null) {
-                subBuilder = response_.toBuilder();
-              }
-              response_ = input.readMessage(Communication.S2C.Response.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(response_);
-                response_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              finish_ = input.readBool();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return Communication.internal_static_S2C_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return Communication.internal_static_S2C_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Communication.S2C.class, Communication.S2C.Builder.class);
-    }
-
     public interface ResponseOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:S2C.Response)
-        com.google.protobuf.MessageOrBuilder {
+            // @@protoc_insertion_point(interface_extends:S2C.Response)
+            com.google.protobuf.MessageLiteOrBuilder {
 
       /**
        * <code>optional .S2C.Response.Status status_code = 1;</code>
@@ -2299,14 +1515,13 @@ public final class Communication {
       Communication.S2C.Response.Status getStatusCode();
 
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      java.lang.String getErrorMessage();
+      int getErrorCodeValue();
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
        */
-      com.google.protobuf.ByteString
-          getErrorMessageBytes();
+      Communication.S2C.Response.ErrorCode getErrorCode();
 
       /**
        * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
@@ -2316,105 +1531,22 @@ public final class Communication {
        * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
        */
       Communication.S2C.Response.ExpectedDelay getExpectedDelay();
-      /**
-       * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
-       */
-      Communication.S2C.Response.ExpectedDelayOrBuilder getExpectedDelayOrBuilder();
     }
     /**
      * Protobuf type {@code S2C.Response}
      */
     public  static final class Response extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:S2C.Response)
-        ResponseOrBuilder {
-      // Use Response.newBuilder() to construct.
-      private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
+            com.google.protobuf.GeneratedMessageLite<
+                    Response, Response.Builder> implements
+            // @@protoc_insertion_point(message_implements:S2C.Response)
+            ResponseOrBuilder {
       private Response() {
-        statusCode_ = 0;
-        errorMessage_ = "";
       }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-      }
-      private Response(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!input.skipField(tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-
-                statusCode_ = rawValue;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                errorMessage_ = s;
-                break;
-              }
-              case 26: {
-                Communication.S2C.Response.ExpectedDelay.Builder subBuilder = null;
-                if (expectedDelay_ != null) {
-                  subBuilder = expectedDelay_.toBuilder();
-                }
-                expectedDelay_ = input.readMessage(Communication.S2C.Response.ExpectedDelay.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(expectedDelay_);
-                  expectedDelay_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Communication.internal_static_S2C_Response_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Communication.internal_static_S2C_Response_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Communication.S2C.Response.class, Communication.S2C.Response.Builder.class);
-      }
-
       /**
        * Protobuf enum {@code S2C.Response.Status}
        */
       public enum Status
-          implements com.google.protobuf.ProtocolMessageEnum {
+              implements com.google.protobuf.Internal.EnumLite {
         /**
          * <code>SUCCESSFUL = 0;</code>
          */
@@ -2437,10 +1569,6 @@ public final class Communication {
 
 
         public final int getNumber() {
-          if (this == UNRECOGNIZED) {
-            throw new java.lang.IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-          }
           return value;
         }
 
@@ -2461,43 +1589,16 @@ public final class Communication {
         }
 
         public static com.google.protobuf.Internal.EnumLiteMap<Status>
-            internalGetValueMap() {
+        internalGetValueMap() {
           return internalValueMap;
         }
         private static final com.google.protobuf.Internal.EnumLiteMap<
-            Status> internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-                public Status findValueByNumber(int number) {
-                  return Status.forNumber(number);
-                }
-              };
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          return getDescriptor().getValues().get(ordinal());
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return Communication.S2C.Response.getDescriptor().getEnumTypes().get(0);
-        }
-
-        private static final Status[] VALUES = values();
-
-        public static Status valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          if (desc.getIndex() == -1) {
-            return UNRECOGNIZED;
-          }
-          return VALUES[desc.getIndex()];
-        }
+                Status> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+                  public Status findValueByNumber(int number) {
+                    return Status.forNumber(number);
+                  }
+                };
 
         private final int value;
 
@@ -2508,83 +1609,97 @@ public final class Communication {
         // @@protoc_insertion_point(enum_scope:S2C.Response.Status)
       }
 
+      /**
+       * Protobuf enum {@code S2C.Response.ErrorCode}
+       */
+      public enum ErrorCode
+              implements com.google.protobuf.Internal.EnumLite {
+        /**
+         * <code>DOCTOR_NOT_FOUND = 0;</code>
+         */
+        DOCTOR_NOT_FOUND(0),
+        /**
+         * <code>NO_DATA = 1;</code>
+         */
+        NO_DATA(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <code>DOCTOR_NOT_FOUND = 0;</code>
+         */
+        public static final int DOCTOR_NOT_FOUND_VALUE = 0;
+        /**
+         * <code>NO_DATA = 1;</code>
+         */
+        public static final int NO_DATA_VALUE = 1;
+
+
+        public final int getNumber() {
+          return value;
+        }
+
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ErrorCode valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ErrorCode forNumber(int value) {
+          switch (value) {
+            case 0: return DOCTOR_NOT_FOUND;
+            case 1: return NO_DATA;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ErrorCode>
+        internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+                ErrorCode> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ErrorCode>() {
+                  public ErrorCode findValueByNumber(int number) {
+                    return ErrorCode.forNumber(number);
+                  }
+                };
+
+        private final int value;
+
+        private ErrorCode(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:S2C.Response.ErrorCode)
+      }
+
       public interface ExpectedDelayOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:S2C.Response.ExpectedDelay)
-          com.google.protobuf.MessageOrBuilder {
+              // @@protoc_insertion_point(interface_extends:S2C.Response.ExpectedDelay)
+              com.google.protobuf.MessageLiteOrBuilder {
 
         /**
          * <code>optional int32 time = 1;</code>
          */
         int getTime();
+
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        boolean getIsEstimated();
       }
       /**
        * Protobuf type {@code S2C.Response.ExpectedDelay}
        */
       public  static final class ExpectedDelay extends
-          com.google.protobuf.GeneratedMessageV3 implements
-          // @@protoc_insertion_point(message_implements:S2C.Response.ExpectedDelay)
-          ExpectedDelayOrBuilder {
-        // Use ExpectedDelay.newBuilder() to construct.
-        private ExpectedDelay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-        }
+              com.google.protobuf.GeneratedMessageLite<
+                      ExpectedDelay, ExpectedDelay.Builder> implements
+              // @@protoc_insertion_point(message_implements:S2C.Response.ExpectedDelay)
+              ExpectedDelayOrBuilder {
         private ExpectedDelay() {
-          time_ = 0;
         }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-          return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-        private ExpectedDelay(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          int mutable_bitField0_ = 0;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 8: {
-
-                  time_ = input.readInt32();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-          } finally {
-            makeExtensionsImmutable();
-          }
-        }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return Communication.internal_static_S2C_Response_ExpectedDelay_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return Communication.internal_static_S2C_Response_ExpectedDelay_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  Communication.S2C.Response.ExpectedDelay.class, Communication.S2C.Response.ExpectedDelay.Builder.class);
-        }
-
         public static final int TIME_FIELD_NUMBER = 1;
         private int time_;
         /**
@@ -2593,348 +1708,302 @@ public final class Communication {
         public int getTime() {
           return time_;
         }
+        /**
+         * <code>optional int32 time = 1;</code>
+         */
+        private void setTime(int value) {
 
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
+          time_ = value;
+        }
+        /**
+         * <code>optional int32 time = 1;</code>
+         */
+        private void clearTime() {
 
-          memoizedIsInitialized = 1;
-          return true;
+          time_ = 0;
+        }
+
+        public static final int IS_ESTIMATED_FIELD_NUMBER = 2;
+        private boolean isEstimated_;
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        public boolean getIsEstimated() {
+          return isEstimated_;
+        }
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        private void setIsEstimated(boolean value) {
+
+          isEstimated_ = value;
+        }
+        /**
+         * <code>optional bool is_estimated = 2;</code>
+         */
+        private void clearIsEstimated() {
+
+          isEstimated_ = false;
         }
 
         public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
+                throws java.io.IOException {
           if (time_ != 0) {
             output.writeInt32(1, time_);
+          }
+          if (isEstimated_ != false) {
+            output.writeBool(2, isEstimated_);
           }
         }
 
         public int getSerializedSize() {
-          int size = memoizedSize;
+          int size = memoizedSerializedSize;
           if (size != -1) return size;
 
           size = 0;
           if (time_ != 0) {
             size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(1, time_);
+                    .computeInt32Size(1, time_);
           }
-          memoizedSize = size;
+          if (isEstimated_ != false) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeBoolSize(2, isEstimated_);
+          }
+          memoizedSerializedSize = size;
           return size;
         }
 
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-          if (obj == this) {
-           return true;
-          }
-          if (!(obj instanceof Communication.S2C.Response.ExpectedDelay)) {
-            return super.equals(obj);
-          }
-          Communication.S2C.Response.ExpectedDelay other = (Communication.S2C.Response.ExpectedDelay) obj;
-
-          boolean result = true;
-          result = result && (getTime()
-              == other.getTime());
-          return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-          if (memoizedHashCode != 0) {
-            return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptorForType().hashCode();
-          hash = (37 * hash) + TIME_FIELD_NUMBER;
-          hash = (53 * hash) + getTime();
-          hash = (29 * hash) + unknownFields.hashCode();
-          memoizedHashCode = hash;
-          return hash;
-        }
-
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, data);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, data, extensionRegistry);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, data);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, data, extensionRegistry);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, input);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, input, extensionRegistry);
         }
         public static Communication.S2C.Response.ExpectedDelay parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
+                throws java.io.IOException {
+          return parseDelimitedFrom(DEFAULT_INSTANCE, input);
         }
         public static Communication.S2C.Response.ExpectedDelay parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, input);
         }
         public static Communication.S2C.Response.ExpectedDelay parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                  DEFAULT_INSTANCE, input, extensionRegistry);
         }
 
-        public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
         public static Builder newBuilder(Communication.S2C.Response.ExpectedDelay prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
-        }
 
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
         /**
          * Protobuf type {@code S2C.Response.ExpectedDelay}
          */
         public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:S2C.Response.ExpectedDelay)
-            Communication.S2C.Response.ExpectedDelayOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return Communication.internal_static_S2C_Response_ExpectedDelay_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return Communication.internal_static_S2C_Response_ExpectedDelay_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    Communication.S2C.Response.ExpectedDelay.class, Communication.S2C.Response.ExpectedDelay.Builder.class);
-          }
-
+                com.google.protobuf.GeneratedMessageLite.Builder<
+                        Communication.S2C.Response.ExpectedDelay, Builder> implements
+                // @@protoc_insertion_point(builder_implements:S2C.Response.ExpectedDelay)
+                Communication.S2C.Response.ExpectedDelayOrBuilder {
           // Construct using Communication.S2C.Response.ExpectedDelay.newBuilder()
           private Builder() {
-            maybeForceBuilderInitialization();
+            super(DEFAULT_INSTANCE);
           }
 
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
-          }
-          public Builder clear() {
-            super.clear();
-            time_ = 0;
 
-            return this;
-          }
-
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return Communication.internal_static_S2C_Response_ExpectedDelay_descriptor;
-          }
-
-          public Communication.S2C.Response.ExpectedDelay getDefaultInstanceForType() {
-            return Communication.S2C.Response.ExpectedDelay.getDefaultInstance();
-          }
-
-          public Communication.S2C.Response.ExpectedDelay build() {
-            Communication.S2C.Response.ExpectedDelay result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          public Communication.S2C.Response.ExpectedDelay buildPartial() {
-            Communication.S2C.Response.ExpectedDelay result = new Communication.S2C.Response.ExpectedDelay(this);
-            result.time_ = time_;
-            onBuilt();
-            return result;
-          }
-
-          public Builder clone() {
-            return (Builder) super.clone();
-          }
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.setField(field, value);
-          }
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
-          }
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
-          }
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
-          }
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              Object value) {
-            return (Builder) super.addRepeatedField(field, value);
-          }
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof Communication.S2C.Response.ExpectedDelay) {
-              return mergeFrom((Communication.S2C.Response.ExpectedDelay)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(Communication.S2C.Response.ExpectedDelay other) {
-            if (other == Communication.S2C.Response.ExpectedDelay.getDefaultInstance()) return this;
-            if (other.getTime() != 0) {
-              setTime(other.getTime());
-            }
-            onChanged();
-            return this;
-          }
-
-          public final boolean isInitialized() {
-            return true;
-          }
-
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            Communication.S2C.Response.ExpectedDelay parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (Communication.S2C.Response.ExpectedDelay) e.getUnfinishedMessage();
-              throw e.unwrapIOException();
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-
-          private int time_ ;
           /**
            * <code>optional int32 time = 1;</code>
            */
           public int getTime() {
-            return time_;
+            return instance.getTime();
           }
           /**
            * <code>optional int32 time = 1;</code>
            */
           public Builder setTime(int value) {
-            
-            time_ = value;
-            onChanged();
+            copyOnWrite();
+            instance.setTime(value);
             return this;
           }
           /**
            * <code>optional int32 time = 1;</code>
            */
           public Builder clearTime() {
-            
-            time_ = 0;
-            onChanged();
-            return this;
-          }
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            copyOnWrite();
+            instance.clearTime();
             return this;
           }
 
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public boolean getIsEstimated() {
+            return instance.getIsEstimated();
+          }
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public Builder setIsEstimated(boolean value) {
+            copyOnWrite();
+            instance.setIsEstimated(value);
             return this;
           }
-
+          /**
+           * <code>optional bool is_estimated = 2;</code>
+           */
+          public Builder clearIsEstimated() {
+            copyOnWrite();
+            instance.clearIsEstimated();
+            return this;
+          }
 
           // @@protoc_insertion_point(builder_scope:S2C.Response.ExpectedDelay)
         }
+        protected final Object dynamicMethod(
+                com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+                Object arg0, Object arg1) {
+          switch (method) {
+            case NEW_MUTABLE_INSTANCE: {
+              return new Communication.S2C.Response.ExpectedDelay();
+            }
+            case IS_INITIALIZED: {
+              return DEFAULT_INSTANCE;
+            }
+            case MAKE_IMMUTABLE: {
+              return null;
+            }
+            case NEW_BUILDER: {
+              return new Builder();
+            }
+            case VISIT: {
+              Visitor visitor = (Visitor) arg0;
+              Communication.S2C.Response.ExpectedDelay other = (Communication.S2C.Response.ExpectedDelay) arg1;
+              time_ = visitor.visitInt(time_ != 0, time_,
+                      other.time_ != 0, other.time_);
+              isEstimated_ = visitor.visitBoolean(isEstimated_ != false, isEstimated_,
+                      other.isEstimated_ != false, other.isEstimated_);
+              if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                      .INSTANCE) {
+              }
+              return this;
+            }
+            case MERGE_FROM_STREAM: {
+              com.google.protobuf.CodedInputStream input =
+                      (com.google.protobuf.CodedInputStream) arg0;
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                      (com.google.protobuf.ExtensionRegistryLite) arg1;
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    default: {
+                      if (!input.skipField(tag)) {
+                        done = true;
+                      }
+                      break;
+                    }
+                    case 8: {
+
+                      time_ = input.readInt32();
+                      break;
+                    }
+                    case 16: {
+
+                      isEstimated_ = input.readBool();
+                      break;
+                    }
+                  }
+                }
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw new RuntimeException(e.setUnfinishedMessage(this));
+              } catch (java.io.IOException e) {
+                throw new RuntimeException(
+                        new com.google.protobuf.InvalidProtocolBufferException(
+                                e.getMessage()).setUnfinishedMessage(this));
+              } finally {
+              }
+            }
+            case GET_DEFAULT_INSTANCE: {
+              return DEFAULT_INSTANCE;
+            }
+            case GET_PARSER: {
+              if (PARSER == null) {    synchronized (Communication.S2C.Response.ExpectedDelay.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+              }
+              return PARSER;
+            }
+          }
+          throw new UnsupportedOperationException();
+        }
+
 
         // @@protoc_insertion_point(class_scope:S2C.Response.ExpectedDelay)
         private static final Communication.S2C.Response.ExpectedDelay DEFAULT_INSTANCE;
         static {
-          DEFAULT_INSTANCE = new Communication.S2C.Response.ExpectedDelay();
+          DEFAULT_INSTANCE = new ExpectedDelay();
+          DEFAULT_INSTANCE.makeImmutable();
         }
 
         public static Communication.S2C.Response.ExpectedDelay getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static final com.google.protobuf.Parser<ExpectedDelay>
-            PARSER = new com.google.protobuf.AbstractParser<ExpectedDelay>() {
-          public ExpectedDelay parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ExpectedDelay(input, extensionRegistry);
-          }
-        };
+        private static volatile com.google.protobuf.Parser<ExpectedDelay> PARSER;
 
         public static com.google.protobuf.Parser<ExpectedDelay> parser() {
-          return PARSER;
+          return DEFAULT_INSTANCE.getParserForType();
         }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<ExpectedDelay> getParserForType() {
-          return PARSER;
-        }
-
-        public Communication.S2C.Response.ExpectedDelay getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-
       }
 
       public static final int STATUS_CODE_FIELD_NUMBER = 1;
@@ -2949,42 +2018,70 @@ public final class Communication {
        * <code>optional .S2C.Response.Status status_code = 1;</code>
        */
       public Communication.S2C.Response.Status getStatusCode() {
-        Communication.S2C.Response.Status result = Communication.S2C.Response.Status.valueOf(statusCode_);
+        Communication.S2C.Response.Status result = Communication.S2C.Response.Status.forNumber(statusCode_);
         return result == null ? Communication.S2C.Response.Status.UNRECOGNIZED : result;
       }
-
-      public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object errorMessage_;
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.Status status_code = 1;</code>
        */
-      public java.lang.String getErrorMessage() {
-        java.lang.Object ref = errorMessage_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          errorMessage_ = s;
-          return s;
-        }
+      private void setStatusCodeValue(int value) {
+        statusCode_ = value;
       }
       /**
-       * <code>optional string error_message = 2;</code>
+       * <code>optional .S2C.Response.Status status_code = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getErrorMessageBytes() {
-        java.lang.Object ref = errorMessage_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          errorMessage_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+      private void setStatusCode(Communication.S2C.Response.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+
+        statusCode_ = value.getNumber();
+      }
+      /**
+       * <code>optional .S2C.Response.Status status_code = 1;</code>
+       */
+      private void clearStatusCode() {
+
+        statusCode_ = 0;
+      }
+
+      public static final int ERROR_CODE_FIELD_NUMBER = 2;
+      private int errorCode_;
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      public int getErrorCodeValue() {
+        return errorCode_;
+      }
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      public Communication.S2C.Response.ErrorCode getErrorCode() {
+        Communication.S2C.Response.ErrorCode result = Communication.S2C.Response.ErrorCode.forNumber(errorCode_);
+        return result == null ? Communication.S2C.Response.ErrorCode.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      private void setErrorCodeValue(int value) {
+        errorCode_ = value;
+      }
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      private void setErrorCode(Communication.S2C.Response.ErrorCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        errorCode_ = value.getNumber();
+      }
+      /**
+       * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+       */
+      private void clearErrorCode() {
+
+        errorCode_ = 0;
       }
 
       public static final int EXPECTED_DELAY_FIELD_NUMBER = 3;
@@ -3004,27 +2101,48 @@ public final class Communication {
       /**
        * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
        */
-      public Communication.S2C.Response.ExpectedDelayOrBuilder getExpectedDelayOrBuilder() {
-        return getExpectedDelay();
+      private void setExpectedDelay(Communication.S2C.Response.ExpectedDelay value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expectedDelay_ = value;
+
       }
+      /**
+       * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
+       */
+      private void setExpectedDelay(
+              Communication.S2C.Response.ExpectedDelay.Builder builderForValue) {
+        expectedDelay_ = builderForValue.build();
 
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
+      }
+      /**
+       * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
+       */
+      private void mergeExpectedDelay(Communication.S2C.Response.ExpectedDelay value) {
+        if (expectedDelay_ != null &&
+                expectedDelay_ != Communication.S2C.Response.ExpectedDelay.getDefaultInstance()) {
+          expectedDelay_ =
+                  Communication.S2C.Response.ExpectedDelay.newBuilder(expectedDelay_).mergeFrom(value).buildPartial();
+        } else {
+          expectedDelay_ = value;
+        }
 
-        memoizedIsInitialized = 1;
-        return true;
+      }
+      /**
+       * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
+       */
+      private void clearExpectedDelay() {  expectedDelay_ = null;
+
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+              throws java.io.IOException {
         if (statusCode_ != Communication.S2C.Response.Status.SUCCESSFUL.getNumber()) {
           output.writeEnum(1, statusCode_);
         }
-        if (!getErrorMessageBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
+        if (errorCode_ != Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND.getNumber()) {
+          output.writeEnum(2, errorCode_);
         }
         if (expectedDelay_ != null) {
           output.writeMessage(3, getExpectedDelay());
@@ -3032,573 +2150,344 @@ public final class Communication {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSize;
+        int size = memoizedSerializedSize;
         if (size != -1) return size;
 
         size = 0;
         if (statusCode_ != Communication.S2C.Response.Status.SUCCESSFUL.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, statusCode_);
+                  .computeEnumSize(1, statusCode_);
         }
-        if (!getErrorMessageBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
+        if (errorCode_ != Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+                  .computeEnumSize(2, errorCode_);
         }
         if (expectedDelay_ != null) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getExpectedDelay());
+                  .computeMessageSize(3, getExpectedDelay());
         }
-        memoizedSize = size;
+        memoizedSerializedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof Communication.S2C.Response)) {
-          return super.equals(obj);
-        }
-        Communication.S2C.Response other = (Communication.S2C.Response) obj;
-
-        boolean result = true;
-        result = result && statusCode_ == other.statusCode_;
-        result = result && getErrorMessage()
-            .equals(other.getErrorMessage());
-        result = result && (hasExpectedDelay() == other.hasExpectedDelay());
-        if (hasExpectedDelay()) {
-          result = result && getExpectedDelay()
-              .equals(other.getExpectedDelay());
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
-        hash = (53 * hash) + statusCode_;
-        hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getErrorMessage().hashCode();
-        if (hasExpectedDelay()) {
-          hash = (37 * hash) + EXPECTED_DELAY_FIELD_NUMBER;
-          hash = (53 * hash) + getExpectedDelay().hashCode();
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
       public static Communication.S2C.Response parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.S2C.Response parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.S2C.Response parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data);
       }
       public static Communication.S2C.Response parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+              byte[] data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, data, extensionRegistry);
       }
       public static Communication.S2C.Response parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.S2C.Response parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.S2C.Response parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
       }
       public static Communication.S2C.Response parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
       }
       public static Communication.S2C.Response parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+              com.google.protobuf.CodedInputStream input)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input);
       }
       public static Communication.S2C.Response parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+                DEFAULT_INSTANCE, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(Communication.S2C.Response prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
 
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
       /**
        * Protobuf type {@code S2C.Response}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:S2C.Response)
-          Communication.S2C.ResponseOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return Communication.internal_static_S2C_Response_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return Communication.internal_static_S2C_Response_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  Communication.S2C.Response.class, Communication.S2C.Response.Builder.class);
-        }
-
+              com.google.protobuf.GeneratedMessageLite.Builder<
+                      Communication.S2C.Response, Builder> implements
+              // @@protoc_insertion_point(builder_implements:S2C.Response)
+              Communication.S2C.ResponseOrBuilder {
         // Construct using Communication.S2C.Response.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+          super(DEFAULT_INSTANCE);
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          statusCode_ = 0;
 
-          errorMessage_ = "";
-
-          if (expectedDelayBuilder_ == null) {
-            expectedDelay_ = null;
-          } else {
-            expectedDelay_ = null;
-            expectedDelayBuilder_ = null;
-          }
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return Communication.internal_static_S2C_Response_descriptor;
-        }
-
-        public Communication.S2C.Response getDefaultInstanceForType() {
-          return Communication.S2C.Response.getDefaultInstance();
-        }
-
-        public Communication.S2C.Response build() {
-          Communication.S2C.Response result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public Communication.S2C.Response buildPartial() {
-          Communication.S2C.Response result = new Communication.S2C.Response(this);
-          result.statusCode_ = statusCode_;
-          result.errorMessage_ = errorMessage_;
-          if (expectedDelayBuilder_ == null) {
-            result.expectedDelay_ = expectedDelay_;
-          } else {
-            result.expectedDelay_ = expectedDelayBuilder_.build();
-          }
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof Communication.S2C.Response) {
-            return mergeFrom((Communication.S2C.Response)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(Communication.S2C.Response other) {
-          if (other == Communication.S2C.Response.getDefaultInstance()) return this;
-          if (other.statusCode_ != 0) {
-            setStatusCodeValue(other.getStatusCodeValue());
-          }
-          if (!other.getErrorMessage().isEmpty()) {
-            errorMessage_ = other.errorMessage_;
-            onChanged();
-          }
-          if (other.hasExpectedDelay()) {
-            mergeExpectedDelay(other.getExpectedDelay());
-          }
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Communication.S2C.Response parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (Communication.S2C.Response) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int statusCode_ = 0;
         /**
          * <code>optional .S2C.Response.Status status_code = 1;</code>
          */
         public int getStatusCodeValue() {
-          return statusCode_;
+          return instance.getStatusCodeValue();
         }
         /**
          * <code>optional .S2C.Response.Status status_code = 1;</code>
          */
         public Builder setStatusCodeValue(int value) {
-          statusCode_ = value;
-          onChanged();
+          copyOnWrite();
+          instance.setStatusCodeValue(value);
           return this;
         }
         /**
          * <code>optional .S2C.Response.Status status_code = 1;</code>
          */
         public Communication.S2C.Response.Status getStatusCode() {
-          Communication.S2C.Response.Status result = Communication.S2C.Response.Status.valueOf(statusCode_);
-          return result == null ? Communication.S2C.Response.Status.UNRECOGNIZED : result;
+          return instance.getStatusCode();
         }
         /**
          * <code>optional .S2C.Response.Status status_code = 1;</code>
          */
         public Builder setStatusCode(Communication.S2C.Response.Status value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          
-          statusCode_ = value.getNumber();
-          onChanged();
+          copyOnWrite();
+          instance.setStatusCode(value);
           return this;
         }
         /**
          * <code>optional .S2C.Response.Status status_code = 1;</code>
          */
         public Builder clearStatusCode() {
-          
-          statusCode_ = 0;
-          onChanged();
+          copyOnWrite();
+          instance.clearStatusCode();
           return this;
         }
 
-        private java.lang.Object errorMessage_ = "";
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public java.lang.String getErrorMessage() {
-          java.lang.Object ref = errorMessage_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            errorMessage_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+        public int getErrorCodeValue() {
+          return instance.getErrorCodeValue();
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public com.google.protobuf.ByteString
-            getErrorMessageBytes() {
-          java.lang.Object ref = errorMessage_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            errorMessage_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>optional string error_message = 2;</code>
-         */
-        public Builder setErrorMessage(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          errorMessage_ = value;
-          onChanged();
+        public Builder setErrorCodeValue(int value) {
+          copyOnWrite();
+          instance.setErrorCodeValue(value);
           return this;
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public Builder clearErrorMessage() {
-          
-          errorMessage_ = getDefaultInstance().getErrorMessage();
-          onChanged();
+        public Communication.S2C.Response.ErrorCode getErrorCode() {
+          return instance.getErrorCode();
+        }
+        /**
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
+         */
+        public Builder setErrorCode(Communication.S2C.Response.ErrorCode value) {
+          copyOnWrite();
+          instance.setErrorCode(value);
           return this;
         }
         /**
-         * <code>optional string error_message = 2;</code>
+         * <code>optional .S2C.Response.ErrorCode error_code = 2;</code>
          */
-        public Builder setErrorMessageBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          errorMessage_ = value;
-          onChanged();
+        public Builder clearErrorCode() {
+          copyOnWrite();
+          instance.clearErrorCode();
           return this;
         }
 
-        private Communication.S2C.Response.ExpectedDelay expectedDelay_ = null;
-        private com.google.protobuf.SingleFieldBuilderV3<
-            Communication.S2C.Response.ExpectedDelay, Communication.S2C.Response.ExpectedDelay.Builder, Communication.S2C.Response.ExpectedDelayOrBuilder> expectedDelayBuilder_;
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
         public boolean hasExpectedDelay() {
-          return expectedDelayBuilder_ != null || expectedDelay_ != null;
+          return instance.hasExpectedDelay();
         }
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
         public Communication.S2C.Response.ExpectedDelay getExpectedDelay() {
-          if (expectedDelayBuilder_ == null) {
-            return expectedDelay_ == null ? Communication.S2C.Response.ExpectedDelay.getDefaultInstance() : expectedDelay_;
-          } else {
-            return expectedDelayBuilder_.getMessage();
-          }
+          return instance.getExpectedDelay();
         }
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
         public Builder setExpectedDelay(Communication.S2C.Response.ExpectedDelay value) {
-          if (expectedDelayBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            expectedDelay_ = value;
-            onChanged();
-          } else {
-            expectedDelayBuilder_.setMessage(value);
-          }
-
+          copyOnWrite();
+          instance.setExpectedDelay(value);
           return this;
         }
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
         public Builder setExpectedDelay(
-            Communication.S2C.Response.ExpectedDelay.Builder builderForValue) {
-          if (expectedDelayBuilder_ == null) {
-            expectedDelay_ = builderForValue.build();
-            onChanged();
-          } else {
-            expectedDelayBuilder_.setMessage(builderForValue.build());
-          }
-
+                Communication.S2C.Response.ExpectedDelay.Builder builderForValue) {
+          copyOnWrite();
+          instance.setExpectedDelay(builderForValue);
           return this;
         }
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
         public Builder mergeExpectedDelay(Communication.S2C.Response.ExpectedDelay value) {
-          if (expectedDelayBuilder_ == null) {
-            if (expectedDelay_ != null) {
-              expectedDelay_ =
-                Communication.S2C.Response.ExpectedDelay.newBuilder(expectedDelay_).mergeFrom(value).buildPartial();
-            } else {
-              expectedDelay_ = value;
-            }
-            onChanged();
-          } else {
-            expectedDelayBuilder_.mergeFrom(value);
-          }
-
+          copyOnWrite();
+          instance.mergeExpectedDelay(value);
           return this;
         }
         /**
          * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
          */
-        public Builder clearExpectedDelay() {
-          if (expectedDelayBuilder_ == null) {
-            expectedDelay_ = null;
-            onChanged();
-          } else {
-            expectedDelay_ = null;
-            expectedDelayBuilder_ = null;
-          }
-
+        public Builder clearExpectedDelay() {  copyOnWrite();
+          instance.clearExpectedDelay();
           return this;
         }
-        /**
-         * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
-         */
-        public Communication.S2C.Response.ExpectedDelay.Builder getExpectedDelayBuilder() {
-          
-          onChanged();
-          return getExpectedDelayFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
-         */
-        public Communication.S2C.Response.ExpectedDelayOrBuilder getExpectedDelayOrBuilder() {
-          if (expectedDelayBuilder_ != null) {
-            return expectedDelayBuilder_.getMessageOrBuilder();
-          } else {
-            return expectedDelay_ == null ?
-                Communication.S2C.Response.ExpectedDelay.getDefaultInstance() : expectedDelay_;
-          }
-        }
-        /**
-         * <code>optional .S2C.Response.ExpectedDelay expected_delay = 3;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilderV3<
-            Communication.S2C.Response.ExpectedDelay, Communication.S2C.Response.ExpectedDelay.Builder, Communication.S2C.Response.ExpectedDelayOrBuilder> 
-            getExpectedDelayFieldBuilder() {
-          if (expectedDelayBuilder_ == null) {
-            expectedDelayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                Communication.S2C.Response.ExpectedDelay, Communication.S2C.Response.ExpectedDelay.Builder, Communication.S2C.Response.ExpectedDelayOrBuilder>(
-                    getExpectedDelay(),
-                    getParentForChildren(),
-                    isClean());
-            expectedDelay_ = null;
-          }
-          return expectedDelayBuilder_;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return this;
-        }
-
 
         // @@protoc_insertion_point(builder_scope:S2C.Response)
       }
+      protected final Object dynamicMethod(
+              com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+              Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new Communication.S2C.Response();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            Communication.S2C.Response other = (Communication.S2C.Response) arg1;
+            statusCode_ = visitor.visitInt(statusCode_ != 0, statusCode_,    other.statusCode_ != 0, other.statusCode_);
+            errorCode_ = visitor.visitInt(errorCode_ != 0, errorCode_,    other.errorCode_ != 0, other.errorCode_);
+            expectedDelay_ = visitor.visitMessage(expectedDelay_, other.expectedDelay_);
+            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                    .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                    (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                    (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 8: {
+                    int rawValue = input.readEnum();
+
+                    statusCode_ = rawValue;
+                    break;
+                  }
+                  case 16: {
+                    int rawValue = input.readEnum();
+
+                    errorCode_ = rawValue;
+                    break;
+                  }
+                  case 26: {
+                    Communication.S2C.Response.ExpectedDelay.Builder subBuilder = null;
+                    if (expectedDelay_ != null) {
+                      subBuilder = expectedDelay_.toBuilder();
+                    }
+                    expectedDelay_ = input.readMessage(Communication.S2C.Response.ExpectedDelay.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(expectedDelay_);
+                      expectedDelay_ = subBuilder.buildPartial();
+                    }
+
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                      new com.google.protobuf.InvalidProtocolBufferException(
+                              e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (Communication.S2C.Response.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
 
       // @@protoc_insertion_point(class_scope:S2C.Response)
       private static final Communication.S2C.Response DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Communication.S2C.Response();
+        DEFAULT_INSTANCE = new Response();
+        DEFAULT_INSTANCE.makeImmutable();
       }
 
       public static Communication.S2C.Response getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Response>
-          PARSER = new com.google.protobuf.AbstractParser<Response>() {
-        public Response parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Response(input, extensionRegistry);
-        }
-      };
+      private static volatile com.google.protobuf.Parser<Response> PARSER;
 
       public static com.google.protobuf.Parser<Response> parser() {
-        return PARSER;
+        return DEFAULT_INSTANCE.getParserForType();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Response> getParserForType() {
-        return PARSER;
-      }
-
-      public Communication.S2C.Response getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
@@ -3618,8 +2507,39 @@ public final class Communication {
     /**
      * <code>optional .S2C.Response response = 1;</code>
      */
-    public Communication.S2C.ResponseOrBuilder getResponseOrBuilder() {
-      return getResponse();
+    private void setResponse(Communication.S2C.Response value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      response_ = value;
+
+    }
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    private void setResponse(
+            Communication.S2C.Response.Builder builderForValue) {
+      response_ = builderForValue.build();
+
+    }
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    private void mergeResponse(Communication.S2C.Response value) {
+      if (response_ != null &&
+              response_ != Communication.S2C.Response.getDefaultInstance()) {
+        response_ =
+                Communication.S2C.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+      } else {
+        response_ = value;
+      }
+
+    }
+    /**
+     * <code>optional .S2C.Response response = 1;</code>
+     */
+    private void clearResponse() {  response_ = null;
+
     }
 
     public static final int FINISH_FIELD_NUMBER = 2;
@@ -3630,19 +2550,23 @@ public final class Communication {
     public boolean getFinish() {
       return finish_;
     }
+    /**
+     * <code>optional bool finish = 2;</code>
+     */
+    private void setFinish(boolean value) {
 
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      finish_ = value;
+    }
+    /**
+     * <code>optional bool finish = 2;</code>
+     */
+    private void clearFinish() {
 
-      memoizedIsInitialized = 1;
-      return true;
+      finish_ = false;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
@@ -3652,579 +2576,286 @@ public final class Communication {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSize;
+      int size = memoizedSerializedSize;
       if (size != -1) return size;
 
       size = 0;
       if (response_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getResponse());
+                .computeMessageSize(1, getResponse());
       }
       if (finish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, finish_);
+                .computeBoolSize(2, finish_);
       }
-      memoizedSize = size;
+      memoizedSerializedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Communication.S2C)) {
-        return super.equals(obj);
-      }
-      Communication.S2C other = (Communication.S2C) obj;
-
-      boolean result = true;
-      result = result && (hasResponse() == other.hasResponse());
-      if (hasResponse()) {
-        result = result && getResponse()
-            .equals(other.getResponse());
-      }
-      result = result && (getFinish()
-          == other.getFinish());
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasResponse()) {
-        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-        hash = (53 * hash) + getResponse().hashCode();
-      }
-      hash = (37 * hash) + FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFinish());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
     public static Communication.S2C parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
     }
     public static Communication.S2C parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static Communication.S2C parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data);
     }
     public static Communication.S2C parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, data, extensionRegistry);
     }
     public static Communication.S2C parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
     }
     public static Communication.S2C parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static Communication.S2C parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+            throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
     public static Communication.S2C parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
     public static Communication.S2C parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input);
     }
     public static Communication.S2C parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+              DEFAULT_INSTANCE, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(Communication.S2C prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
 
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code S2C}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:S2C)
-        Communication.S2COrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Communication.internal_static_S2C_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Communication.internal_static_S2C_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Communication.S2C.class, Communication.S2C.Builder.class);
-      }
-
+            com.google.protobuf.GeneratedMessageLite.Builder<
+                    Communication.S2C, Builder> implements
+            // @@protoc_insertion_point(builder_implements:S2C)
+            Communication.S2COrBuilder {
       // Construct using Communication.S2C.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+        super(DEFAULT_INSTANCE);
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        if (responseBuilder_ == null) {
-          response_ = null;
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-        finish_ = false;
 
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return Communication.internal_static_S2C_descriptor;
-      }
-
-      public Communication.S2C getDefaultInstanceForType() {
-        return Communication.S2C.getDefaultInstance();
-      }
-
-      public Communication.S2C build() {
-        Communication.S2C result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public Communication.S2C buildPartial() {
-        Communication.S2C result = new Communication.S2C(this);
-        if (responseBuilder_ == null) {
-          result.response_ = response_;
-        } else {
-          result.response_ = responseBuilder_.build();
-        }
-        result.finish_ = finish_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Communication.S2C) {
-          return mergeFrom((Communication.S2C)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(Communication.S2C other) {
-        if (other == Communication.S2C.getDefaultInstance()) return this;
-        if (other.hasResponse()) {
-          mergeResponse(other.getResponse());
-        }
-        if (other.getFinish() != false) {
-          setFinish(other.getFinish());
-        }
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Communication.S2C parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Communication.S2C) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Communication.S2C.Response response_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return responseBuilder_ != null || response_ != null;
+        return instance.hasResponse();
       }
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
       public Communication.S2C.Response getResponse() {
-        if (responseBuilder_ == null) {
-          return response_ == null ? Communication.S2C.Response.getDefaultInstance() : response_;
-        } else {
-          return responseBuilder_.getMessage();
-        }
+        return instance.getResponse();
       }
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
       public Builder setResponse(Communication.S2C.Response value) {
-        if (responseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          response_ = value;
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(value);
-        }
-
+        copyOnWrite();
+        instance.setResponse(value);
         return this;
       }
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
       public Builder setResponse(
-          Communication.S2C.Response.Builder builderForValue) {
-        if (responseBuilder_ == null) {
-          response_ = builderForValue.build();
-          onChanged();
-        } else {
-          responseBuilder_.setMessage(builderForValue.build());
-        }
-
+              Communication.S2C.Response.Builder builderForValue) {
+        copyOnWrite();
+        instance.setResponse(builderForValue);
         return this;
       }
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
       public Builder mergeResponse(Communication.S2C.Response value) {
-        if (responseBuilder_ == null) {
-          if (response_ != null) {
-            response_ =
-              Communication.S2C.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-          } else {
-            response_ = value;
-          }
-          onChanged();
-        } else {
-          responseBuilder_.mergeFrom(value);
-        }
-
+        copyOnWrite();
+        instance.mergeResponse(value);
         return this;
       }
       /**
        * <code>optional .S2C.Response response = 1;</code>
        */
-      public Builder clearResponse() {
-        if (responseBuilder_ == null) {
-          response_ = null;
-          onChanged();
-        } else {
-          response_ = null;
-          responseBuilder_ = null;
-        }
-
+      public Builder clearResponse() {  copyOnWrite();
+        instance.clearResponse();
         return this;
       }
-      /**
-       * <code>optional .S2C.Response response = 1;</code>
-       */
-      public Communication.S2C.Response.Builder getResponseBuilder() {
-        
-        onChanged();
-        return getResponseFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .S2C.Response response = 1;</code>
-       */
-      public Communication.S2C.ResponseOrBuilder getResponseOrBuilder() {
-        if (responseBuilder_ != null) {
-          return responseBuilder_.getMessageOrBuilder();
-        } else {
-          return response_ == null ?
-              Communication.S2C.Response.getDefaultInstance() : response_;
-        }
-      }
-      /**
-       * <code>optional .S2C.Response response = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder> 
-          getResponseFieldBuilder() {
-        if (responseBuilder_ == null) {
-          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Communication.S2C.Response, Communication.S2C.Response.Builder, Communication.S2C.ResponseOrBuilder>(
-                  getResponse(),
-                  getParentForChildren(),
-                  isClean());
-          response_ = null;
-        }
-        return responseBuilder_;
-      }
 
-      private boolean finish_ ;
       /**
        * <code>optional bool finish = 2;</code>
        */
       public boolean getFinish() {
-        return finish_;
+        return instance.getFinish();
       }
       /**
        * <code>optional bool finish = 2;</code>
        */
       public Builder setFinish(boolean value) {
-        
-        finish_ = value;
-        onChanged();
+        copyOnWrite();
+        instance.setFinish(value);
         return this;
       }
       /**
        * <code>optional bool finish = 2;</code>
        */
       public Builder clearFinish() {
-        
-        finish_ = false;
-        onChanged();
+        copyOnWrite();
+        instance.clearFinish();
         return this;
       }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
-      }
-
 
       // @@protoc_insertion_point(builder_scope:S2C)
     }
+    protected final Object dynamicMethod(
+            com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+            Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new Communication.S2C();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          Communication.S2C other = (Communication.S2C) arg1;
+          response_ = visitor.visitMessage(response_, other.response_);
+          finish_ = visitor.visitBoolean(finish_ != false, finish_,
+                  other.finish_ != false, other.finish_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+                  .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+                  (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                  (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  Communication.S2C.Response.Builder subBuilder = null;
+                  if (response_ != null) {
+                    subBuilder = response_.toBuilder();
+                  }
+                  response_ = input.readMessage(Communication.S2C.Response.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(response_);
+                    response_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 16: {
+
+                  finish_ = input.readBool();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                    new com.google.protobuf.InvalidProtocolBufferException(
+                            e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (Communication.S2C.class) {
+            if (PARSER == null) {
+              PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+            }
+          }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
 
     // @@protoc_insertion_point(class_scope:S2C)
     private static final Communication.S2C DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Communication.S2C();
+      DEFAULT_INSTANCE = new S2C();
+      DEFAULT_INSTANCE.makeImmutable();
     }
 
     public static Communication.S2C getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<S2C>
-        PARSER = new com.google.protobuf.AbstractParser<S2C>() {
-      public S2C parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new S2C(input, extensionRegistry);
-      }
-    };
+    private static volatile com.google.protobuf.Parser<S2C> PARSER;
 
     public static com.google.protobuf.Parser<S2C> parser() {
-      return PARSER;
+      return DEFAULT_INSTANCE.getParserForType();
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<S2C> getParserForType() {
-      return PARSER;
-    }
-
-    public Communication.S2C getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_C2S_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_C2S_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_C2S_Request_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_C2S_Request_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_C2S_Report_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_C2S_Report_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_S2C_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_S2C_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_S2C_Response_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_S2C_Response_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_S2C_Response_ExpectedDelay_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_S2C_Response_ExpectedDelay_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\023Communication.proto\"\216\002\n\003C2S\022\035\n\007request" +
-      "\030\001 \001(\0132\014.C2S.Request\022\033\n\006report\030\002 \001(\0132\013.C" +
-      "2S.Report\022\016\n\006finish\030\003 \001(\010\032|\n\007Request\022\037\n\004" +
-      "type\030\001 \001(\0162\021.C2S.Request.Type\022\024\n\014doctors" +
-      "_name\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"\'\n\004Type\022\007" +
-      "\n\003NOW\020\000\022\014\n\010ESTIMATE\020\001\022\010\n\004SOME\020\003\032=\n\006Repor" +
-      "t\022\024\n\014doctors_name\030\001 \001(\t\022\035\n\025current_delay" +
-      "_minutes\030\002 \001(\005\"\200\002\n\003S2C\022\037\n\010response\030\001 \001(\013" +
-      "2\r.S2C.Response\022\016\n\006finish\030\002 \001(\010\032\307\001\n\010Resp" +
-      "onse\022)\n\013status_code\030\001 \001(\0162\024.S2C.Response",
-      ".Status\022\025\n\rerror_message\030\002 \001(\t\0223\n\016expect" +
-      "ed_delay\030\003 \001(\0132\033.S2C.Response.ExpectedDe" +
-      "lay\032\035\n\rExpectedDelay\022\014\n\004time\030\001 \001(\005\"%\n\006St" +
-      "atus\022\016\n\nSUCCESSFUL\020\000\022\013\n\007FAILURE\020\001b\006proto" +
-      "3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_C2S_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_C2S_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_C2S_descriptor,
-        new java.lang.String[] { "Request", "Report", "Finish", });
-    internal_static_C2S_Request_descriptor =
-      internal_static_C2S_descriptor.getNestedTypes().get(0);
-    internal_static_C2S_Request_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_C2S_Request_descriptor,
-        new java.lang.String[] { "Type", "DoctorsName", "Timestamp", });
-    internal_static_C2S_Report_descriptor =
-      internal_static_C2S_descriptor.getNestedTypes().get(1);
-    internal_static_C2S_Report_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_C2S_Report_descriptor,
-        new java.lang.String[] { "DoctorsName", "CurrentDelayMinutes", });
-    internal_static_S2C_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_S2C_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_S2C_descriptor,
-        new java.lang.String[] { "Response", "Finish", });
-    internal_static_S2C_Response_descriptor =
-      internal_static_S2C_descriptor.getNestedTypes().get(0);
-    internal_static_S2C_Response_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_S2C_Response_descriptor,
-        new java.lang.String[] { "StatusCode", "ErrorMessage", "ExpectedDelay", });
-    internal_static_S2C_Response_ExpectedDelay_descriptor =
-      internal_static_S2C_Response_descriptor.getNestedTypes().get(0);
-    internal_static_S2C_Response_ExpectedDelay_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_S2C_Response_ExpectedDelay_descriptor,
-        new java.lang.String[] { "Time", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
