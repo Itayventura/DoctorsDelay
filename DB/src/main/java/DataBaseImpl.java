@@ -22,7 +22,7 @@ public class DataBaseImpl implements DataBase {
     }
 
     @Override
-    public List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime) {
+    public List<DelayReport> getReports(String doctorsName, Timestamp startTime, Timestamp endTime) {
         return null; //TODO - implement
     }
 

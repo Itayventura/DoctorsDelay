@@ -1,24 +1,28 @@
 import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
-import weka.core.Environment;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.filters.unsupervised.instance.RemoveWithValues;
 
 
 public class AlgorithmsImpl implements Algorithms {
     private static final Logger logger = Logger.getLogger(AlgorithmsImpl.class);
     private static final String CSV_SEPARATOR = ",";
+    private static final int T_MIN_TREAT = 2;
+    private static final int T_BETWEEN_TREATS = 5;
     private static final String dataSetPath = "C:\\Users\\shiranpilas\\university\\4 year\\crowdsourcing\\dataSet.csv";
     private DataBase db;
 
@@ -37,18 +41,19 @@ public class AlgorithmsImpl implements Algorithms {
 
     @Override
     public int getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) {
-        List<DataBase.DelayReport> listDelayReports = db.getReports(doctorsName,LocalDateTime.now().minusMonths(6),LocalDateTime.now());
-        writeToCSV(listDelayReports);
+        List<DataBase.DelayReport> listDelayReports = db.getReports(doctorsName, Timestamp.valueOf(LocalDateTime.now().minusMonths(6)),Timestamp.valueOf(LocalDateTime.now()));
+        List<DataBase.DelayReport> filteredListDelayReports = filteredData(listDelayReports);
+        writeToCSV(filteredListDelayReports);
         Instances dataSet = getDataSet();
         dataSet.setClassIndex(dataSet.numAttributes() - 1);
 
         //need to be added = >  filter and preperation data
-        //need to be added = > lock csv file while use it
 
         Instances[] trainTestSplitResult = trainTestSplit(dataSet,80);
 
         RandomForest forest=new RandomForest();
         forest.setNumIterations(5000);//number of trees
+
 
 
         try{
@@ -67,14 +72,6 @@ public class AlgorithmsImpl implements Algorithms {
             logger.info("train and testing model were failed: " + ex.getMessage());
         }
 
-
-
-
-
-
-
-
-
         return -1; //TODO - implement
     }
 
@@ -82,8 +79,6 @@ public class AlgorithmsImpl implements Algorithms {
     public void addReport(String doctorsName, int reportedDelay) {
         //TODO - implement
     }
-
-
 
     private static void writeToCSV(List<DataBase.DelayReport> DelayReportList)
     {
@@ -111,15 +106,15 @@ public class AlgorithmsImpl implements Algorithms {
             {
                 counter++;
                 oneLine = new StringBuffer();
-                oneLine.append(report.getReportTimestamp().getYear());
+                oneLine.append(report.getReportTimestamp().toLocalDateTime().getYear());
                 oneLine.append(CSV_SEPARATOR);
-                oneLine.append(report.getReportTimestamp().getMonth().getValue());
+                oneLine.append(report.getReportTimestamp().toLocalDateTime().getMonth().getValue());
                 oneLine.append(CSV_SEPARATOR);
-                oneLine.append(report.getReportTimestamp().getDayOfWeek());
+                oneLine.append(report.getReportTimestamp().toLocalDateTime().getDayOfWeek());
                 oneLine.append(CSV_SEPARATOR);
-                oneLine.append(report.getReportTimestamp().getHour());
+                oneLine.append(report.getReportTimestamp().toLocalDateTime().getHour());
                 oneLine.append(CSV_SEPARATOR);
-                oneLine.append(report.getReportTimestamp().getMinute());
+                oneLine.append(report.getReportTimestamp().toLocalDateTime().getMinute());
                 oneLine.append(CSV_SEPARATOR);
                 oneLine.append(report.getReportedDelay());
                 if(counter < DelayReportList.size()){
@@ -138,8 +133,8 @@ public class AlgorithmsImpl implements Algorithms {
         catch (IOException e){}
     }
 
-
-    private void convertCSVToArff(String csvPath, String arffPath){
+    private void convertCSVToArff(String csvPath, String arffPath)
+    {
 
         try{
 
@@ -166,14 +161,13 @@ public class AlgorithmsImpl implements Algorithms {
         try
         {
             DataSource source = new DataSource(dataSetPath);
-            //source.reset();
             dataSet = source.getDataSet();
-
         }
         catch(Exception ex){
             logger.info("get data set was failed: " + ex.getMessage());
 
         }
+
         return dataSet;
     }
     private Instances[] trainTestSplit(Instances dataSet, int percentage)
@@ -190,8 +184,45 @@ public class AlgorithmsImpl implements Algorithms {
 
     }
 
+    public List<DataBase.DelayReport> filteredData(List<DataBase.DelayReport> list)
+    {
+        List<DataBase.DelayReport> filteredList = new ArrayList<DataBase.DelayReport>();
+        int MaximumDelay,savedTime, gapTime,minimumDelay;
+        Collections.sort(list, new SortByTimestamp());//sort reports list by time
+        //check validation of reports
+        filteredList.add(list.get(0));//assume first report is correct
+        for(int i = 1; i < list.size(); i++){
+            //day was changed
+            if(list.get(i).getReportTimestamp().toLocalDateTime().getDayOfMonth() != filteredList.get(filteredList.size()-1).getReportTimestamp().toLocalDateTime().getDayOfMonth() ){
+                filteredList.add(list.get(i));
+                continue;
+            }
 
+            gapTime =(int) (list.get(i).getReportTimestamp().getTime()-filteredList.get(filteredList.size()-1).getReportTimestamp().getTime())/(60*1000);//in minutes
+            savedTime = T_BETWEEN_TREATS - T_MIN_TREAT;
 
+            minimumDelay =Math.max(0,list.get(i-1).getReportedDelay() - (gapTime/T_MIN_TREAT*savedTime));
+            MaximumDelay =(int) (list.get(i).getReportTimestamp().getTime()/(60*1000)-(filteredList.get(filteredList.size()-1).getReportTimestamp().getTime()/(60*1000)-filteredList.get(filteredList.size()-1).getReportedDelay()));
+
+            if(list.get(i).getReportedDelay() >= minimumDelay && list.get(i).getReportedDelay() <= MaximumDelay){
+                filteredList.add(list.get(i));
+            }
+
+        }
+
+        return filteredList;
+
+    }
+
+}
+
+class SortByTimestamp implements Comparator<DataBase.DelayReport>
+{
+
+    public int compare(DataBase.DelayReport a, DataBase.DelayReport b)
+    {
+        return (int)( a.getReportTimestamp().getTime() - b.getReportTimestamp().getTime());
+    }
 }
 
 
