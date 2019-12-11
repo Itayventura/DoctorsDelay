@@ -3,6 +3,7 @@ import java.time.LocalDateTime;
 public interface Algorithms {
 
     public class AlgorithmException extends Exception{
+        private Reason reason;
         public enum Reason{ //TODO - if you want, you can add\remove reasons and just push
             DOCTOR_NOT_EXISTS,
             NO_CURRENT_DATA,
@@ -19,7 +20,6 @@ public interface Algorithms {
             this.reason = reason;
         }
 
-        private Reason reason;
         public Reason getReason() { return reason; }
     }
 
@@ -42,4 +42,11 @@ public interface Algorithms {
      * @param reportedDelay - in minutes
      */
     void addReport(String doctorsName, int reportedDelay) throws AlgorithmException;
+
+    /**
+     * reporting delay by the appointment number currently inside.
+     * @param doctorsName
+     * @param appointmentNumber - The curernt appointmet happening
+     */
+    void addReportByNumber(String doctorsName, int appointmentNumber) throws AlgorithmException;
 }
