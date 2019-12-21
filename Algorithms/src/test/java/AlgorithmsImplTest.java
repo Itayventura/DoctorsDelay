@@ -8,10 +8,29 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class AlgorithmsImplTest {
-    AlgorithmsImpl algorithms = new AlgorithmsImpl(new DataBaseMock());
 
-    public class DataBaseMock implements DataBase{
+public class AlgorithmsImplTest
+{
+/*    @Test
+    public void buildModelWithPyhtonInterpreter()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl();
+
+        try
+        {
+            algorithms.getEstimatedDelay("Dulitel", LocalDateTime.now());
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            fail();
+        }
+    }*/
+
+    /*public class DataBaseMock implements DataBase
+    {
+
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DataBaseMock());
+
         @Override
         public List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime) {
             return null; //TODO - implement silly mocker
@@ -39,5 +58,5 @@ public class AlgorithmsImplTest {
     @Test
     public void test() {
         System.out.println("yay it works!");
-    }
+    }*/
 }
