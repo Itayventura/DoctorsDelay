@@ -34,14 +34,15 @@ public interface Algorithms {
      * @param meetingDateTime - to determine what the expected delay at that time will be.
      * @return the estimated time according to history - in minutes
      */
-    int getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) throws AlgorithmException;
+    DelayEstimation getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) throws AlgorithmException;
 
     /**
      * Straight forward - using DB addReport to set the records.
      * @param doctorsName
      * @param reportedDelay - in minutes
+     * @param type - the type of the reporter
      */
-    void addReport(String doctorsName, int reportedDelay) throws AlgorithmException;
+    void addReport(String doctorsName, int reportedDelay, ReporterType type) throws AlgorithmException;
 
     /**
      * reporting delay by the appointment number currently inside.
