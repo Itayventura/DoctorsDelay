@@ -1,47 +1,51 @@
+import entities.Appointment;
+import entities.Delay;
+import entities.Doctor;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.time.LocalTime;
 
-/**
- * Handles MySql. Note! should be thread safe.
- */
 public interface DataBase {
 
-    public abstract class DelayReport{
-        abstract public int getReportedDelay();
-        abstract public int getReportTimestamp();
-    }
+    /**
+     * adds the delay to this doctor at current timestamp to db
+     * @pre doctorExists(doctorsName) == true
+     * @pre user exist
+     * @param personalId - the user's identity number
+     * @param doctorsName - the doctor's name
+     * @param delay - the reported delay in minutes
+     * @return a list of reports to the specified doctor, in this date
+     */
+    void addReport(int personalId, String doctorsName, int delay);
+
 
     /**
-     *
-     * @param doctorsName
-     * @param startTime
-     * @param endTime
+     * @param doctorsName - the doctor's name
+     * @param date - date's format: "yyyy-mm-dd"
+     * @return a list of reports to the specified doctor, in this date
+     *         or null if doctor does not exist
+     */
+    List<Delay> getDayReport(String doctorsName, LocalDate date);
+
+    /** get report list of doctor between this time range
+     * @param doctorsName the doctor's name
+     * @param from start time
+     * @param to end time
      * @return a list of reports to the specified doctor, in this time range
      */
-    List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime);
+    List<Delay> getReports(String doctorsName, LocalDateTime from, LocalDateTime to);
 
-    public abstract class DoctorInfo{
-        abstract LocalTime getStartTime();
-        abstract int getInterval();
-    }
-
-
-    /**
-     * Accesses doctors db
-     * @param doctorName
-     * @return the doctors start time and interval
+    /** select from doctors where doctor_name = doctorsName and return new Doctor same as table
+     *
+     * @param doctorsName
+     * @return Doctor with attributes like in table
      */
-    DoctorInfo getDoctorInfo(String doctorName);
+    Doctor getDoctor(String doctorsName);
 
-
-    public abstract class Appointment{
-        abstract LocalDateTime getDateTime();
-        abstract String getDoctor();
-    }
 
     /**
-     * Accesses this clients db and gets it's **future**
+     * Accesses this patients' db and gets it's **future**
      * appointments (checks if their LocalDateTime is after current)
      * @param userId - the user's identity number
      * @return a list if the user's future appointments
@@ -54,28 +58,41 @@ public interface DataBase {
      */
     boolean doctorExists(String doctorsName);
 
-
-    /**
-     * adds the reported delay to this doctor at current timestamp
-     * @param doctorsName
-     * @param expectedDelay
-     */
-    void addReport(String doctorsName, int expectedDelay);//implementation - needs to add current timestamp to db row
-
-
     /**
      * @param userId - the user's identity number
-     * @return this uses password as written in clients db
+     * @return this uses password as written in patients' db. null if  user is not in the system
      */
     String getUserPassword(int userId);
 
-    /**
-     * This is the actual delay a user experienced.
-     * This function should somehow fix the data (don't know yet how)
-     * @param userId        - the user's identity number
+    /** adds report with report_type = 'feedback' to data base
+     *  @param userId        - the user's identity number
+     * @param doctorsName - the doctor's name
      * @param actualDelay   - the actual delay the user experienced
      */
-    void feedbackOnEstimate(int userId, int actualDelay);
+    void feedbackOnEstimate(int userId, String doctorsName, int actualDelay);
 
+
+    /** adds score added to patient with id userId
+     *
+     * @param userId id of the patient
+     * @param scoreAdded score added to patient's score
+     */
+    public void addScore(int userId, int scoreAdded);
+
+    /**
+     * @param userId id of patient
+     * @return patient's score
+     */
+    public int getScore(int userId);
+
+    /**
+     *
+     * @param userId user's id
+     * @return
+     */
+    public Appointment getLastAppointment(int userId);
+
+    /** prints all records from tableName in database */
+    void printTable(String tableName);
 
 }
