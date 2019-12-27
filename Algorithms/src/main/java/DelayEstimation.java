@@ -32,13 +32,13 @@ public class DelayEstimation
         switch (estimationType)
         {
             case Small:
-                return new DelayRange(0,15);
+                return new DelayRange(0,15, EstimationType.Small);
             case Medium:
-                return new DelayRange(16,30);
+                return new DelayRange(16,30, EstimationType.Medium);
             case Large:
-                return new DelayRange(31,12*60);
+                return new DelayRange(31,12*60, EstimationType.Large);
             default:
-                return new DelayRange(0,0);
+                return new DelayRange(0,0, EstimationType.Small);
         }
     }
 
@@ -46,5 +46,5 @@ public class DelayEstimation
     {
         return accuracyEstimationPercentage;
     }
-    //public EstimationType getEstimationType(){ return estimationType; }
+
 }
