@@ -1,3 +1,6 @@
+import communications.Communication;
+import communications.Communicator;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;

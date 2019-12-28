@@ -1,3 +1,5 @@
+import communications.Communication;
+import communications.Communicator;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,9 +9,6 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Arrays;
-
-
-import static org.junit.Assert.*;
 
 public class CommunicatorTest {
     private Communicator communicator;
@@ -32,7 +31,10 @@ public class CommunicatorTest {
         server2client = Communication.S2C.newBuilder()
                 .setResponse(Communication.S2C.Response.newBuilder()
                     .setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL)
-                    .setExpectedDelay(Communication.S2C.Response.ExpectedDelay.newBuilder().setTime(10))
+                    .setExpectedDelay(Communication.S2C.Response.ExpectedDelay.newBuilder()
+                            .setMinTime(0)
+                            .setMaxTime(15)
+                            .setAccuracy(80))
                 ).setFinish(false)
                 .build();
         ByteArrayOutputStream b = new ByteArrayOutputStream();

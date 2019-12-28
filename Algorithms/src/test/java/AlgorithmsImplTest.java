@@ -14,13 +14,13 @@ public class AlgorithmsImplTest
 /*    @Test
     public void buildModelWithPyhtonInterpreter()
     {
-        AlgorithmsImpl algorithms = new AlgorithmsImpl();
+        algorithms.AlgorithmsImpl algorithms = new algorithms.AlgorithmsImpl();
 
         try
         {
             algorithms.getEstimatedDelay("Dulitel", LocalDateTime.now());
         }
-        catch (Algorithms.AlgorithmException e)
+        catch (algorithms.Algorithms.AlgorithmException e)
         {
             fail();
         }
@@ -29,7 +29,7 @@ public class AlgorithmsImplTest
     /*public class DataBaseMock implements DataBase
     {
 
-        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DataBaseMock());
+        algorithms.AlgorithmsImpl algorithms = new algorithms.AlgorithmsImpl(new DataBaseMock());
 
         @Override
         public List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime) {

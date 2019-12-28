@@ -1,3 +1,5 @@
+import algorithms.Algorithms;
+import communications.Communication;
 import org.apache.log4j.Logger;
 
 import java.time.Instant;
@@ -51,8 +53,9 @@ public class AlgorithmsHandler {
     }
 
     protected Communication.S2C handleReport(Communication.C2S.Report report){
+        if ()
         try {
-            algorithms.addReport(report.getDoctorsName(), report.getCurrentDelayMinutes());
+            //algorithms.addReport(report.getDoctorsName(), report.getCurrentDelayMinutes());
         } catch (Algorithms.AlgorithmException e) {
             logger.error("handle report failed, report=" + report, e);
         }
@@ -67,13 +70,21 @@ public class AlgorithmsHandler {
     }
 
     private void getEstimatedDelay(Communication.S2C.Response.ExpectedDelay.Builder delay, Communication.C2S.Request request) throws Algorithms.AlgorithmException {
-        delay.setTime(algorithms.getEstimatedDelay(request.getDoctorsName(),
-                epochToDateTime(request.getTimestamp())));
+        DelayEstimation delayEstimation = algorithms.getEstimatedDelay(request.getDoctorsName(),
+                epochToDateTime(request.getTimestamp()));
+        delayEstimationToDelay(delayEstimation, delay);
         delay.setIsEstimated(true);
     }
 
     private void getCurrentDelay(Communication.S2C.Response.ExpectedDelay.Builder delay, Communication.C2S.Request request) throws Algorithms.AlgorithmException {
-        delay.setTime(algorithms.getCurrentDelay(request.getDoctorsName()));
+        delayEstimationToDelay(algorithms.getCurrentDelay(request.getDoctorsName()), delay);
+    }
+
+    private void delayEstimationToDelay(DelayEstimation delayEstimation ,Communication.S2C.Response.ExpectedDelay.Builder delay) {
+        delay.setAccuracy(delayEstimation.getEstimationAccuracyPercentage());
+        DelayRange range = delayEstimation.getTypeRange();
+        delay.setMaxTime(range.getMaximalDelay());
+        delay.setMinTime(range.getMinimalDelay());
     }
 
     private LocalDateTime epochToDateTime(long milliSinceEpoch) {

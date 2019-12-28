@@ -1,3 +1,4 @@
+import algorithms.AlgorithmsImpl;
 import org.apache.commons.cli.*;
 
 import java.io.IOException;
@@ -30,8 +31,7 @@ public class Main {
                 listeningPort = Integer.parseInt(cmd.getOptionValue(listeningPortArg));
             if (cmd.hasOption(numThreadsArg))
                 numThreads = Integer.parseInt(cmd.getOptionValue(numThreadsArg));
-
-            server = new Server(listeningPort, numThreads, new AlgorithmsImpl(new DataBaseImpl()));
+            server = new Server(listeningPort, numThreads, new AlgorithmsImpl(new DataBaseImpl()), new DataBaseImpl());
             server.start();
         } catch (ParseException e) {
             System.out.println("Wrong argument given, use --help, " + e.getMessage());

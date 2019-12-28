@@ -1,3 +1,4 @@
+import communications.Communication;
 import org.junit.Assert;
 
 import java.util.Arrays;
@@ -7,16 +8,16 @@ import java.util.Map;
 
 public class TestBase {
     protected static List<String> doctors = Arrays.asList("doctor0", "doctor1", "doctor2", "doctor3", "doctor4");
-    protected static Map<String, Integer> doctors2curDelays = new HashMap<String, Integer>() {{
-        put(doctors.get(0), 15);
-        put(doctors.get(1), 12);
-        put(doctors.get(2), 43);
+    protected static Map<String, DelayEstimation> doctors2curDelays = new HashMap<String, DelayEstimation>() {{
+        put(doctors.get(0), new DelayEstimation(DelayEstimation.EstimationType.Small, 40));
+        put(doctors.get(1), new DelayEstimation(DelayEstimation.EstimationType.Medium, 70));
+        put(doctors.get(2), new DelayEstimation(DelayEstimation.EstimationType.Large, 50));
     }};
-    protected static Map<String, Integer> doctors2expectedDelays = new HashMap<String, Integer>() {{
-        put(doctors.get(0), 10);
-        put(doctors.get(1), 21);
-        put(doctors.get(2), 37);
-        put(doctors.get(3), 22);
+    protected static Map<String, DelayEstimation> doctors2expectedDelays = new HashMap<String, DelayEstimation>() {{
+        put(doctors.get(0), new DelayEstimation(DelayEstimation.EstimationType.Medium, 80));
+        put(doctors.get(1), new DelayEstimation(DelayEstimation.EstimationType.Small, 70));
+        put(doctors.get(2), new DelayEstimation(DelayEstimation.EstimationType.Large, 50));
+        put(doctors.get(3), new DelayEstimation(DelayEstimation.EstimationType.Medium, 30));
     }};
 
     protected static boolean doctorExists(String doctorName) {

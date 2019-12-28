@@ -1,8 +1,12 @@
+package algorithms;
+
+import entities.Delay;
 import org.apache.log4j.Logger;
+import utils.CurrentDelayUtil;
 
 import java.io.File;
-import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class AlgorithmsImpl implements Algorithms {
     // TODO generic path.
@@ -15,15 +19,30 @@ public class AlgorithmsImpl implements Algorithms {
      * @param db - mock when testing, real impl when server initializes
      */
     public AlgorithmsImpl(DataBase db) {
-        logger.info("Algorithms is initialized with db=" + db.getClass().getName());
         this.db = db;
+        logger.info("algorithms.Algorithms is initialized with db=" + db.getClass().getName());
+    }
+
+    public AlgorithmsImpl() {
+        this.db = new DataBaseImpl();
+        logger.info("algorithms.Algorithms is initialized with db=" + db.getClass().getName());
     }
 
     @Override
-    public int getCurrentDelay(String doctorsName) throws AlgorithmException
+    public DelayEstimation getCurrentDelay(String doctorsName) throws AlgorithmException
     {
-        return 0;
-        // TODO.
+        if (!db.doctorExists(doctorsName)) {
+            throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
+        }
+        LocalDateTime endTime = LocalDateTime.now();
+        LocalDateTime startTime = endTime.minusMinutes(CurrentDelayUtil.MINUTES_DURATION);
+        List<Delay> delays = db.getReports(doctorsName, startTime, endTime);
+        if (delays == null || delays.isEmpty()) {
+            throw new AlgorithmException(AlgorithmException.Reason.NO_CURRENT_DATA);
+        }
+        double predictedDelay = CurrentDelayUtil.getPredictedDelay(delays, startTime);
+        return new DelayEstimation(delayTimeToEstimationType(predictedDelay),
+                CurrentDelayUtil.getCurrentAccuracy(db.getDoctor(doctorsName).getInterval(), delays.size()));
     }
 
     @Override
@@ -39,6 +58,16 @@ public class AlgorithmsImpl implements Algorithms {
         //DelayEstimation predictionResult = predict(model, requestVector); TODO
         DelayEstimation predictionResult = new DelayEstimation(DelayEstimation.EstimationType.Small, -1);
         return predictionResult;
+    }
+
+    private static DelayEstimation.EstimationType delayTimeToEstimationType(double delay) {
+        if (delay <= 15) {
+            return DelayEstimation.EstimationType.Small;
+        } else if (delay <= 30) {
+            return DelayEstimation.EstimationType.Medium;
+        } else {
+            return DelayEstimation.EstimationType.Large;
+        }
     }
 
     private Boolean isModelAlreadyExist()
@@ -82,15 +111,4 @@ public class AlgorithmsImpl implements Algorithms {
 //        // TODO implement
 //    }
 
-    @Override
-    public void addReport(String doctorsName, int reportedDelay, ReporterType type) throws AlgorithmException
-    {
-        //TODO insert type of reporter(user,feedback,expert)
-    }
-
-    @Override
-    public void addReportByNumber(String doctorsName, int appointmentNumber) throws AlgorithmException
-    {
-        //TODO (maybe) insert type of reporter(user,feedback,expert)
-    }
 }

@@ -1,3 +1,5 @@
+package algorithms;
+
 import java.time.LocalDateTime;
 
 public interface Algorithms {
@@ -25,9 +27,9 @@ public interface Algorithms {
 
     /**
      * @param doctorsName - may not exist
-     * @return the current estimated time according to reports - in minutes
+     * @return the current estimated time according to reports
      */
-    int getCurrentDelay(String doctorsName) throws AlgorithmException;
+    DelayEstimation getCurrentDelay(String doctorsName) throws AlgorithmException;
 
     /**
      * @param doctorsName - may not exist
@@ -36,18 +38,4 @@ public interface Algorithms {
      */
     DelayEstimation getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) throws AlgorithmException;
 
-    /**
-     * Straight forward - using DB addReport to set the records.
-     * @param doctorsName
-     * @param reportedDelay - in minutes
-     * @param type - the type of the reporter
-     */
-    void addReport(String doctorsName, int reportedDelay, ReporterType type) throws AlgorithmException;
-
-    /**
-     * reporting delay by the appointment number currently inside.
-     * @param doctorsName
-     * @param appointmentNumber - The curernt appointmet happening
-     */
-    void addReportByNumber(String doctorsName, int appointmentNumber) throws AlgorithmException;
 }

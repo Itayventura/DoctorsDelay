@@ -1,3 +1,4 @@
+import communications.Communication;
 import org.junit.Assert;
 import org.junit.Test;
 

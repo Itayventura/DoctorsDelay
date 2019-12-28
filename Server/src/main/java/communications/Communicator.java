@@ -1,3 +1,5 @@
+package communications;
+
 import com.google.protobuf.MessageLite;
 import com.google.protobuf.Parser;
 
