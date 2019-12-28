@@ -1,4 +1,6 @@
 import java.security.InvalidParameterException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DelayEstimation
 {
@@ -12,15 +14,16 @@ public class DelayEstimation
     private EstimationType estimationType;
     private int accuracyEstimationPercentage;
 
-    public DelayEstimation(EstimationType type, int accuracyPercentage) throws InvalidParameterException
+    public static HashMap<String, EstimationType> StringToEstimationType = new HashMap<String, EstimationType>()
+    {{
+        put("S", EstimationType.Small);
+        put("M", EstimationType.Medium);
+        put("L", EstimationType.Large);
+    }};
+
+    public DelayEstimation(EstimationType type, int accuracyPercentage)
     {
         estimationType = type;
-
-        if(accuracyPercentage > 100 || accuracyPercentage < 0)
-        {
-            throw new InvalidParameterException("Error: Percentage should be between 0 and 100");
-        }
-
         accuracyEstimationPercentage = accuracyPercentage;
     }
 
@@ -29,13 +32,13 @@ public class DelayEstimation
         switch (estimationType)
         {
             case Small:
-                return new DelayRange(0,15);
+                return new DelayRange(0,15, EstimationType.Small);
             case Medium:
-                return new DelayRange(16,30);
+                return new DelayRange(16,30, EstimationType.Medium);
             case Large:
-                return new DelayRange(31,12*60);
+                return new DelayRange(31,12*60, EstimationType.Large);
             default:
-                return new DelayRange(0,15);
+                return new DelayRange(0,0, EstimationType.Small);
         }
     }
 
@@ -43,4 +46,5 @@ public class DelayEstimation
     {
         return accuracyEstimationPercentage;
     }
+
 }

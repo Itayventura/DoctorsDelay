@@ -7,7 +7,8 @@ public interface Algorithms {
         public enum Reason{ //TODO - if you want, you can add\remove reasons and just push
             DOCTOR_NOT_EXISTS,
             NO_CURRENT_DATA,
-            NO_DATA_FOUND
+            NO_DATA_FOUND,
+            INVALID_TIME_REQUEST
         }
 
         public AlgorithmException(Reason reason, String error) {
