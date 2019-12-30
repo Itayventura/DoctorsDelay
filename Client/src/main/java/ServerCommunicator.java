@@ -1,9 +1,0 @@
-
-/**
- * TBD
- */
-public interface ServerCommunicator {
-
-
-
-}

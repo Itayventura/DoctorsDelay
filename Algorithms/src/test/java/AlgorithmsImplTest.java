@@ -1,4 +1,7 @@
-import entities.Delay;
+import algorithms.Algorithms;
+import algorithms.AlgorithmsImpl;
+import estimation.DelayEstimation;
+import estimation.HttpCommunications;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -38,7 +41,7 @@ public class AlgorithmsImplTest
     }
 
     @Test
-    public void checkRequestValidation_DoctorExist_ValidTime_NoExceptionThrown()
+    public void checkRequestValidation_DoctorExist_ValidTime_NoExceptionThrown() throws Exception
     {
         AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
         try

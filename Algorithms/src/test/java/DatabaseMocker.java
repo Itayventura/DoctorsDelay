@@ -1,3 +1,4 @@
+import db.DataBase;
 import entities.Appointment;
 import entities.Delay;
 import entities.Doctor;

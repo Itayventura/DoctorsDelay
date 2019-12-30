@@ -1,105 +1,74 @@
+import algorithms.Algorithms;
+import algorithms.AlgorithmsImpl;
+import db.DataBase;
+import db.DataBaseImpl;
+import handlers.ClientHandler;
 import org.apache.log4j.Logger;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * Activates the ServerSocket, waits for connections, accepts,
+ * and launches ClientHandler's to manage them within a multi threaded ExecutorService.
+ */
 public class Server {
     private static final Logger logger = Logger.getLogger(Server.class);
     private int listeningPort;
     private ExecutorService pool;
-    private Algorithms algorithms;
-    private AtomicInteger connectedClients = new AtomicInteger();
+    private Constructor<? extends Algorithms> algorithmsConstructor;
+    private Constructor<? extends DataBase> dbConstructor;
+    private ServerSocket serverSocket;
 
-    public Server(int listeningPort, int numThreads, Algorithms algorithms) {
+    public Server(int listeningPort, int numThreads) throws NoSuchMethodException{
         this.listeningPort = listeningPort;
         this.pool = Executors.newFixedThreadPool(numThreads);
-        this.algorithms = algorithms;
+        this.algorithmsConstructor = AlgorithmsImpl.class.getConstructor();
+        this.dbConstructor = DataBaseImpl.class.getConstructor();
     }
 
-    public void start() throws IOException {
-        logger.info(String.format("Starting server on port=%d, Algorithms=%s",
-                listeningPort, algorithms.getClass().getName()));
-        try (ServerSocket serverSocket = new ServerSocket(listeningPort)) {
-            for(;;){
-                pool.execute(new ClientHandler(serverSocket.accept(), algorithms));
+    public Server(int listeningPort, int numThreads, Constructor<? extends Algorithms> algorithmsConstructor,
+                  Constructor<? extends DataBase> dbConstructor) {
+        this.listeningPort = listeningPort;
+        this.pool = Executors.newFixedThreadPool(numThreads);
+        this.algorithmsConstructor = algorithmsConstructor;
+        this.dbConstructor = dbConstructor;
+    }
+
+    void start() throws Exception {
+        logger.info(String.format("Starting server on port=%d", listeningPort));
+        serverSocket = new ServerSocket(listeningPort);
+        for (;;) {
+            try {
+                pool.execute(new ClientHandler(serverSocket.accept(), algorithmsConstructor.newInstance(),
+                        dbConstructor.newInstance()));
+            } catch (IOException e) {
+                logger.warn("server was interrupted", e);
+                break;
             }
         }
     }
 
-    public void stop() {
-        pool.shutdown();
-    }
-
-    public int getConnectedClients() {
-        return connectedClients.get();
-    }
-
-    public class ClientHandler extends Communicator implements Runnable {
-        private Socket socket = null;
-        private String clientName;
-        private AlgorithmsHandler algorithmsHandler;
-
-        public ClientHandler(Socket socket, Algorithms algorithms) throws IOException {
-            super(new DataInputStream(socket.getInputStream()),
-                    new DataOutputStream(socket.getOutputStream()));
-            this.algorithmsHandler = new AlgorithmsHandler(algorithms);
-            this.socket = socket;
-            this.clientName = socket.getRemoteSocketAddress().toString();
-            int connected = connectedClients.incrementAndGet();
-            logger.info(String.format("created new client handler for: %s, currently %d clients connected", clientName, connected));
+    void stop() {
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            logger.error("server socket close() failed", e);
         }
-
-        @Override
-        public void run() {
-            for(;;) {
-                try{
-                    Communication.C2S client2server = readMessage(Communication.C2S.parser());
-                    Communication.S2C server2client;
-                    if (client2server.hasRequest())
-                        server2client = algorithmsHandler.handleRequest(client2server.getRequest());
-                    else if (client2server.hasReport())
-                        server2client = algorithmsHandler.handleReport(client2server.getReport());
-                    else{
-                        if (!client2server.getFinish())
-                            logger.error(String.format("got empty c2s message from client %s, closing connection", clientName));
-                        break;
-                    }
-                    logger.info(String.format("sending s2c=%s to client=%s", server2client, clientName));
-                    sendMessage(server2client);
-                } catch (IOException e) {
-                    logger.error(String.format("communication with client %s failed", clientName), e);
-                    break;
-                }
+        pool.shutdownNow();
+        try {
+            if (!pool.awaitTermination(100, TimeUnit.MICROSECONDS)) {
+                logger.warn("Still waiting...");
+                System.exit(0);
             }
-            close();
+        } catch (InterruptedException e) {
+            logger.warn("Server was interrupted when trying to exit");
         }
-
-        public void close() {
-            connectedClients.decrementAndGet();
-            if (socket == null) {
-                try {
-                    closeStreams();
-                } catch (IOException e) {
-                    logger.error("close streams failed", e);
-                }
-            }
-            else {
-                logger.info(String.format("closing connection with client %s", clientName));
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                    logger.error(String.format("failed to close connection with client %s",
-                            socket.getRemoteSocketAddress()), e);
-                }
-            }
-        }
-
+        logger.info("Exiting normally...");
     }
 
 }

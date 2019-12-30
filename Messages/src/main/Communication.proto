@@ -1,10 +1,16 @@
 syntax = "proto3";
 
 message C2S{
+    message Login{
+        int32 client_id = 1;
+        string password = 2;
+    }
     message Request{
         enum Type{
             NOW = 0;
             ESTIMATE = 1;
+            NEXT_APPOINTMENTS = 2;
+            GET_SCORE = 3;
         }
         Type type = 1;
         string doctors_name = 2;
@@ -13,10 +19,13 @@ message C2S{
     message Report{
         string doctors_name = 1;
         int32 current_delay_minutes = 2;
+        int32 current_appointment_in = 3;
     }
     Request request = 1;
     Report report = 2;
-    bool finish = 3;
+    Report feedback = 3;
+    Login login = 4;
+    bool finish = 5;
 }
 
 
@@ -27,8 +36,10 @@ message S2C{
             FAILURE = 1;
         }
         message ExpectedDelay{
-            int32 time = 1;
-            bool is_estimated = 2;
+            int32 min_time = 1;
+            int32 max_time = 2;
+            int32 accuracy = 3;
+            bool is_estimated = 4;
         }
         enum ErrorCode{
             DOCTOR_NOT_FOUND = 0;
@@ -37,6 +48,8 @@ message S2C{
         Status status_code = 1;
         ErrorCode error_code = 2;
         ExpectedDelay expected_delay = 3;
+        repeated int64 next_appointments = 4;
+        int32 score = 5;
     }
     Response response = 1;
     bool finish = 2;
