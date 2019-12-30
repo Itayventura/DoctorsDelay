@@ -3,6 +3,7 @@ package handlers;
 import algorithms.Algorithms;
 import communications.Communication;
 import communications.Communicator;
+import db.DataBase;
 import org.apache.log4j.Logger;
 
 import java.io.DataInputStream;
@@ -10,49 +11,86 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * First manages login of the client to the server.
+ * If successful, reads a message from the client, handles it
+ * and sends a response if required.
+ * This goes on until client decides to disconnect.
+ */
 public class ClientHandler extends Communicator implements Runnable {
     private static final Logger logger = Logger.getLogger(ClientHandler.class);
-    private Socket socket = null;
-    private String clientName;
-    //private AlgorithmsHandler algorithmsHandler;
+    private Socket socket;
+    private Algorithms algorithms;
+    private DataBase db;
+    private int clientId = -1;
 
-    public ClientHandler(Socket socket, Algorithms algorithms) throws IOException {
+    public ClientHandler(Socket socket, Algorithms algorithms, DataBase db) throws IOException {
         super(new DataInputStream(socket.getInputStream()),
                 new DataOutputStream(socket.getOutputStream()));
-        this.algorithmsHandler = new AlgorithmsHandler(algorithms);
         this.socket = socket;
-        this.clientName = socket.getRemoteSocketAddress().toString();
-        int connected = connectedClients.incrementAndGet();
-        logger.info(String.format("created new client handler for: %s, currently %d clients connected", clientName, connected));
+        this.algorithms = algorithms;
+        this.db = db;
     }
 
     @Override
     public void run() {
-        for(;;) {
-            try{
-                Communication.C2S client2server = readMessage(Communication.C2S.parser());
-                Communication.S2C server2client;
-                if (client2server.hasRequest())
-                    server2client = algorithmsHandler.handleRequest(client2server.getRequest());
-                else if (client2server.hasReport())
-                    server2client = algorithmsHandler.handleReport(client2server.getReport());
-                else{
-                    if (!client2server.getFinish())
-                        logger.error(String.format("got empty c2s message from client %s, closing connection", clientName));
+        if (login()) {
+            final ReportHandler reportHandler = new ReportHandler(clientId, db);
+            final RequestHandler requestHandler = new RequestHandler(clientId, algorithms, db);
+            for(;;) {
+                try{
+                    Communication.C2S client2server = readMessage(Communication.C2S.parser());
+                    if (client2server.hasRequest())
+                        sendMessage(requestHandler.handle(client2server.getRequest()));
+                    else if (client2server.hasReport())
+                        sendMessage(reportHandler.handle(client2server.getReport()));
+                    else if (client2server.hasFeedback())
+                        reportHandler.handleFeedback(client2server.getFeedback());
+                    else{
+                        if (!client2server.getFinish())
+                            logger.error(String.format("got empty c2s message from client %d, closing connection", clientId));
+                        break;
+                    }
+                } catch (IOException e) {
+                    logger.error(String.format("communication with client %d failed", clientId), e);
                     break;
+                } catch (Throwable e) {
+                    logger.error("Client " + clientId + "was interrupted", e);
                 }
-                logger.info(String.format("sending s2c=%s to client=%s", server2client, clientName));
-                sendMessage(server2client);
-            } catch (IOException e) {
-                logger.error(String.format("communication with client %s failed", clientName), e);
-                break;
             }
         }
         close();
     }
 
+    private boolean login() {
+        boolean loggedIn = false;
+        while (!loggedIn) {
+            try {
+                Communication.C2S client2server = readMessage(Communication.C2S.parser());
+                Communication.S2C.Response.Builder response = getFailureResponse();
+                if (client2server.getFinish()) {
+                    logger.warn("client decided to close during login");
+                    return false;
+                }
+                if (client2server.hasLogin()) {
+                    Communication.C2S.Login login = client2server.getLogin();
+                    logger.info("Client " + login.getClientId() + " attempts to login");
+                    if (db.getUserPassword(login.getClientId()).equals(login.getPassword())) {
+                        loggedIn = true;
+                        clientId = login.getClientId();
+                        response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
+                    }
+                }
+                sendMessage(Communication.S2C.newBuilder().setResponse(response).build());
+            } catch (IOException e) {
+                logger.error("Login failed, exiting...");
+                break;
+            }
+        }
+        return loggedIn;
+    }
+
     public void close() {
-        connectedClients.decrementAndGet();
         if (socket == null) {
             try {
                 closeStreams();
@@ -61,7 +99,7 @@ public class ClientHandler extends Communicator implements Runnable {
             }
         }
         else {
-            logger.info(String.format("closing connection with client %s", clientName));
+            logger.info(String.format("closing connection with client %d", clientId));
             try {
                 socket.close();
             } catch (IOException e) {
@@ -69,6 +107,11 @@ public class ClientHandler extends Communicator implements Runnable {
                         socket.getRemoteSocketAddress()), e);
             }
         }
+    }
+
+    protected static Communication.S2C.Response.Builder getFailureResponse() {
+        return Communication.S2C.Response.newBuilder()
+                .setStatusCode(Communication.S2C.Response.Status.FAILURE);
     }
 
 }

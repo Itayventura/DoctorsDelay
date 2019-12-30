@@ -1,62 +1,141 @@
-import org.junit.After;
-import org.junit.Before;
+import algorithms.Algorithms;
+import algorithms.AlgorithmsImpl;
+import estimation.DelayEstimation;
+import estimation.HttpCommunications;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.time.LocalDateTime;
-import java.util.List;
-
-import static org.junit.Assert.*;
-
 
 public class AlgorithmsImplTest
 {
-/*    @Test
-    public void buildModelWithPyhtonInterpreter()
+    @Test
+    public void isModelAlreadyExist_modelNotExist_false()
     {
-        algorithms.AlgorithmsImpl algorithms = new algorithms.AlgorithmsImpl();
-
-        try
-        {
-            algorithms.getEstimatedDelay("Dulitel", LocalDateTime.now());
-        }
-        catch (algorithms.Algorithms.AlgorithmException e)
-        {
-            fail();
-        }
-    }*/
-
-    /*public class DataBaseMock implements DataBase
-    {
-
-        algorithms.AlgorithmsImpl algorithms = new algorithms.AlgorithmsImpl(new DataBaseMock());
-
-        @Override
-        public List<DelayReport> getReports(String doctorsName, LocalDateTime startTime, LocalDateTime endTime) {
-            return null; //TODO - implement silly mocker
-        }
-
-        @Override
-        public boolean doctorExists(String doctorsName) {
-            return false; //TODO - implement silly mocker
-        }
-
-        @Override
-        public void addReport(String doctorsName, int expectedDelay) {
-            //TODO - implement silly mocker
-        }
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunications());
+        String notExistsPath = "src\\main\\";
+        Assert.assertFalse(algorithms.isModelAlreadyExist(notExistsPath));
     }
 
     @Test
-    public void test() {
-        System.out.println("yay it works!");
-    }*/
+    public void isModelAlreadyExist_modelExist_true()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        String existsPath = "scripts\\model.pkl";
+        Assert.assertTrue(algorithms.isModelAlreadyExist(existsPath));
+    }
+
+    @Test
+    public void shouldModelBeUpdated_modelShouldBeUpdated_true()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        Assert.assertTrue(algorithms.shouldModelBeUpdated(
+                LocalDateTime.of(1991, 1, 1, 12, 0, 0)));
+    }
+
+    @Test
+    public void shouldModelBeUpdated_modelShouldBeUpdated_false()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        Assert.assertFalse(algorithms.shouldModelBeUpdated(LocalDateTime.now()));
+    }
+
+    @Test
+    public void checkRequestValidation_DoctorExist_ValidTime_NoExceptionThrown() throws Exception
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        try
+        {
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().plusMinutes(60));
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void checkRequestValidation_DoctorNotExist_AlgorithmExceptionThrown()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        try
+        {
+            algorithms.checkRequestValidation("Shuki", LocalDateTime.now().plusMinutes(60));
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.assertEquals(e.getReason(), Algorithms.AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
+        }
+    }
+
+    @Test
+    public void checkRequestValidation_InvalidTime_passedTime_AlgorithmExceptionThrown()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        try
+        {
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().minusMinutes(60));
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.assertEquals(e.getReason(), Algorithms.AlgorithmException.Reason.INVALID_TIME_REQUEST);
+        }
+    }
+
+    @Test
+    public void checkRequestValidation_InvalidTime_earlyTime_AlgorithmExceptionThrown()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        try
+        {
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().minusHours(7));
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.assertEquals(e.getReason(), Algorithms.AlgorithmException.Reason.INVALID_TIME_REQUEST);
+        }
+    }
+
+    @Test
+    public void checkRequestValidation_InvalidTime_outOfDateTime_AlgorithmExceptionThrown()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        try
+        {
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().plusHours(7));
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.assertEquals(e.getReason(), Algorithms.AlgorithmException.Reason.INVALID_TIME_REQUEST);
+        }
+    }
+
+    @Test
+    public void getEstimatedDelay_AsExpected()
+    {
+        DelayEstimation.EstimationType expectedEstimationType = DelayEstimation.EstimationType.Medium;
+        int expectedAccuracy = 85;
+
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(
+                new DatabaseMocker(),
+                new HttpCommunicationsMocker(expectedEstimationType, expectedAccuracy));
+        try
+        {
+            DelayEstimation estimatedDelay = algorithms.getEstimatedDelay("Shirin", LocalDateTime.now());
+            Assert.assertEquals(estimatedDelay.getTypeRange().getEstimationType(), expectedEstimationType);
+            Assert.assertEquals(estimatedDelay.getEstimationAccuracyPercentage(), expectedAccuracy);
+        }
+        catch (Algorithms.AlgorithmException e)
+        {
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void addReport()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        // TODO
+//        algorithms.addReport();
+    }
 }

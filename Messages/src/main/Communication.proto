@@ -26,7 +26,6 @@ message C2S{
     Report feedback = 3;
     Login login = 4;
     bool finish = 5;
-    int32 client_id = 6;
 }
 
 

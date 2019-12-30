@@ -1,12 +1,14 @@
 import algorithms.Algorithms;
 import algorithms.AlgorithmsImpl;
+import db.DataBase;
 import entities.Appointment;
 import entities.Delay;
 import entities.Doctor;
 import entities.Entity;
+import estimation.DelayEstimation;
 import org.junit.Assert;
 import org.junit.Test;
-import utils.CurrentDelayUtil;
+import current.CurrentDelayUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -26,7 +28,7 @@ public class CurrentDelayTest {
         final List<Delay> delays = Arrays.asList(newDelay(delay, startTime.plusMinutes(10)),
                 newDelay(delay, startTime.plusMinutes(70)),
                 newDelay(delay, startTime.plusMinutes(130)));
-        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(delays));
+        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(delays), null);
         DelayEstimation delayEstimation = algorithms.getCurrentDelay(DOCTOR);
         Assert.assertEquals(15, delayEstimation.getTypeRange().getMaximalDelay());
         Assert.assertEquals(33, delayEstimation.getEstimationAccuracyPercentage());
@@ -34,13 +36,13 @@ public class CurrentDelayTest {
 
     @Test
     public void testCurrentDelayNoDoctor() {
-        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(Collections.emptyList()));
+        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(Collections.emptyList()), null);
         Assert.assertThrows(Algorithms.AlgorithmException.class, () -> algorithms.getCurrentDelay("NO_DOCTOR"));
     }
 
     @Test
     public void testCurrentDelayNoDelays() {
-        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(Collections.emptyList()));
+        final Algorithms algorithms = new AlgorithmsImpl(new DataBaseMocker(Collections.emptyList()), null);
         Assert.assertThrows(Algorithms.AlgorithmException.class, () -> algorithms.getCurrentDelay(DOCTOR));
     }
 
@@ -110,7 +112,7 @@ public class CurrentDelayTest {
         return new Delay(delay, timestampFormat.format(timestamp), Entity.Type.USER);
     }
 
-    private class DataBaseMocker implements DataBase{
+    private class DataBaseMocker implements DataBase {
         private List<Delay> delays;
 
         private DataBaseMocker(List<Delay> delays) {

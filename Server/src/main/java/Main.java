@@ -1,20 +1,19 @@
 import algorithms.AlgorithmsImpl;
+import db.DataBaseImpl;
 import org.apache.commons.cli.*;
 
 import java.io.IOException;
 
 /**
- * The heart of the server.
- * Listens to a socket and accepts client (on a new Thread)
- * Reads a C2S message, parses and handles. sends back the S2C response.
- * Uses Algorithm to set and get information.
+ * A simple API to activate our server.
+ * Use --help to see program arguments.
  */
 
 public class Main {
     private static final String listeningPortArg = "listeningPort";
-    protected static int listeningPort = 80;
+    static int listeningPort = 80;
+    static int numThreads = 4;
     private static final String numThreadsArg = "numThreads";
-    protected static int numThreads = 4;
     private static Options options = createOptions();
 
     public static void main(String[] args){
@@ -31,12 +30,13 @@ public class Main {
                 listeningPort = Integer.parseInt(cmd.getOptionValue(listeningPortArg));
             if (cmd.hasOption(numThreadsArg))
                 numThreads = Integer.parseInt(cmd.getOptionValue(numThreadsArg));
-            server = new Server(listeningPort, numThreads, new AlgorithmsImpl(new DataBaseImpl()), new DataBaseImpl());
+            server = new Server(listeningPort, numThreads);
             server.start();
         } catch (ParseException e) {
             System.out.println("Wrong argument given, use --help, " + e.getMessage());
-        } catch (IOException e) {
-            server.stop();
+        } catch (Exception e) {
+            if (server != null)
+                server.stop();
             System.out.println("Server failed, " + e.getMessage());
         }
     }

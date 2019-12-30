@@ -11,9 +11,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.externals import joblib
 
 
-path = r"C:\Users\shiranpilas\Desktop\shiran\Doctor shiran.csv"
-model_path = r"C:\Users\shiranpilas\Desktop\shiran\model.pkl"
-
+path = r"doctors_report.csv"
+model_path = r"model.pkl"
+model_columns_path = r"model_columns.pkl"
 
 def one_hot_creation(data, categorical_variables,numeric_variables,label_variables):
     #Creating one-hot columns for all categorial variables.
@@ -74,7 +74,7 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
     if(number_of_possible_predicted_class > 1):
         #Build SVM linear classifier.
         from sklearn.svm import SVC
-        svm_linear = SVC(kernel='linear')
+        svm_linear = SVC(kernel='linear',decision_function_shape='ovr', break_ties=True)
         
         #Learn and build the model.
         svm_linear.fit(X_train, y_train)
@@ -118,7 +118,7 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
         
         
         #Build SVM rbf classifier.
-        svm_rbf = SVC(kernel='rbf', random_state=0, gamma= 100, C=1)
+        svm_rbf = SVC(kernel='rbf', random_state=0, gamma= 0.0001, C=1000)
 
         #Learn and build the model.
         svm_rbf.fit(X_train, y_train)
@@ -197,7 +197,7 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
 #    print(classification_report(y_test,y_pred))
 #    print()
 
-    #return svm_linear
+    return svm_linear, testing_set_accuracy_linear_svm
     
     
 #def reliability_check_data(data):
@@ -207,10 +207,22 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
 #    for row in data:
 #        if 
 #    
-#    
-    
+#
 
-def flow(path):
+
+##def load_model():
+##    model = joblib.load(model_path)
+##    model_columns = joblib.load(model_columns_path)    
+##    print('model and its columns labels were loaded')
+##    return model,model_columns
+  
+
+def save_model(model):
+    joblib.dump(model,model_path)
+    print("model saved")
+
+    
+def flow():
     data = pd.read_csv(path, header=None)
     print("Reading csv file done")
     is_exist_feedbacks = 0
@@ -241,7 +253,8 @@ def flow(path):
 
     #Random examples in data set.
     data = data.sample(frac = 1)
-
+    print("before calling one_hot_creation")
+    
     #Creating one-hot columns for all categorial variables.
     data = one_hot_creation(data,categorical_variables,numeric_variables,label_variables)
       
@@ -254,42 +267,16 @@ def flow(path):
     #spliting data consider feedback reports in training data.
     X_train,X_test,y_train,y_test = spliting_data(data,is_exist_feedbacks)
     
+    #save lables of x_train culomns for future prediction.
+    model_columns = list(X_train.columns)
+    joblib.dump(model_columns, 'model_columns.pkl')
+    ['model_columns.pkl']
+    
     #build appropriate model.
-    model = search_and_build_model(X_train,X_test,y_train,y_test,number_of_possible_predicted_class)
+    model,accuracy = search_and_build_model(X_train,X_test,y_train,y_test,number_of_possible_predicted_class)
     
     #save model for future use.
     save_model(model)
 
+    return accuracy
 
-def predict(path_request):
-    
-    request = pd.read_csv(path_request, header=None)
-    request = request.drop(request.index[0])
-    request.columns = ['Doctor\'s name' ,'TypeReport','month', 'day', 'hour', 'minutes' ]
-    
-    #Specifying data types.
-    categorical_variables = ['Doctor\'s name','TypeReport','month', 'day']
-    numeric_variables = ['hour','minutes']
-    
-    for variable in numeric_variables:
-        request[variable] = request[variable].astype(np.int64)
-    
-    request = one_hot_creation(request,categorical_variables,numeric_variables,label_variables)
-
-    
-    request_vectore = request ###########TODO###########
-    model = load_model()
-    y_pred = model.predict(request_vectore)
-    return y_pred
-    
-def load_model():
-    model = joblib.load(model_path)
-    print('model loaded')
-    return model
-    
-def save_model(model):
-    joblib.dump(model,model_path)
-    print("model saved")
-
-
-flow(path)
