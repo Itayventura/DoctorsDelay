@@ -1,16 +1,21 @@
 import org.apache.log4j.Logger;
 
-import java.io.File;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class AlgorithmsImpl implements Algorithms {
     private static final Logger logger = Logger.getLogger(AlgorithmsImpl.class);
-    private static LocalDateTime lastModelUpdatedTime = LocalDateTime.now();
+    private static LocalDateTime lastModelUpdatedTime;
     protected static double accuracy_model = 0;
 
     private final String MODEL_PATH = "scripts\\model.pkl";
+    private final String CSV_PATH = "scripts\\doctorsReports.csv";
+    private final String MODEL_DETAILS_PATH = "ModelDetailsFile.txt";
     private DataBase db;
     private ModelHandler httpCom;
 
@@ -19,17 +24,14 @@ public class AlgorithmsImpl implements Algorithms {
      */
     public AlgorithmsImpl(DataBase db, ModelHandler httpCom)
     {
-        logger.info("Algorithms is initialized with db=" + db.getClass().getName());
+        logger.info("Algorithms is initialized with db= " + db.getClass().getName());
 
         this.db = db;
         this.httpCom = httpCom;
-    }
 
-    @Override
-    public int getCurrentDelay(String doctorsName) throws AlgorithmException
-    {
-        return 0;
-        // TODO.
+        ModelDetails modelDetails = getModelDetailsFromFile(MODEL_DETAILS_PATH);
+        lastModelUpdatedTime = modelDetails.getLastModelUpdatedTime();
+        accuracy_model = modelDetails.getModelAccuracy();
     }
 
     @Override
@@ -37,7 +39,12 @@ public class AlgorithmsImpl implements Algorithms {
     {
         if (!isModelAlreadyExist(MODEL_PATH) || shouldModelBeUpdated(this.lastModelUpdatedTime))
         {
+            PrepareData prepareData = new PrepareData();
+            prepareData.createCSVFileDoctorsReports(CSV_PATH, db);
+
             accuracy_model = httpCom.BuildModel();
+
+            saveModelDetailsIntoFile(accuracy_model, LocalDateTime.now(),MODEL_DETAILS_PATH);
             logger.debug("Python script run and build successfully a model in" + MODEL_PATH);
         }
 
@@ -78,33 +85,40 @@ public class AlgorithmsImpl implements Algorithms {
 
     protected Boolean shouldModelBeUpdated(LocalDateTime lastModelUpdatedTime)
     {
-        // TODO ask Itay if it is possbile.
-        // DB implementation support.
-        Duration lastUpdatedTimeDuration = Duration.between(LocalDateTime.now().minusMonths(1), lastModelUpdatedTime);
+        Boolean shouldUpdate = true;
 
-        Boolean shouldUpdate = lastUpdatedTimeDuration.isNegative();
-        if (shouldUpdate)
+        try
         {
-            logger.debug("Model should be updated");
+            if(lastModelUpdatedTime != null)
+            {
+                Duration lastUpdatedTimeDuration = Duration.between(LocalDateTime.now().minusMonths(1), lastModelUpdatedTime);
+                shouldUpdate = lastUpdatedTimeDuration.isNegative();
+            }
+            else
+            {
+                shouldUpdate = true;
+            }
         }
-        else
+        finally
         {
-            logger.debug("Model is up to date");
+            if (shouldUpdate)
+            {
+                logger.debug("Model should be updated");
+            }
+            else
+            {
+                logger.debug("Model is up to date");
+            }
+
+            return shouldUpdate;
         }
-
-        return shouldUpdate;
-
-        // Simple implementation.
-        //return LocalDateTime.now().getDayOfMonth() == 1;
     }
 
     protected void checkRequestValidation(String doctorName, LocalDateTime meetingDateTime) throws AlgorithmException
     {
         Duration duration = Duration.between(LocalDateTime.now(), meetingDateTime);
 
-        if(duration.isNegative()
-                || Duration.between(db.getDoctor(doctorName).getStartTime(), meetingDateTime).isNegative()
-                || Duration.between(meetingDateTime, db.getDoctor(doctorName).getEndTime()).isNegative())
+        if(isMeetingTimePassed(duration) || isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
         {
             logger.debug("Invalid data time: Prediction request time has passed.");
             throw new AlgorithmException(AlgorithmException.Reason.INVALID_TIME_REQUEST);
@@ -117,6 +131,71 @@ public class AlgorithmsImpl implements Algorithms {
         }
     }
 
+    protected Boolean isMeetingTimePassed(Duration duration)
+    {
+        return duration.isNegative();
+    }
+
+    protected Boolean isMeetingTimeInDoctorWorkRange(String doctorName, LocalDateTime meetingDateTime)
+    {
+        return !(Duration.between(db.getDoctor(doctorName).getStartTime(), meetingDateTime.toLocalTime()).isNegative()
+               || Duration.between(meetingDateTime.toLocalTime(), db.getDoctor(doctorName).getEndTime()).isNegative());
+    }
+
+    protected void saveModelDetailsIntoFile(double accuracy, LocalDateTime lastModelUpdatedTime, String modelDetailsPathFile)
+    {
+        try
+        {
+            File file = new File(modelDetailsPathFile);
+            if(file.exists())
+            {
+                file.delete();
+            }
+
+            file.createNewFile();
+            FileWriter writer = new FileWriter(file);
+            writer.write(accuracy + ";" + lastModelUpdatedTime.format(DateTimeFormatter.ISO_DATE_TIME));
+            writer.flush();
+            writer.close();
+            logger.debug("Created model details file in: " + modelDetailsPathFile);
+        }
+        catch (IOException ex)
+        {
+            logger.error("Error: could not save model details to file");
+        }
+    }
+
+    protected ModelDetails getModelDetailsFromFile(String modelDetailsPathFile)
+    {
+        LocalDateTime lastModelUpdatedTime = null;
+        double accuracy = 0;
+
+        File file = new File(modelDetailsPathFile);
+        if(file.exists())
+        {
+            try
+            {
+                List<String> lines = Files.readAllLines(file.toPath(), Charset.defaultCharset());
+                for(String line : lines)
+                {
+                    String[] res = line.split(";");
+                    accuracy = Double.parseDouble(res[0]);
+                    lastModelUpdatedTime = LocalDateTime.parse(res[1], DateTimeFormatter.ISO_DATE_TIME);
+                }
+            }
+            catch (IOException ex)
+            {
+                logger.debug("Cannot read file. Exception: " + ex.getMessage());
+            }
+        }
+        else
+        {
+            logger.debug("File not exist, creating default details");
+        }
+
+        return new ModelDetails(lastModelUpdatedTime, accuracy);
+    }
+
     @Override
     public void addReport(String doctorsName, int reportedDelay, ReporterType type) throws AlgorithmException
     {
@@ -127,5 +206,12 @@ public class AlgorithmsImpl implements Algorithms {
     public void addReportByNumber(String doctorsName, int appointmentNumber) throws AlgorithmException
     {
         //TODO (maybe) insert type of reporter(user,feedback,expert)
+    }
+
+    @Override
+    public int getCurrentDelay(String doctorsName) throws AlgorithmException
+    {
+        return 0;
+        // TODO.
     }
 }

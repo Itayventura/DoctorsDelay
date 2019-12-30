@@ -1,7 +1,7 @@
-import entities.Delay;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.time.LocalDateTime;
 
 public class AlgorithmsImplTest
@@ -80,12 +80,12 @@ public class AlgorithmsImplTest
     }
 
     @Test
-    public void checkRequestValidation_InvalidTime_earlyTime_AlgorithmExceptionThrown()
+    public void checkRequestValidation_InvalidTime_EarlyTime_AlgorithmExceptionThrown()
     {
         AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
         try
         {
-            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().minusHours(7));
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().plusHours(7));
         }
         catch (Algorithms.AlgorithmException e)
         {
@@ -118,7 +118,7 @@ public class AlgorithmsImplTest
                 new HttpCommunicationsMocker(expectedEstimationType, expectedAccuracy));
         try
         {
-            DelayEstimation estimatedDelay = algorithms.getEstimatedDelay("Shirin", LocalDateTime.now());
+            DelayEstimation estimatedDelay = algorithms.getEstimatedDelay("Dolittle", LocalDateTime.now().plusMinutes(30));
             Assert.assertEquals(estimatedDelay.getTypeRange().getEstimationType(), expectedEstimationType);
             Assert.assertEquals(estimatedDelay.getEstimationAccuracyPercentage(), expectedAccuracy);
         }
@@ -126,6 +126,56 @@ public class AlgorithmsImplTest
         {
             Assert.fail();
         }
+    }
+
+    @Test
+    public void saveModelDetailsIntoFile_createdFile_NoErrors()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        String tempModelDetailsFilePath = "testFile.txt";
+
+        File file = new File(tempModelDetailsFilePath);
+        if(file.exists())
+        {
+            file.delete();
+        }
+
+        algorithms.saveModelDetailsIntoFile(45.3,LocalDateTime.now(), tempModelDetailsFilePath);
+        if(!file.exists())
+        {
+            Assert.fail();
+        }
+        else
+        {
+            file.delete();
+        }
+    }
+
+    @Test
+    public void getModelDetailsFromFile_NoFileExist_DefaultModelDetailsValues()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        ModelDetails modelDetails = algorithms.getModelDetailsFromFile("not-a-real-path");
+        Assert.assertEquals(modelDetails.getModelAccuracy(), 0, 0);
+        Assert.assertNull(modelDetails.getLastModelUpdatedTime());
+    }
+
+    @Test
+    public void getModelDetailsFromFile_FileExist_RightModelDetailsValues()
+    {
+        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
+        String tempModelDetailsFilePath = "tempModelDetails.txt";
+
+        LocalDateTime expectedTime = LocalDateTime.of(1994, 07, 28, 12, 05, 00);
+        double expectedAccuracy = 62.88;
+        algorithms.saveModelDetailsIntoFile(expectedAccuracy, expectedTime, tempModelDetailsFilePath);
+        ModelDetails modelDetails = algorithms.getModelDetailsFromFile(tempModelDetailsFilePath);
+
+        Assert.assertEquals(expectedTime, modelDetails.getLastModelUpdatedTime());
+        Assert.assertEquals(expectedAccuracy, modelDetails.getModelAccuracy(), 0);
+
+        File file = new File(tempModelDetailsFilePath);
+        file.delete();
     }
 
     @Test
