@@ -1,3 +1,8 @@
+import algorithms.Algorithms;
+import algorithms.AlgorithmsImpl;
+import estimation.DelayEstimation;
+import estimation.HttpCommunications;
+import estimation.ModelDetails;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -176,13 +181,5 @@ public class AlgorithmsImplTest
 
         File file = new File(tempModelDetailsFilePath);
         file.delete();
-    }
-
-    @Test
-    public void addReport()
-    {
-        AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
-        // TODO
-//        algorithms.addReport();
     }
 }

@@ -1,6 +1,7 @@
 import entities.Delay;
 import entities.Doctor;
 import entities.Entity;
+import estimation.PrepareData;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +12,7 @@ import java.time.LocalTime;
 public class PrepareDataTest
 {
     @Test
-    public void createCSVFileDoctorsReports_csvFileCreated_with19rows_csvFileExist()
+    public void createCSVFileDoctorsReports_csvFileCreated_withExpectedRowsNumber_csvFileExist()
     {
         String csvPath = "scripts/doctorsReports.csv";
         PrepareData prepareData = new PrepareData();

@@ -1,5 +1,8 @@
+import estimation.DelayEstimation;
 import org.junit.Assert;
 import org.junit.Test;
+import estimation.HttpCommunications;
+
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.fail;
