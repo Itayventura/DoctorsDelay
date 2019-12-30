@@ -44,7 +44,7 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertTrue(prepareData.checkValidationOfReport(delay1,doctor,lastExpertReport));
+        Assert.assertTrue(prepareData.ValidateReport(delay1,doctor,lastExpertReport));
     }
 
 
@@ -56,7 +56,7 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertFalse(prepareData.checkValidationOfReport(delay2,doctor,lastExpertReport));
+        Assert.assertFalse(prepareData.ValidateReport(delay2,doctor,lastExpertReport));
     }
 
 
@@ -68,7 +68,7 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertTrue(prepareData.checkValidationOfReport(delay3,doctor,lastExpertReport));
+        Assert.assertTrue(prepareData.ValidateReport(delay3,doctor,lastExpertReport));
     }
 
 
@@ -80,7 +80,7 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertTrue(prepareData.checkValidationOfReport(delay4,doctor,lastExpertReport));
+        Assert.assertTrue(prepareData.ValidateReport(delay4,doctor,lastExpertReport));
     }
 
 
@@ -92,7 +92,7 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertFalse(prepareData.checkValidationOfReport(delay5,doctor,lastExpertReport));
+        Assert.assertFalse(prepareData.ValidateReport(delay5,doctor,lastExpertReport));
     }
 
     @Test
@@ -103,6 +103,6 @@ public class PrepareDataTest
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
         Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
 
-        Assert.assertFalse(prepareData.checkValidationOfReport(delay6,doctor,lastExpertReport));
+        Assert.assertFalse(prepareData.ValidateReport(delay6,doctor,lastExpertReport));
     }
 }

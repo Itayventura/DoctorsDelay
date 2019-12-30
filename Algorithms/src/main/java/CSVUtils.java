@@ -48,10 +48,8 @@ public class CSVUtils {
 
             first = false;
         }
+
         sb.append("\n");
         w.append(sb.toString());
-
-
     }
-
 }

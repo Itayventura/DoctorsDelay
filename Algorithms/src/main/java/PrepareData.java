@@ -33,7 +33,7 @@ public class PrepareData
                         lastExpertReport = reportDelay;
                     }
 
-                    if(checkValidationOfReport(reportDelay, doctor, lastExpertReport))
+                    if(ValidateReport(reportDelay, doctor, lastExpertReport))
                     {
                         List<String> rowInCSV = new ArrayList<>();
 
@@ -61,14 +61,14 @@ public class PrepareData
         }
     }
 
-    protected boolean checkValidationOfReport(Delay reportDelay, Doctor doctor, Delay lastExpertReport)
+    protected boolean ValidateReport(Delay reportDelay, Doctor doctor, Delay lastExpertReport)
     {
        // reported timestamp is after the doctor start to work.
         Duration duration = Duration.between(doctor.getStartTime(), reportDelay.getReportTimestamp().toLocalTime());
 
         if(duration.isNegative())
         {
-            logger.debug("report is not reliable: timestamp is before the doctor started his day work");
+            logger.debug("Report is not reliable: timestamp is before the doctor started his day work");
             return false;
         }
 
@@ -76,11 +76,11 @@ public class PrepareData
         long max = lastExpertReport.getReportedDelay() + Duration.between(lastExpertReport.getReportTimestamp(),reportDelay.getReportTimestamp()).toMinutes();
         if(reportDelay.getReportedDelay() > max || reportDelay.getReportedDelay() < 0)
         {
-            logger.debug("report is not reliable: delay reported is too large or invalid(negative)");
+            logger.debug("Report is not reliable: delay reported is too large or invalid(negative)");
             return false;
         }
 
-        logger.debug("report is reliable");
+        logger.debug("Report is reliable");
         return true;
     }
 }
