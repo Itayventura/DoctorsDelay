@@ -4,6 +4,7 @@ import estimation.DelayEstimation;
 import estimation.HttpCommunications;
 import estimation.ModelDetails;
 import org.junit.Assert;
+
 import org.junit.Test;
 
 import java.io.File;

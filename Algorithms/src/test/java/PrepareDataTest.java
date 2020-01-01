@@ -17,7 +17,7 @@ public class PrepareDataTest
         String csvPath = "scripts/doctorsReports.csv";
         PrepareData prepareData = new PrepareData();
         prepareData.createCSVFileDoctorsReports(csvPath, new DatabaseMocker());
-        int expectedLines = 22;
+        int expectedLines = 19;
 
         try
         {
@@ -41,9 +41,9 @@ public class PrepareDataTest
     public void checkValidationOfReport_ValidTime_1_true()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay1 = new Delay(20, LocalDateTime.now().plusMinutes(12).toString(), Entity.Type.USER);
+        Delay delay1 = new Delay(20, LocalDateTime.now().plusMinutes(12).format(Delay.formatter), Entity.Type.USER);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
 
         Assert.assertTrue(prepareData.ValidateReport(delay1,doctor,lastExpertReport));
     }
@@ -53,9 +53,9 @@ public class PrepareDataTest
     public void checkValidationOfReport_InvalidTime_2_false()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay2 = new Delay(50, LocalDateTime.now().plusMinutes(12).toString(), Entity.Type.USER);
+        Delay delay2 = new Delay(50, LocalDateTime.now().plusMinutes(12).format(Delay.formatter), Entity.Type.USER);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
 
         Assert.assertFalse(prepareData.ValidateReport(delay2,doctor,lastExpertReport));
     }
@@ -65,9 +65,9 @@ public class PrepareDataTest
     public void checkValidationOfReport_ValidTime_3_true()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay3 = new Delay(5, LocalDateTime.now().plusMinutes(15).toString(), Entity.Type.FEEDBACK);
+        Delay delay3 = new Delay(5, LocalDateTime.now().plusMinutes(15).format(Delay.formatter), Entity.Type.FEEDBACK);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
 
         Assert.assertTrue(prepareData.ValidateReport(delay3,doctor,lastExpertReport));
     }
@@ -77,9 +77,9 @@ public class PrepareDataTest
     public void checkValidationOfReport_ValidTime_4_true()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay4 = new Delay(0, LocalDateTime.now().plusMinutes(10).toString(), Entity.Type.USER);
+        Delay delay4 = new Delay(0, LocalDateTime.now().plusMinutes(10).format(Delay.formatter), Entity.Type.USER);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
 
         Assert.assertTrue(prepareData.ValidateReport(delay4,doctor,lastExpertReport));
     }
@@ -89,21 +89,21 @@ public class PrepareDataTest
     public void checkValidationOfReport_InvalidTime_5_false()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay5 = new Delay(-5, LocalDateTime.now().plusMinutes(15).toString(), Entity.Type.USER);
+        Delay delay5 = new Delay(-5, LocalDateTime.now().plusMinutes(15).format(Delay.formatter), Entity.Type.USER);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
 
         Assert.assertFalse(prepareData.ValidateReport(delay5,doctor,lastExpertReport));
     }
 
     @Test
-    public void checkValidationOfReport_InvalidTime_6_false()
+    public void checkValidationOfReport_validTime_6_true()
     {
         PrepareData prepareData = new PrepareData();
-        Delay delay6 = new Delay(20, LocalTime.now().minusHours(8).toString(), Entity.Type.USER);
+        Delay delay6 = new Delay(20, LocalDateTime.now().plusMinutes(8).format(Delay.formatter), Entity.Type.USER);
         Doctor doctor = new Doctor(null,"Dolittle", LocalTime.now().minusHours(5),LocalTime.now().plusHours(5),10);
-        Delay lastExpertReport = new Delay(20, LocalDateTime.now().toString(), Entity.Type.EXPERT);
-
-        Assert.assertFalse(prepareData.ValidateReport(delay6,doctor,lastExpertReport));
+        Delay lastExpertReport = new Delay(20, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT);
+        boolean result = prepareData.ValidateReport(delay6,doctor,lastExpertReport);
+        Assert.assertTrue(result);
     }
 }

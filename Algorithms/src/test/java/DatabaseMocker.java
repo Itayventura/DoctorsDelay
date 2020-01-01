@@ -65,13 +65,13 @@ public class DatabaseMocker implements DataBase {
     public List<Delay> getDelays(String doctorsName) {
         ArrayList<Delay> doctorDelayReports = new ArrayList<Delay>()
         {{
-            add(new Delay(5, LocalDateTime.now().toString(), Entity.Type.EXPERT));
-            add(new Delay(15, LocalDateTime.now().plusMinutes(10).toString(), Entity.Type.USER));
-            add(new Delay(20, LocalDateTime.now().plusMinutes(12).toString(), Entity.Type.USER)); // Not valid
-            add(new Delay(20, LocalDateTime.now().plusMinutes(30).toString(), Entity.Type.USER));
-            add(new Delay(30, LocalDateTime.now().plusMinutes(60).toString(), Entity.Type.EXPERT));
-            add(new Delay(5, LocalDateTime.now().plusMinutes(65).toString(), Entity.Type.USER));
-            add(new Delay(15, LocalDateTime.now().plusMinutes(120).toString(), Entity.Type.EXPERT));
+            add(new Delay(5, LocalDateTime.now().format(Delay.formatter), Entity.Type.EXPERT));
+            add(new Delay(15, LocalDateTime.now().plusMinutes(10).format(Delay.formatter), Entity.Type.USER));
+            add(new Delay(20, LocalDateTime.now().plusMinutes(12).format(Delay.formatter), Entity.Type.USER)); // Not valid
+            add(new Delay(20, LocalDateTime.now().plusMinutes(30).format(Delay.formatter), Entity.Type.USER));
+            add(new Delay(30, LocalDateTime.now().plusMinutes(60).format(Delay.formatter), Entity.Type.EXPERT));
+            add(new Delay(5, LocalDateTime.now().plusMinutes(65).format(Delay.formatter), Entity.Type.USER));
+            add(new Delay(15, LocalDateTime.now().plusMinutes(120).format(Delay.formatter), Entity.Type.EXPERT));
         }};
         return doctorDelayReports;
     }

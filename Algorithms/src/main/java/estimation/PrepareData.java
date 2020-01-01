@@ -3,6 +3,8 @@ package estimation;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,20 +38,19 @@ public class PrepareData
                         lastExpertReport = reportDelay;
                     }
 
-                    if(ValidateReport(reportDelay, doctor, lastExpertReport))
-                    {
-                        List<String> rowInCSV = new ArrayList<>();
-
-                        rowInCSV.add(doctor.getName());
-                        rowInCSV.add(String.valueOf(reportDelay.getReportedDelay()));
-                        rowInCSV.add(reportDelay.getReportType().toString().toLowerCase());
-                        rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getMonth()));
-                        rowInCSV.add(reportDelay.getReportTimestamp().getDayOfWeek().toString());
-                        rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getHour()));
-                        rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getMinute()));
-
-                        CSVUtils.writeLine(writer, rowInCSV);
+                    else if(!ValidateReport(reportDelay, doctor, lastExpertReport)) {
+                        continue;
                     }
+                    List<String> rowInCSV = new ArrayList<>();
+                    rowInCSV.add(doctor.getName());
+                    rowInCSV.add(String.valueOf(reportDelay.getReportedDelay()));
+                    rowInCSV.add(reportDelay.getReportType().toString().toLowerCase());
+                    rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getMonth()));
+                    rowInCSV.add(reportDelay.getReportTimestamp().getDayOfWeek().toString());
+                    rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getHour()));
+                    rowInCSV.add(String.valueOf(reportDelay.getReportTimestamp().getMinute()));
+
+                    CSVUtils.writeLine(writer, rowInCSV);
                 }
             }
 
@@ -66,6 +67,7 @@ public class PrepareData
 
     public boolean ValidateReport(Delay reportDelay, Doctor doctor, Delay lastExpertReport)
     {
+
        // reported timestamp is after the doctor start to work.
         Duration duration = Duration.between(doctor.getStartTime(), reportDelay.getReportTimestamp().toLocalTime());
 

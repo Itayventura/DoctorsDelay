@@ -98,7 +98,7 @@ public class AlgorithmsImpl implements Algorithms {
         }
         catch(AlgorithmException ex)
         {
-            logger.debug("the request details are not valid: " + ex.getMessage());
+            logger.error("the request details are not valid: " + ex.getMessage());
             throw ex;
         }
     }
@@ -162,6 +162,12 @@ public class AlgorithmsImpl implements Algorithms {
 
     public void checkRequestValidation(String doctorName, LocalDateTime meetingDateTime) throws AlgorithmException
     {
+        if(!db.doctorExists(doctorName))
+        {
+            logger.debug("Doctor not exist");
+            throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
+        }
+
         Duration duration = Duration.between(LocalDateTime.now(), meetingDateTime);
 
         if(isMeetingTimePassed(duration) || isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
@@ -170,11 +176,6 @@ public class AlgorithmsImpl implements Algorithms {
             throw new AlgorithmException(AlgorithmException.Reason.INVALID_TIME_REQUEST);
         }
 
-        if(!db.doctorExists(doctorName))
-        {
-            logger.debug("Doctor not exist");
-            throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
-        }
     }
 
     protected Boolean isMeetingTimePassed(Duration duration)
@@ -231,7 +232,7 @@ public class AlgorithmsImpl implements Algorithms {
             }
             catch (IOException ex)
             {
-                logger.debug("Cannot read file. Exception: " + ex.getMessage());
+                logger.error("Cannot read file. Exception: " + ex.getMessage());
             }
         }
         else
