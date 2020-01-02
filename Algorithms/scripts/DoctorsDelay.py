@@ -11,7 +11,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.externals import joblib
 
 
-path = r"doctors_report.csv"
+path = r"doctorsReports.csv"
 model_path = r"model.pkl"
 model_columns_path = r"model_columns.pkl"
 
@@ -70,75 +70,112 @@ def spliting_data(data,is_exist_feedbacks):
     return X_train,X_test,y_train,y_test
 
 
-def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_predicted_class):
-    if(number_of_possible_predicted_class > 1):
-        #Build SVM linear classifier.
-        from sklearn.svm import SVC
-        svm_linear = SVC(kernel='linear',decision_function_shape='ovr', break_ties=True)
-        
-        #Learn and build the model.
-        svm_linear.fit(X_train, y_train)
-        
-        #Predict and print accuracy.
-        y_pred = svm_linear.predict(X_test)
-        
-        training_set_accuracy_linear_svm = svm_linear.score(X_train, y_train)
-        testing_set_accuracy_linear_svm = svm_linear.score(X_test, y_test)
-        
-        #Print classifier performance
-        print('Accuracy of SVM linear classifier on training set: {:.2f}'.format(training_set_accuracy_linear_svm))
-        print('Accuracy of SVM linear classifier on test set: {:.2f}'.format(testing_set_accuracy_linear_svm ))
-        print()
-        
-        print(confusion_matrix(y_test,y_pred))
-        print(classification_report(y_test,y_pred))
-        print()
-        
-        
-#        #Build SVM poly classifier.
-#        svm_poly = SVC(kernel='poly',gamma = 'scale',degree = 3)
-#        
-#        #Learn and build the model.
-#        svm_poly.fit(X_train, y_train)
-#        
-#        #Predict and print accuracy.
-#        y_pred = svm_poly.predict(X_test)
-#        
-#        training_set_accuracy_poly_svm = svm_poly.score(X_train, y_train)
-#        testing_set_accuracy_poly_svm = svm_poly.score(X_test, y_test)
-#        
-#        #Print classifier performance
-#        print('Accuracy of SVM poly classifier on training set: {:.2f}'.format(training_set_accuracy_poly_svm))
-#        print('Accuracy of SVM poly classifier on test set: {:.2f}'.format(testing_set_accuracy_poly_svm ))
-#        print()
-#        
-#        print(confusion_matrix(y_test,y_pred))
-#        print(classification_report(y_test,y_pred))
-#        print()
-        
-        
-        #Build SVM rbf classifier.
-        svm_rbf = SVC(kernel='rbf', random_state=0, gamma= 0.0001, C=1000)
+def calc_our_score(matrix):
 
-        #Learn and build the model.
-        svm_rbf.fit(X_train, y_train)
+    upper_sum = np.triu(matrix).sum()-np.trace(matrix)
+    lower_sum = np.tril(matrix).sum()-np.trace(matrix)
+    diagonal_sum = sum([matrix[i][i] for i in range(0,len(matrix))])
+    our_score = diagonal_sum*15 + upper_sum - lower_sum*5
+
+    return our_score
+
+
+def SVM_linear(X_train,X_test,y_train,y_test):
+
+    #Build SVM linear classifier.
+    from sklearn.svm import SVC
+    svm_linear = SVC(kernel='linear',decision_function_shape='ovr', break_ties=True)
         
-        #Predict and print accuracy.
-        y_pred = svm_rbf.predict(X_test)
+    #Learn and build the model.
+    svm_linear.fit(X_train, y_train)
         
-        training_set_accuracy_rbf_svm = svm_rbf.score(X_train, y_train)
-        testing_set_accuracy_rbf_svm = svm_rbf.score(X_test, y_test)
+    #Predict and print accuracy.
+    y_pred = svm_linear.predict(X_test)
         
-        #Print classifier performance
-        print('Accuracy of SVM rbf classifier on training set: {:.2f}'.format(training_set_accuracy_rbf_svm))
-        print('Accuracy of SVM rbf classifier on test set: {:.2f}'.format(testing_set_accuracy_rbf_svm ))
-        print()
+    training_set_accuracy_linear_svm = svm_linear.score(X_train, y_train)
+    testing_set_accuracy_linear_svm = svm_linear.score(X_test, y_test)
         
-        print(confusion_matrix(y_test,y_pred))
-        print(classification_report(y_test,y_pred))
-        print()
+    #Print classifier performance
+    print('Accuracy of SVM linear classifier on training set: {:.2f}'.format(training_set_accuracy_linear_svm))
+    print('Accuracy of SVM linear classifier on test set: {:.2f}'.format(testing_set_accuracy_linear_svm ))
+    print()
+
+    array = confusion_matrix(y_test,y_pred)
+    print(array)
+    print(classification_report(y_test,y_pred))
+    print()
+
+    our_score_linear_svm = calc_our_score(array)
+    print(our_score_linear_svm)
+
+    return svm_linear,testing_set_accuracy_linear_svm,our_score_linear_svm
+
+
+def SVM_rbf(X_train,X_test,y_train,y_test):
+
+    from sklearn.svm import SVC
+    
+    #Build SVM rbf classifier.
+    svm_rbf = SVC(kernel='rbf', random_state=0, gamma= 0.01, C=100)
+
+    #Learn and build the model.
+    svm_rbf.fit(X_train, y_train)
         
+    #Predict and print accuracy.
+    y_pred = svm_rbf.predict(X_test)
         
+    training_set_accuracy_rbf_svm = svm_rbf.score(X_train, y_train)
+    testing_set_accuracy_rbf_svm = svm_rbf.score(X_test, y_test)
+        
+    #Print classifier performance
+    print('Accuracy of SVM rbf classifier on training set: {:.2f}'.format(training_set_accuracy_rbf_svm))
+    print('Accuracy of SVM rbf classifier on test set: {:.2f}'.format(testing_set_accuracy_rbf_svm ))
+    print()
+
+    array = confusion_matrix(y_test,y_pred)
+    print(array)
+    print(classification_report(y_test,y_pred))
+    print()
+
+    our_score_rbf_svm = calc_our_score(array)
+    print(our_score_rbf_svm)
+
+    return svm_rbf,testing_set_accuracy_rbf_svm,our_score_rbf_svm
+
+
+def SVM_poly(X_train,X_test,y_train,y_test):
+
+    from sklearn.svm import SVC
+            
+    #Build SVM poly classifier.
+    svm_poly = SVC(kernel='poly',gamma = 'scale',degree = 3)
+        
+    #Learn and build the model.
+    svm_poly.fit(X_train, y_train)
+        
+    #Predict and print accuracy.
+    y_pred = svm_poly.predict(X_test)
+        
+    training_set_accuracy_poly_svm = svm_poly.score(X_train, y_train)
+    testing_set_accuracy_poly_svm = svm_poly.score(X_test, y_test)
+        
+    #Print classifier performance
+    print('Accuracy of SVM poly classifier on training set: {:.2f}'.format(training_set_accuracy_poly_svm))
+    print('Accuracy of SVM poly classifier on test set: {:.2f}'.format(testing_set_accuracy_poly_svm ))
+    print()
+        
+    print(matrix = confusion_matrix(y_test,y_pred))
+    print(classification_report(y_test,y_pred))
+    print()
+
+    our_score_poly_svm = calc_our_score(matrix)
+    print(our_score_poly_svm)
+
+    return svm_poly,testing_set_accuracy_poly_svm,our_score_poly_svm
+
+
+def random_forest(X_train,X_test,y_train,y_test):
+            
     from sklearn.ensemble import RandomForestClassifier
     
     #Build RandomForest classifier.
@@ -156,66 +193,48 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
     print('Accuracy of Random Forest classifier on training set: {:.2f}'.format(training_set_accuracy_random_forest))
     print('Accuracy of Random Forest classifier on test set: {:.2f}'.format(testing_set_accuracy_random_forest ))
     print()
-    
-    print(confusion_matrix(y_test,y_pred))
+
+    array = confusion_matrix(y_test,y_pred)
+    print(array)
     print(classification_report(y_test,y_pred))
     print()
-    
-    
-#    from sklearn.discriminant_analysis import LinearDiscriminantAnalysis,QuadraticDiscriminantAnalysis
-#    clf = LinearDiscriminantAnalysis(solver='svd')
-#    #clf= QuadraticDiscriminantAnalysis()
-#    clf.fit(X_train, y_train)
-#    y_pred = clf.predict(X_test)
-#    
-#    training_set_accuracy_clf = clf.score(X_train, y_train)
-#    testing_set_accuracy_clf = clf.score(X_test, y_test)
-#    
-#    print('Accuracy of clf classifier on training set: {:.2f}'.format(training_set_accuracy_clf))
-#    print('Accuracy of clf classifier on test set: {:.2f}'.format(testing_set_accuracy_clf ))
-#    print()
-#    
-#    print(confusion_matrix(y_test,y_pred))
-#    print(classification_report(y_test,y_pred))
-#    print()
-    
-    
-##    
-    
-#    from sklearn.naive_bayes import GaussianNB
-#    nb = GaussianNB()
-#    nb.fit(X_train, y_train)
-#    y_pred = nb.predict(X_test)
-#    training_set_accuracy_nb = nb.score(X_train, y_train)
-#    testing_set_accuracy_nb = nb.score(X_test, y_test)
-#    
-#    print('Accuracy of Naivy Bias classifier on training set: {:.2f}'.format(training_set_accuracy_nb))
-#    print('Accuracy of Random Forest classifier on test set: {:.2f}'.format(testing_set_accuracy_nb ))
-#    print()
-#    
-#    print(confusion_matrix(y_test,y_pred))
-#    print(classification_report(y_test,y_pred))
-#    print()
 
-    return svm_linear, testing_set_accuracy_linear_svm
+    our_score_random_forest = calc_our_score(array)
+    print(our_score_random_forest)
     
-    
-#def reliability_check_data(data):
-#    
-#    
-#    data[data['TypeReport']=='expert']
-#    for row in data:
-#        if 
-#    
-#
+
+    return random_forest_classifier,testing_set_accuracy_random_forest, our_score_random_forest
 
 
-##def load_model():
-##    model = joblib.load(model_path)
-##    model_columns = joblib.load(model_columns_path)    
-##    print('model and its columns labels were loaded')
-##    return model,model_columns
-  
+def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_predicted_class):
+
+    if(number_of_possible_predicted_class > 1):
+        
+        svm_linear,testing_set_accuracy_linear_svm,our_score_linear_svm = SVM_linear(X_train,X_test,y_train,y_test)
+        
+        svm_rbf,testing_set_accuracy_rbf_svm,our_score_rbf_svm = SVM_rbf(X_train,X_test,y_train,y_test)
+
+        #svm_poly,testing_set_accuracy_poly_svm,our_score_poly_svm = SVM_poly(X_train,X_test,y_train,y_test)
+                
+    random_forest_classifier,testing_set_accuracy_random_forest,our_score_random_forest = random_forest(X_train,X_test,y_train,y_test)
+
+
+    max_score_our = max(our_score_linear_svm,our_score_rbf_svm,our_score_random_forest)
+
+    if(our_score_linear_svm == max_score_our):
+        classifier = svm_linear
+        testing_set_accuracy_model = testing_set_accuracy_linear_svm
+        
+    elif(our_score_rbf_svm == max_score_our):
+        classifier = svm_rbf
+        testing_set_accuracy_model = testing_set_accuracy_rbf_svm
+        
+    else:
+        classifier = random_forest_classifier
+        testing_set_accuracy_model = testing_set_accuracy_random_forest
+        
+    return classifier, testing_set_accuracy_model
+        
 
 def save_model(model):
     joblib.dump(model,model_path)
@@ -279,4 +298,3 @@ def flow():
     save_model(model)
 
     return accuracy
-

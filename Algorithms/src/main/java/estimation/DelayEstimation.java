@@ -1,8 +1,6 @@
 package estimation;
 
-import java.security.InvalidParameterException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class DelayEstimation
 {
@@ -52,5 +50,4 @@ public class DelayEstimation
     {
         return accuracyEstimationPercentage;
     }
-
 }

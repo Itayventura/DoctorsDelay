@@ -143,5 +143,11 @@ public class CurrentDelayTest {
         public int getScore(int userId) { return 0; }
         public Appointment getLastAppointment(int userId) { return null; }
         public void printTable(String tableName) { }
+
+        public List<Doctor> getDoctors(){return null;}
+        public List<Delay> getDelays(String doctorsName){return null;}
     }
+
+
+
 }
