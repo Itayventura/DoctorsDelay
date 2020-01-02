@@ -170,7 +170,7 @@ public class AlgorithmsImpl implements Algorithms {
 
         Duration duration = Duration.between(LocalDateTime.now(), meetingDateTime);
 
-        if(isMeetingTimePassed(duration) || isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
+        if(isMeetingTimePassed(duration) || !isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
         {
             logger.debug("Invalid data time: Prediction request time has passed.");
             throw new AlgorithmException(AlgorithmException.Reason.INVALID_TIME_REQUEST);
