@@ -91,7 +91,7 @@ public class AlgorithmsImplTest
         AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
         try
         {
-            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().plusHours(7));
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().minusHours(7));
         }
         catch (Algorithms.AlgorithmException e)
         {
