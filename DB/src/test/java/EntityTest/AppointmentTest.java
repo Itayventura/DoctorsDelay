@@ -1,7 +1,7 @@
 package EntityTest;
 
 import entities.Appointment;
-//import handlers.Handler;
+import handlers.Handler;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -15,12 +15,12 @@ public class AppointmentTest {
 
     @BeforeClass
     public static void setUpClass(){
-        //Handler.printHeadline("Appointment Test");
+        Handler.printHeadline("Appointment Test");
     }
 
     @Before
     public void setUp(){
-        //Handler.printHeadline("setUp");
+        Handler.printHeadline("setUp");
         System.out.println("localDateTime = Timestamp.valueOf(\"2019-11-26 10:40:32\").toLocalDateTime();\n" +
                 "doctorsName = \"Doctor\";\n");
         appointment_time = "2019-11-26 10:40:32";
@@ -28,7 +28,7 @@ public class AppointmentTest {
     }
     @Test
     public void informativeAppointmentTest() {
-        //Handler.printHeadline("informative Appointment Test");
+        Handler.printHeadline("informative Appointment Test");
 
         System.out.println("patientId = \"123456789\";\n");
         patientId = "123456789";
@@ -46,13 +46,13 @@ public class AppointmentTest {
         Assert.assertEquals(appointment_time, appointment.getAppointmentDateTime().format(Appointment.formatter));
         Assert.assertEquals(patientId, appointment.getPatientId());
         System.out.println("assertions passed successfully");
-        //Handler.printHeadline("informative Appointment Test finished successfully");
+        Handler.printHeadline("informative Appointment Test finished successfully");
 
     }
 
     @Test
     public void compactAppointmentTest() {
-        //Handler.printHeadline("compact Appointment Test");
+        Handler.printHeadline("compact Appointment Test");
         System.out.println("Appointment appointment = new Appointment(localDateTime,doctorsName);");
         Appointment appointment = new Appointment(appointment_time,doctorsName);
 
@@ -67,7 +67,7 @@ public class AppointmentTest {
         Assert.assertEquals(appointment_time, appointment.getAppointmentDateTime().format(Appointment.formatter));
         Assert.assertNull(appointment.getPatientId());
         System.out.println("assertions passed successfully");
-        //Handler.printHeadline("compact Appointment Test finished successfully");
+        Handler.printHeadline("compact Appointment Test finished successfully");
     }
 
 }

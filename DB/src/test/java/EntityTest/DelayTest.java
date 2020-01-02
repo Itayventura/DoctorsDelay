@@ -2,7 +2,7 @@ package EntityTest;
 
 import entities.Delay;
 import entities.Entity;
-//import handlers.Handler;
+import handlers.Handler;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -10,8 +10,8 @@ import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
-//todo make Delay1,2,3 static or attribute
 public class DelayTest {
 
     private int patientID;
@@ -21,13 +21,13 @@ public class DelayTest {
 
     @BeforeClass
     public static void setUpClass(){
-        //Handler.printHeadline("Delay Test");
+        Handler.printHeadline("Delay Test");
 
     }
 
     @Before
     public void setUp(){
-        //Handler.printHeadline("setUp");
+        Handler.printHeadline("setUp");
         System.out.println("patientID = 111111111;\n" +
                 "ts = (\"2016-11-09 10:30:45\");\n" +
                 "delayInMinutes = 16;\n");
@@ -38,7 +38,7 @@ public class DelayTest {
 
     @Test
     public void DelayFirstTest() {
-        //Handler.printHeadline("Delay First Test");
+        Handler.printHeadline("Delay First Test");
 
         System.out.println("type =  Entity.Type.USER;\n" +
                 "Delay delay = new Delay(delayInMinutes,ts, type,patientID);\n");
@@ -57,13 +57,13 @@ public class DelayTest {
         Assert.assertEquals(delayInMinutes, delay.getReportedDelay());
         Assert.assertEquals(patientID, delay.getPatientId());
         Assert.assertEquals(type, delay.getReportType());
-        //Handler.printHeadline("Delay First Test finished successfully");
+        Handler.printHeadline("Delay First Test finished successfully");
 
     }
 
     @Test
     public void DelaySecondTest() {
-        //Handler.printHeadline("Delay Second Test");
+        Handler.printHeadline("Delay Second Test");
 
         System.out.println("SimpleDateFormat sdf = new SimpleDateFormat(Delay.TIMESTAMP_FORMAT);\n" +
                 "Timestamp timestamp =  Timestamp.valueOf (\"2016-11-09 10:30:45\");\n" +
@@ -88,14 +88,14 @@ public class DelayTest {
         Assert.assertEquals(delayInMinutes, delay.getReportedDelay());
         Assert.assertEquals(-1, delay.getPatientId());
         Assert.assertEquals(type, delay.getReportType());
-        //Handler.printHeadline("Delay Second Test finished successfully");
+        Handler.printHeadline("Delay Second Test finished successfully");
 
     }
 
 
     @Test
     public void DelayThirdTest() {
-        //Handler.printHeadline("Delay Third Test");
+        Handler.printHeadline("Delay Third Test");
 
         System.out.println("type = Entity.Type.EXPERT;");
         type = Entity.Type.EXPERT;
@@ -114,7 +114,24 @@ public class DelayTest {
         Assert.assertEquals(delayInMinutes, delay.getReportedDelay());
         Assert.assertEquals(patientID, delay.getPatientId());
         Assert.assertEquals(type, delay.getReportType());
-        //Handler.printHeadline("Delay Third Test finished successfully");
+        Handler.printHeadline("Delay Third Test finished successfully");
 
+    }
+
+    @Test
+    public void localDateTimeFormat(){
+
+        System.out.println("LocalDateTime now = LocalDateTime.now();\n" +
+                "System.out.println(now);");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+        System.out.println("\nString timestamp = now.format(Delay.formatter);\n" +
+                "System.out.println(timestamp);");
+        String timestamp = now.format(Delay.formatter);
+        System.out.println(timestamp);
+        System.out.println("\nDelay delay = new Delay(delayInMinutes, timestamp, type);\n" +
+                "System.out.println(delay.toString());\n");
+        Delay delay = new Delay(delayInMinutes, timestamp, type);
+        System.out.println(delay.toString());
     }
 }
