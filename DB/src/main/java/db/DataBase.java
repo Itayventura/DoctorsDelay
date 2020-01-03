@@ -3,6 +3,7 @@ package db;
 import entities.Appointment;
 import entities.Delay;
 import entities.Doctor;
+import entities.Entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -68,11 +69,10 @@ public interface DataBase {
 
     /** adds report with report_type = 'feedback' to data base
      *  @param userId        - the user's identity number
-     * @param doctorsName - the doctor's name
      * @param actualDelay   - the actual delay the user experienced
      */
-    void feedbackOnEstimate(int userId, String doctorsName, int actualDelay);
-
+    void feedbackOnEstimate(int userId, int actualDelay);
+    //todo different from interface
 
     /** adds score added to patient with id userId
      *
@@ -93,6 +93,11 @@ public interface DataBase {
      * @return
      */
     public Appointment getLastAppointment(int userId);
+
+    public List<Doctor> getDoctors();
+
+    public List<Delay> getDelays(String doctorsName);
+
 
     /** prints all records from tableName in database */
     void printTable(String tableName);

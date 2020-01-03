@@ -6,15 +6,23 @@ import java.util.List;
 public class Patient  extends Entity {
     private String personalId;
     private String password;
-    private int score;
-    private Type type;
+    private int score = 0;
+    private Type type = Type.USER;
 
-    public Patient (String personalId, String password, int score, Type type) {
+    /** this constructor serves data handler */
+    public Patient(String personalId, String password){
         this.personalId = personalId;
         this.password = password;
+    }
+
+    /** this constructor serves patients repository. we use this constructor when we select from patients table */
+    public Patient (String personalId, String password, int score, Type type) {
+        this(personalId, password);
         this.score = score;
         this.type = type;
     }
+
+
 
 
     public String getPersonalId() {

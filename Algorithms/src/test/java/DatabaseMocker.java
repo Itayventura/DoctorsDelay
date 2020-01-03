@@ -82,7 +82,7 @@ public class DatabaseMocker implements DataBase {
     }
 
     @Override
-    public void feedbackOnEstimate(int userId, String doctorsName, int actualDelay) {
+    public void feedbackOnEstimate(int userId, int actualDelay) {
 
     }
 

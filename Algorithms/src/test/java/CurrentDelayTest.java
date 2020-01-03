@@ -138,7 +138,12 @@ public class CurrentDelayTest {
         public List<Delay> getDayReport(String doctorsName, LocalDate date) { return null; }
         public List<Appointment> getUserFutureAppointments(int userId) { return null; }
         public String getUserPassword(int userId) { return null; }
-        public void feedbackOnEstimate(int userId, String doctorsName, int actualDelay) { }
+
+        @Override
+        public void feedbackOnEstimate(int userId, int actualDelay) {
+
+        }
+
         public void addScore(int userId, int scoreAdded) { }
         public int getScore(int userId) { return 0; }
         public Appointment getLastAppointment(int userId) { return null; }

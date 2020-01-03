@@ -1,7 +1,7 @@
 package EntityTest;
 
 import entities.Doctor;
-//import handlers.Handler;
+import handlers.Handler;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,12 +12,12 @@ public class DoctorTest {
 
     @BeforeClass
     public static void setUpClass(){
-        //Handler.printHeadline("Doctor Test");
+        Handler.printHeadline("Doctor Test");
     }
 
     @Test
     public void compactDoctorTest() {
-        //Handler.printHeadline("compact Doctor Test");
+        Handler.printHeadline("compact Doctor Test");
 
         System.out.println("\n" +
                 "String doctorsName = \"compact\";\n" +
@@ -39,12 +39,12 @@ public class DoctorTest {
         Assert.assertNull(doctor.getStartTime());
         Assert.assertNull(doctor.getEndTime());
         Assert.assertEquals(-1, doctor.getInterval());
-        //Handler.printHeadline("compact Doctor Test finished successfully");
+        Handler.printHeadline("compact Doctor Test finished successfully");
     }
 
     @Test
     public void informativeDoctorTest() {
-        //Handler.printHeadline("informative Doctor Test");
+        Handler.printHeadline("informative Doctor Test");
 
         System.out.println("String doctorsName = \"informative\";\n" +
                 "String doctorsType = \"family\";\n" +
@@ -73,6 +73,6 @@ public class DoctorTest {
         Assert.assertEquals(startTime, doctor.getStartTime());
         Assert.assertEquals(endTime, doctor.getEndTime());
         Assert.assertEquals(interval, doctor.getInterval());
-        //Handler.printHeadline("informative Doctor Test finished successfully");
+        Handler.printHeadline("informative Doctor Test finished successfully");
     }
 }
