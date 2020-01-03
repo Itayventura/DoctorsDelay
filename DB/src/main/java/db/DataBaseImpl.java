@@ -3,6 +3,7 @@ package db;
 import db.DataBase;
 import entities.*;
 import handlers.*;
+import jdk.nashorn.internal.ir.debug.NashornTextifier;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -25,6 +26,23 @@ public class DataBaseImpl implements DataBase {
     //private static final String mySql = "\\DB\\MySQLServer\\bin\\mysqld"; // for class
     private static final String mySql = "\\MySQLServer\\bin\\mysqld"; // for test
 
+    static {
+        try {
+            mySqlTask = Runtime.getRuntime().exec(System.getProperty("user.dir") + mySql);
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                @Override
+                public void run() {
+                    logger.info("Closing mysql process");
+                    mySqlTask.destroy();
+                }
+            });
+        } catch (IOException e) {
+            String errorMessage = "Couldn't start mysql from path " + System.getProperty("user.dir") + mySql;
+            logger.error(errorMessage, e);
+            throw new RuntimeException("errorMessage", e);
+        }
+    }
+
 
     public DataBaseImpl(){
         appointmentsHandler = new AppointmentsHandler();
@@ -35,14 +53,6 @@ public class DataBaseImpl implements DataBase {
         for (Doctor doctor: doctors) {
             doctorsDelaysHandler.put(doctor.getName(), new DelaysHandler(doctor.getName()));
             System.out.println(doctor.getName());
-        }
-        try {
-            mySqlTask = Runtime.getRuntime().exec(System.getProperty("user.dir") + mySql);
-
-        } catch (IOException e) {
-            String errorMessage = "Couldn't start mysql from path " + System.getProperty("user.dir") + mySql;
-            logger.error(errorMessage, e);
-            throw new RuntimeException("errorMessage", e);
         }
     }
 
@@ -167,7 +177,7 @@ public class DataBaseImpl implements DataBase {
         }
     }
 
-    DelaysHandler getDelayHandler(String doctorsName) {
+    public DelaysHandler getDelayHandler(String doctorsName) {
         return doctorsDelaysHandler.get(doctorsName);
     }
 
