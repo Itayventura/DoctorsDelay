@@ -69,7 +69,7 @@ public class DataBaseMocker implements DataBase {
     }
 
     @Override
-    public void feedbackOnEstimate(int userId, String doctorsName, int actualDelay) {
+    public void feedbackOnEstimate(int userId, int actualDelay) {
 
     }
 
@@ -85,6 +85,16 @@ public class DataBaseMocker implements DataBase {
 
     @Override
     public Appointment getLastAppointment(int userId) {
+        return null;
+    }
+
+    @Override
+    public List<Doctor> getDoctors() {
+        return null;
+    }
+
+    @Override
+    public List<Delay> getDelays(String doctorsName) {
         return null;
     }
 
