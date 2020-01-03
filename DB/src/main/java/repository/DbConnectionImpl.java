@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class DbConnectionImpl{
 
     private static BasicDataSource dataSource;
+    private static DbConnectionImpl instance;
 
     private DbConnectionImpl(){
         BasicDataSource ds = new BasicDataSource();
@@ -26,7 +27,7 @@ public class DbConnectionImpl{
     public static Connection getConnection() throws SQLException
     {
         if (dataSource == null)
-            new DbConnectionImpl();
+            instance = new DbConnectionImpl();
         return dataSource.getConnection();
     }
 

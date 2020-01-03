@@ -1,0 +1,19 @@
+Doctor's name,Delay,TypeReport,Month,Day,Hour,Minutes
+Dolittle,5,expert,JANUARY,FRIDAY,10,39
+Dolittle,15,user,JANUARY,FRIDAY,10,49
+Dolittle,20,user,JANUARY,FRIDAY,11,9
+Dolittle,30,expert,JANUARY,FRIDAY,11,39
+Dolittle,5,user,JANUARY,FRIDAY,11,44
+Dolittle,15,expert,JANUARY,FRIDAY,12,39
+Shiran,5,expert,JANUARY,FRIDAY,10,39
+Shiran,15,user,JANUARY,FRIDAY,10,49
+Shiran,20,user,JANUARY,FRIDAY,11,9
+Shiran,30,expert,JANUARY,FRIDAY,11,39
+Shiran,5,user,JANUARY,FRIDAY,11,44
+Shiran,15,expert,JANUARY,FRIDAY,12,39
+Tal,5,expert,JANUARY,FRIDAY,10,39
+Tal,15,user,JANUARY,FRIDAY,10,49
+Tal,20,user,JANUARY,FRIDAY,11,9
+Tal,30,expert,JANUARY,FRIDAY,11,39
+Tal,5,user,JANUARY,FRIDAY,11,44
+Tal,15,expert,JANUARY,FRIDAY,12,39
