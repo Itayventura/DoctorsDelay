@@ -44,7 +44,7 @@ public class ReportHandler {
         return Communication.S2C.newBuilder().setResponse(response).build();
     }
     public void handleFeedback(Communication.C2S.Report feedback) {
-        db.feedbackOnEstimate(clientId, feedback.getDoctorsName(), feedback.getCurrentDelayMinutes());
+        db.feedbackOnEstimate(clientId, feedback.getCurrentDelayMinutes());
     }
 
     public int convertCurrentAppointmentToDelay(String doctorsName, int currentAppointmentIn, LocalTime actualTime) {
