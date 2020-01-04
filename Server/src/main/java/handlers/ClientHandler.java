@@ -75,7 +75,8 @@ public class ClientHandler extends Communicator implements Runnable {
                 if (client2server.hasLogin()) {
                     Communication.C2S.Login login = client2server.getLogin();
                     logger.info("Client " + login.getClientId() + " attempts to login");
-                    if (db.getUserPassword(login.getClientId()).equals(login.getPassword())) {
+                    String password = db.getUserPassword(login.getClientId());
+                    if (password != null && password.equals(login.getPassword())) {
                         loggedIn = true;
                         clientId = login.getClientId();
                         response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
