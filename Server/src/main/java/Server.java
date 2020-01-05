@@ -55,7 +55,8 @@ public class Server {
 
     void stop() {
         try {
-            serverSocket.close();
+            if (serverSocket != null)
+                serverSocket.close();
         } catch (IOException e) {
             logger.error("server socket close() failed", e);
         }
