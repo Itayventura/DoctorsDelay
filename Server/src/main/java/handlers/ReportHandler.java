@@ -39,6 +39,7 @@ public class ReportHandler {
                 response.setErrorCode(Communication.S2C.Response.ErrorCode.NO_DATA);
             } else {
                 db.addReport(clientId, report.getDoctorsName(), delay);
+                db.addScore(clientId, 1);
                 response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
             }
         }
@@ -47,6 +48,7 @@ public class ReportHandler {
     public void handleFeedback(Communication.C2S.Report feedback) {
         logger.info("Client " + clientId + " reporting feedback");
         db.feedbackOnEstimate(clientId, feedback.getCurrentDelayMinutes());
+        db.addScore(clientId, 5);
     }
 
     public int convertCurrentAppointmentToDelay(String doctorsName, int currentAppointmentIn, LocalTime actualTime) {
