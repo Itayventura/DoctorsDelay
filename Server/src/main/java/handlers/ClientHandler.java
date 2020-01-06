@@ -1,9 +1,9 @@
 package handlers;
 
 import algorithms.Algorithms;
-import communications.Communication;
 import communications.Communicator;
 import db.DataBase;
+import generated.Communication;
 import org.apache.log4j.Logger;
 
 import java.io.DataInputStream;

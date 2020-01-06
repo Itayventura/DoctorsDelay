@@ -1,7 +1,7 @@
 package mockers;
 
-import communications.Communication;
 import estimation.DelayEstimation;
+import generated.Communication;
 import org.junit.Assert;
 
 import java.util.Arrays;

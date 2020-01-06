@@ -1,17 +1,17 @@
 package handlers;
 
 import algorithms.Algorithms;
-import communications.Communication;
 import db.DataBase;
 import entities.Appointment;
+import entities.Delay;
 import estimation.DelayEstimation;
 import estimation.DelayRange;
+import generated.Communication;
 import org.apache.log4j.Logger;
 
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 
@@ -72,6 +72,7 @@ public class RequestHandler {
         try{
             delayEstimationToDelay(algorithms.getCurrentDelay(request.getDoctorsName()), delay);
             response.setExpectedDelay(delay);
+            setRecentDelays(request.getDoctorsName(), delay);
             response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
         } catch (Algorithms.AlgorithmException e) {
             if (e.getReason() == Algorithms.AlgorithmException.Reason.NO_CURRENT_DATA) {
@@ -81,6 +82,18 @@ public class RequestHandler {
                 logger.error("Could not get current delay, clientId=" + clientId, e);
                 algorithmExeptionToResponse(e, response);
             }
+        }
+    }
+
+    private void setRecentDelays(String doctorsName, Communication.S2C.Response.ExpectedDelay.Builder reportedDelay) {
+        if (!db.doctorExists(doctorsName))
+            return;
+
+        final LocalDateTime now = LocalDateTime.now();
+        List<Delay> delays = db.getReports(doctorsName, now.minusMinutes(120), now);
+        for (Delay delay : delays) {
+            reportedDelay.addRecentReportDelays(delay.getReportedDelay());
+            reportedDelay.addRecentReportTimes(120 - (int)ChronoUnit.MINUTES.between(now, delay.getReportTimestamp()));
         }
     }
 
@@ -112,6 +125,9 @@ public class RequestHandler {
                 break;
             case NO_DATA_FOUND:
                 response.setErrorCode(Communication.S2C.Response.ErrorCode.NO_DATA);
+                break;
+            case INVALID_TIME_REQUEST:
+                response.setErrorCode(Communication.S2C.Response.ErrorCode.INVALID_TIME);
                 break;
 
         }

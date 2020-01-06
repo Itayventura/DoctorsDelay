@@ -2,11 +2,12 @@ package handlers;
 
 import db.DataBase;
 import entities.Doctor;
-import communications.Communication;
+import generated.Communication;
 import org.apache.log4j.Logger;
 
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+
 
 /**
  * Handles a client's report on delay or

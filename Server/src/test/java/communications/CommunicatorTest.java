@@ -1,7 +1,6 @@
 package communications;
 
-import communications.Communication;
-import communications.Communicator;
+import generated.Communication;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
