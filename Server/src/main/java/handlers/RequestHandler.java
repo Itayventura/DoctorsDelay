@@ -34,6 +34,7 @@ public class RequestHandler {
 
     Communication.S2C handle(Communication.C2S.Request request) {
         Communication.S2C.Response.Builder response = ClientHandler.getFailureResponse();
+        logger.info("Client " + clientId + " requesting " + request.getType().name());
         switch (request.getType()) {
             case NOW:
                 getCurrentDelay(response, request);

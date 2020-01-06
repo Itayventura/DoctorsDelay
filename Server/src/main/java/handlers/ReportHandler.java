@@ -23,6 +23,7 @@ public class ReportHandler {
     }
 
     public Communication.S2C handle(Communication.C2S.Report report) {
+        logger.info("Client " + clientId + " is reporting");
         Communication.S2C.Response.Builder response = ClientHandler.getFailureResponse();
         if (!db.doctorExists(report.getDoctorsName())) {
             logger.error("report for doctor " + report.getDoctorsName() + " does not exist");
@@ -44,6 +45,7 @@ public class ReportHandler {
         return Communication.S2C.newBuilder().setResponse(response).build();
     }
     public void handleFeedback(Communication.C2S.Report feedback) {
+        logger.info("Client " + clientId + " reporting feedback");
         db.feedbackOnEstimate(clientId, feedback.getCurrentDelayMinutes());
     }
 

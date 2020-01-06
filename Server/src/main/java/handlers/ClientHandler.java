@@ -35,6 +35,7 @@ public class ClientHandler extends Communicator implements Runnable {
     @Override
     public void run() {
         if (login()) {
+            logger.info("Client " + clientId + " has successfully logged in!");
             final ReportHandler reportHandler = new ReportHandler(clientId, db);
             final RequestHandler requestHandler = new RequestHandler(clientId, algorithms, db);
             for(;;) {
