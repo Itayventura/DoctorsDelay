@@ -40,6 +40,7 @@ public class ReportHandler {
             } else {
                 db.addReport(clientId, report.getDoctorsName(), delay);
                 db.addScore(clientId, 1);
+                System.out.println("added 1 to score for client=" + clientId);
                 response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
             }
         }

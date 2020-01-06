@@ -100,12 +100,8 @@ public class RequestHandler {
     }
 
     public void getScore(Communication.S2C.Response.Builder response, Communication.C2S.Request request) {
-        if (!db.doctorExists(request.getDoctorsName())) {
-            response.setErrorCode(Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND);
-        } else {
-            response.setScore(db.getScore(clientId));
-            response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
-        }
+        response.setScore(db.getScore(clientId));
+        response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
     }
 
     private void algorithmExeptionToResponse(Algorithms.AlgorithmException e, Communication.S2C.Response.Builder response) {
