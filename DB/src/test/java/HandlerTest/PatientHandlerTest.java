@@ -47,9 +47,7 @@ public class PatientHandlerTest {
                                             123456789
                                         };
     static int[] notRealPatients = new int[]{0,
-                                             1,
                                              2,
-                                             123456543
                                              };
     private static Patient patient;
 
@@ -306,6 +304,13 @@ public class PatientHandlerTest {
     @Test
     public void printTable(){
         patientsHandler.printTable();
+    }
+
+    @Test
+    public void test(){
+        System.out.println(patientsHandler.patientExists(949962296));
+        Patient patient = patientsHandler.getPatient(949962296);
+        System.out.println(patient.toString());
     }
 
 }
