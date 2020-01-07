@@ -62,6 +62,7 @@ if __name__ == '__main__':
         port = 12345 # If you don't provide any port the port will be set to 12345
         
     print ("Running api.py on port:", port)
+	
     model = joblib.load("model.pkl") # Load "model.pkl"
     print ('Model loaded')
     
