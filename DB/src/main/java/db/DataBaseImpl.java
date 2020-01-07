@@ -1,9 +1,7 @@
 package db;
 
-import db.DataBase;
 import entities.*;
 import handlers.*;
-import jdk.nashorn.internal.ir.debug.NashornTextifier;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -21,14 +19,20 @@ public class DataBaseImpl implements DataBase {
     private DoctorsHandler doctorsHandler;
     private PatientsHandler patientsHandler;
 
-
-    private static Process mySqlTask; // todo - if error occurs should shut down
-    //private static final String mySql = "\\DB\\MySQLServer\\bin\\mysqld"; // for class
-    private static final String mySql = "\\MySQLServer\\bin\\mysqld"; // for test
+    private static Process mySqlTask;
+    private static final String DB = "\\DB";
+    private static final String mySql = "\\MySQLServer\\bin\\mysqld";
 
     static {
         try {
-            mySqlTask = Runtime.getRuntime().exec(System.getProperty("user.dir") + mySql);
+            String path = System.getProperty("user.dir");
+            String substring = path.length() > 2 ? path.substring(path.length() - 2) : null;
+            if (substring != null) {
+                if (!substring.equals("DB"))
+                    path += DB;
+                path += mySql;
+                mySqlTask = Runtime.getRuntime().exec(path);
+            }
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 @Override
                 public void run() {
@@ -36,13 +40,12 @@ public class DataBaseImpl implements DataBase {
                     mySqlTask.destroy();
                 }
             });
-        } catch (IOException e) {
+        } catch(IOException e){
             String errorMessage = "Couldn't start mysql from path " + System.getProperty("user.dir") + mySql;
             logger.error(errorMessage, e);
             throw new RuntimeException("errorMessage", e);
         }
     }
-
 
     public DataBaseImpl(){
         appointmentsHandler = new AppointmentsHandler();
@@ -52,7 +55,6 @@ public class DataBaseImpl implements DataBase {
         List<Doctor> doctors = getDoctors();
         for (Doctor doctor: doctors) {
             doctorsDelaysHandler.put(doctor.getName(), new DelaysHandler(doctor.getName()));
-            System.out.println(doctor.getName());
         }
     }
 
@@ -180,6 +182,7 @@ public class DataBaseImpl implements DataBase {
     public DelaysHandler getDelayHandler(String doctorsName) {
         return doctorsDelaysHandler.get(doctorsName);
     }
+
 
 
 }
