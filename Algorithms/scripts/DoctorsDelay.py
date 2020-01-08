@@ -15,6 +15,7 @@ path = r"doctorsReports.csv"
 model_path = r"model.pkl"
 model_columns_path = r"model_columns.pkl"
 
+
 def one_hot_creation(data, categorical_variables,numeric_variables,label_variables):
     #Creating one-hot columns for all categorial variables.
     oh_data = data['Doctor\'s name']
@@ -212,22 +213,22 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
         
         svm_linear,testing_set_accuracy_linear_svm,our_score_linear_svm = SVM_linear(X_train,X_test,y_train,y_test)
         
-        svm_rbf,testing_set_accuracy_rbf_svm,our_score_rbf_svm = SVM_rbf(X_train,X_test,y_train,y_test)
+        #svm_rbf,testing_set_accuracy_rbf_svm,our_score_rbf_svm = SVM_rbf(X_train,X_test,y_train,y_test)
 
         #svm_poly,testing_set_accuracy_poly_svm,our_score_poly_svm = SVM_poly(X_train,X_test,y_train,y_test)
                 
     random_forest_classifier,testing_set_accuracy_random_forest,our_score_random_forest = random_forest(X_train,X_test,y_train,y_test)
 
 
-    max_score_our = max(our_score_linear_svm,our_score_rbf_svm,our_score_random_forest)
+    max_score_our = max(our_score_linear_svm,our_score_random_forest)
 
     if(our_score_linear_svm == max_score_our):
         classifier = svm_linear
         testing_set_accuracy_model = testing_set_accuracy_linear_svm
         
-    elif(our_score_rbf_svm == max_score_our):
-        classifier = svm_rbf
-        testing_set_accuracy_model = testing_set_accuracy_rbf_svm
+    #elif(our_score_rbf_svm == max_score_our):
+     #   classifier = svm_rbf
+      #  testing_set_accuracy_model = testing_set_accuracy_rbf_svm
         
     else:
         classifier = random_forest_classifier
@@ -240,7 +241,6 @@ def save_model(model):
     joblib.dump(model,model_path)
     print("model saved")
 
-    
 def flow():
     data = pd.read_csv(path, header=None)
     print("Reading csv file done")
@@ -268,12 +268,10 @@ def flow():
     data.loc[data['delay'] >= 31, 'delayCategorial'] = "L"
     
     number_of_possible_predicted_class = data['delayCategorial'].nunique()
-    print(number_of_possible_predicted_class)
 
     #Random examples in data set.
     data = data.sample(frac = 1)
-    print("before calling one_hot_creation")
-    
+
     #Creating one-hot columns for all categorial variables.
     data = one_hot_creation(data,categorical_variables,numeric_variables,label_variables)
       
@@ -288,8 +286,8 @@ def flow():
     
     #save lables of x_train culomns for future prediction.
     model_columns = list(X_train.columns)
-    joblib.dump(model_columns, 'model_columns.pkl')
-    ['model_columns.pkl']
+    joblib.dump(model_columns, model_columns_path)
+    [model_columns_path]
     
     #build appropriate model.
     model,accuracy = search_and_build_model(X_train,X_test,y_train,y_test,number_of_possible_predicted_class)
@@ -298,3 +296,4 @@ def flow():
     save_model(model)
 
     return accuracy
+
