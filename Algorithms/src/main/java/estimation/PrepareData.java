@@ -19,7 +19,7 @@ public class PrepareData
 {
     private static final Logger logger = Logger.getLogger(PrepareData.class);
 
-    public void createCSVFileDoctorsReports(String csvPathFile, DataBase db)
+    public void createCSVFileDoctorsReports(String csvPathFile, DataBase db) throws IOException
     {
         try
         {
@@ -56,12 +56,13 @@ public class PrepareData
 
             writer.flush();
             writer.close();
-            logger.debug("CSV file was created successfully");
+            logger.info("CSV file was created successfully");
 
         }
         catch(IOException ex)
         {
             logger.error("Failed to create FileWriter for csv path: "+csvPathFile+" ," + ex.getMessage());
+            throw ex;
         }
     }
 
@@ -73,7 +74,7 @@ public class PrepareData
 
         if(duration.isNegative())
         {
-            logger.debug("Report is not reliable: timestamp is before the doctor started his day work");
+            logger.info("Report is not reliable: timestamp is before the doctor started his day work");
             return false;
         }
 
@@ -81,7 +82,7 @@ public class PrepareData
         long max = lastExpertReport.getReportedDelay() + Duration.between(lastExpertReport.getReportTimestamp(),reportDelay.getReportTimestamp()).toMinutes();
         if(reportDelay.getReportedDelay() > max || reportDelay.getReportedDelay() < 0)
         {
-            logger.debug("Report is not reliable: delay reported is too large or invalid(negative)");
+            logger.info("Report is not reliable: delay reported is too large or invalid(negative)");
             return false;
         }
 

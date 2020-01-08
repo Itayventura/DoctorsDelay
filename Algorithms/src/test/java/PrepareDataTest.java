@@ -16,11 +16,11 @@ public class PrepareDataTest
     {
         String csvPath = "scripts/doctorsReports.csv";
         PrepareData prepareData = new PrepareData();
-        prepareData.createCSVFileDoctorsReports(csvPath, new DatabaseMocker());
         int expectedLines = 19;
 
         try
         {
+            prepareData.createCSVFileDoctorsReports(csvPath, new DatabaseMocker());
             BufferedReader bufferedReader = new BufferedReader(new FileReader(csvPath));
             String input;
             int count = 0;
