@@ -143,9 +143,9 @@ public class AppointmentsHandlerTest {
         Assert.assertNotNull("last appointment not found", lastAppointmentBeforeAddition);
         System.out.println(lastAppointmentBeforeAddition.toString());
 
-        System.out.println("Appointment newAppointmentBeforeAddition = new Appointment(\"111111111\", \"2019-12-31 21:00:00\",\"Itay Ventura\");\n" +
+        System.out.println("Appointment newAppointmentBeforeAddition = new Appointment(\"111111111\", \"2019-12-31 21:00:00\",\"Luba\");\n" +
                 "System.out.println(newAppointmentBeforeAddition.toString());\n");
-        Appointment newAppointmentBeforeAddition = new Appointment("111111111", "2019-12-31 21:00:00","Itay Ventura");
+        Appointment newAppointmentBeforeAddition = new Appointment("111111111", "2019-12-31 21:00:00","Luba");
         System.out.println(newAppointmentBeforeAddition.toString());
 
         System.out.println("List<Appointment> appointments = new ArrayList<>();\n" +

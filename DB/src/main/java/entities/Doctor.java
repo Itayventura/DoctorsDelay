@@ -9,7 +9,8 @@ public class Doctor extends Entity{
 
     //todo add more doctorTypes
     public enum DoctorType {
-        FAMILY
+        FAMILY,
+        GYNECOLOG
     }
 
     /** this constructor is used whenever selection from "doctors" is made */
@@ -40,6 +41,7 @@ public class Doctor extends Entity{
     //todo add more doctorTypes
     private DoctorType toDoctorType(String type){
         if (type.equals("family")) return DoctorType.FAMILY;
+        if (type.equals("gynecolog")) return DoctorType.GYNECOLOG;
         return null;
     }
 

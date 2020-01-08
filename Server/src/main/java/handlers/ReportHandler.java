@@ -2,11 +2,12 @@ package handlers;
 
 import db.DataBase;
 import entities.Doctor;
-import communications.Communication;
+import generated.Communication;
 import org.apache.log4j.Logger;
 
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+
 
 /**
  * Handles a client's report on delay or
@@ -23,6 +24,7 @@ public class ReportHandler {
     }
 
     public Communication.S2C handle(Communication.C2S.Report report) {
+        logger.info("Client " + clientId + " is reporting");
         Communication.S2C.Response.Builder response = ClientHandler.getFailureResponse();
         if (!db.doctorExists(report.getDoctorsName())) {
             logger.error("report for doctor " + report.getDoctorsName() + " does not exist");
@@ -38,13 +40,17 @@ public class ReportHandler {
                 response.setErrorCode(Communication.S2C.Response.ErrorCode.NO_DATA);
             } else {
                 db.addReport(clientId, report.getDoctorsName(), delay);
+                db.addScore(clientId, 1);
+                System.out.println("added 1 to score for client=" + clientId);
                 response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
             }
         }
         return Communication.S2C.newBuilder().setResponse(response).build();
     }
     public void handleFeedback(Communication.C2S.Report feedback) {
+        logger.info("Client " + clientId + " reporting feedback");
         db.feedbackOnEstimate(clientId, feedback.getCurrentDelayMinutes());
+        db.addScore(clientId, 5);
     }
 
     public int convertCurrentAppointmentToDelay(String doctorsName, int currentAppointmentIn, LocalTime actualTime) {

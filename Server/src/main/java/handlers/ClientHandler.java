@@ -1,9 +1,9 @@
 package handlers;
 
 import algorithms.Algorithms;
-import communications.Communication;
 import communications.Communicator;
 import db.DataBase;
+import generated.Communication;
 import org.apache.log4j.Logger;
 
 import java.io.DataInputStream;
@@ -35,6 +35,7 @@ public class ClientHandler extends Communicator implements Runnable {
     @Override
     public void run() {
         if (login()) {
+            logger.info("Client " + clientId + " has successfully logged in!");
             final ReportHandler reportHandler = new ReportHandler(clientId, db);
             final RequestHandler requestHandler = new RequestHandler(clientId, algorithms, db);
             for(;;) {
@@ -75,7 +76,8 @@ public class ClientHandler extends Communicator implements Runnable {
                 if (client2server.hasLogin()) {
                     Communication.C2S.Login login = client2server.getLogin();
                     logger.info("Client " + login.getClientId() + " attempts to login");
-                    if (db.getUserPassword(login.getClientId()).equals(login.getPassword())) {
+                    String password = db.getUserPassword(login.getClientId());
+                    if (password != null && password.equals(login.getPassword())) {
                         loggedIn = true;
                         clientId = login.getClientId();
                         response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);

@@ -1,7 +1,7 @@
 package mockers;
 
-import communications.Communication;
 import communications.Communicator;
+import generated.Communication;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

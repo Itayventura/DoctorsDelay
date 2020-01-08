@@ -13,8 +13,6 @@ public interface DataBase {
 
     /**
      * adds the delay to this doctor at current timestamp to db
-     * @pre doctorExists(doctorsName) == true
-     * @pre user exist
      * @param personalId - the user's identity number
      * @param doctorsName - the doctor's name
      * @param delay - the reported delay in minutes

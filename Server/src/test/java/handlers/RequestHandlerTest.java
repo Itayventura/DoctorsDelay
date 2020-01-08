@@ -1,7 +1,7 @@
 package handlers;
 
 import algorithms.Algorithms;
-import communications.Communication;
+import generated.Communication;
 import mockers.AlgorithmsMocker;
 import mockers.DataBaseMocker;
 import mockers.TestBase;

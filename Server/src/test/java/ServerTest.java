@@ -1,5 +1,4 @@
-import com.mysql.fabric.xmlrpc.Client;
-import communications.Communication;
+import generated.Communication;
 import mockers.AlgorithmsMocker;
 import mockers.ClientMocker;
 import mockers.DataBaseMocker;

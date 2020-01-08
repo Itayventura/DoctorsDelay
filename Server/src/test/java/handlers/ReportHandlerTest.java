@@ -1,6 +1,6 @@
 package handlers;
 
-import communications.Communication;
+import generated.Communication;
 import mockers.DataBaseMocker;
 import org.junit.Assert;
 import org.junit.Test;
