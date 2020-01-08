@@ -55,8 +55,9 @@ public class RequestHandler {
     public void getEstimatedDelay(Communication.S2C.Response.Builder response, Communication.C2S.Request request) {
         Communication.S2C.Response.ExpectedDelay.Builder delay = Communication.S2C.Response.ExpectedDelay.newBuilder();
         try {
+            LocalDateTime dateTime = epochToDateTime(request.getTimestamp());
             DelayEstimation delayEstimation = algorithms.getEstimatedDelay(request.getDoctorsName(),
-                    epochToDateTime(request.getTimestamp()));
+                    dateTime);
             delayEstimationToDelay(delayEstimation, delay);
             delay.setIsEstimated(true);
             response.setExpectedDelay(delay);
@@ -71,8 +72,8 @@ public class RequestHandler {
         Communication.S2C.Response.ExpectedDelay.Builder delay = Communication.S2C.Response.ExpectedDelay.newBuilder();
         try{
             delayEstimationToDelay(algorithms.getCurrentDelay(request.getDoctorsName()), delay);
-            response.setExpectedDelay(delay);
             setRecentDelays(request.getDoctorsName(), delay);
+            response.setExpectedDelay(delay);
             response.setStatusCode(Communication.S2C.Response.Status.SUCCESSFUL);
         } catch (Algorithms.AlgorithmException e) {
             if (e.getReason() == Algorithms.AlgorithmException.Reason.NO_CURRENT_DATA) {
@@ -93,7 +94,7 @@ public class RequestHandler {
         List<Delay> delays = db.getReports(doctorsName, now.minusMinutes(120), now);
         for (Delay delay : delays) {
             reportedDelay.addRecentReportDelays(delay.getReportedDelay());
-            reportedDelay.addRecentReportTimes(120 - (int)ChronoUnit.MINUTES.between(now, delay.getReportTimestamp()));
+            reportedDelay.addRecentReportTimes(120 - (int)ChronoUnit.MINUTES.between(delay.getReportTimestamp(), now));
         }
     }
 
@@ -141,10 +142,10 @@ public class RequestHandler {
     }
 
     private LocalDateTime epochToDateTime(long milliSinceEpoch) {
-        return LocalDateTime.ofInstant(Instant.ofEpochMilli(milliSinceEpoch), ZoneId.systemDefault());
+        return LocalDateTime.ofInstant(Instant.ofEpochMilli(milliSinceEpoch), ZoneId.of("Israel"));
     }
 
     private long dateTimeToEpoch(LocalDateTime dateTime) {
-        return Timestamp.valueOf(dateTime).getTime();
+        return dateTime.atZone(ZoneId.of("Israel")).toInstant().toEpochMilli();
     }
 }
