@@ -20,8 +20,9 @@ public class AlgorithmsImpl implements Algorithms {
     private static LocalDateTime lastModelUpdatedTime;
     protected static double accuracy_model = 0;
 
-    private final String MODEL_PATH = "scripts\\model.pkl";
-    private final String CSV_PATH = "scripts\\doctorsReports.csv";
+
+    private final String MODEL_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\model.pkl");
+    private final String CSV_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\doctorsReports.csv");
     private final String MODEL_DETAILS_PATH = "ModelDetailsFile.txt";
     private DataBase db;
     private ModelHandler httpCom;
@@ -73,34 +74,43 @@ public class AlgorithmsImpl implements Algorithms {
     @Override
     public DelayEstimation getEstimatedDelay(String doctorsName, LocalDateTime meetingDateTime) throws AlgorithmException
     {
-        if (!isModelAlreadyExist(MODEL_PATH) || shouldModelBeUpdated(this.lastModelUpdatedTime))
-        {
-            PrepareData prepareData = new PrepareData();
-            prepareData.createCSVFileDoctorsReports(CSV_PATH, db);
-
-            accuracy_model = httpCom.BuildModel();
-
-            saveModelDetailsIntoFile(accuracy_model, LocalDateTime.now(),MODEL_DETAILS_PATH);
-            logger.debug("Python script run and build successfully a model in" + MODEL_PATH);
-        }
-
         // Check if the request is valid and throw exception if needed.
         try
         {
             checkRequestValidation(doctorsName, meetingDateTime);
-            logger.debug("Request details are valid. Start prediction");
-
-            //ask estimation from python by http request.
-            DelayEstimation delayEstimation = httpCom.Predict(doctorsName, meetingDateTime);
-            logger.debug("Prediction result: " + delayEstimation.getTypeRange().getEstimationType().toString() +
-                    ". Model accuracy: " + delayEstimation.getEstimationAccuracyPercentage());
-            return delayEstimation;
+            logger.info("Request details are valid. Start prediction");
         }
         catch(AlgorithmException ex)
         {
             logger.error("the request details are not valid: " + ex.getMessage());
             throw ex;
         }
+
+
+        if (!isModelAlreadyExist(MODEL_PATH) || shouldModelBeUpdated(this.lastModelUpdatedTime))
+        {
+            try
+            {
+                PrepareData prepareData = new PrepareData();
+                prepareData.createCSVFileDoctorsReports(CSV_PATH, db);
+            }
+            catch (IOException ex)
+            {
+                logger.info("csv file did not updated. continue to base on older file");
+            }
+
+            accuracy_model = httpCom.BuildModel();
+
+            saveModelDetailsIntoFile(accuracy_model, LocalDateTime.now(),MODEL_DETAILS_PATH);
+            logger.info("Python script run and build successfully a model in: " + MODEL_PATH);
+        }
+
+        //ask estimation from python by http request.
+        DelayEstimation delayEstimation = httpCom.Predict(doctorsName, meetingDateTime);
+        logger.info("Prediction result: " + delayEstimation.getTypeRange().getEstimationType().toString() +
+                ". Model accuracy: " + delayEstimation.getEstimationAccuracyPercentage());
+        return delayEstimation;
+
     }
 
     private static DelayEstimation.EstimationType delayTimeToEstimationType(double delay) {
@@ -119,7 +129,7 @@ public class AlgorithmsImpl implements Algorithms {
         {
             File modelFilePath = new File(modelPath);
             Boolean isModelPathFound = modelFilePath.exists() && !modelFilePath.isDirectory();
-            logger.debug("Model exist: " + isModelPathFound.toString());
+            logger.info("Model exist: " + isModelPathFound.toString() + " in path:" + modelPath);
             return isModelPathFound;
         }
         catch (Exception e)
@@ -149,11 +159,11 @@ public class AlgorithmsImpl implements Algorithms {
         {
             if (shouldUpdate)
             {
-                logger.debug("Model should be updated");
+                logger.info("Model should be updated");
             }
             else
             {
-                logger.debug("Model is up to date");
+                logger.info("Model is up to date");
             }
 
             return shouldUpdate;
@@ -164,7 +174,7 @@ public class AlgorithmsImpl implements Algorithms {
     {
         if(!db.doctorExists(doctorName))
         {
-            logger.debug("Doctor not exist");
+            logger.info("Doctor not exist");
             throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
         }
 
@@ -172,7 +182,7 @@ public class AlgorithmsImpl implements Algorithms {
 
         if(isMeetingTimePassed(duration) || !isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
         {
-            logger.debug("Invalid data time: Prediction request time has passed.");
+            logger.info("Invalid data time: Prediction request time has passed.");
             throw new AlgorithmException(AlgorithmException.Reason.INVALID_TIME_REQUEST);
         }
 
@@ -204,7 +214,7 @@ public class AlgorithmsImpl implements Algorithms {
             writer.write(accuracy + ";" + lastModelUpdatedTime.format(DateTimeFormatter.ISO_DATE_TIME));
             writer.flush();
             writer.close();
-            logger.debug("Created model details file in: " + modelDetailsPathFile);
+            logger.info("Created model details file in: " + modelDetailsPathFile);
         }
         catch (IOException ex)
         {
@@ -237,7 +247,7 @@ public class AlgorithmsImpl implements Algorithms {
         }
         else
         {
-            logger.debug("File not exist, creating default details");
+            logger.info("File not exist, creating default details");
         }
 
         return new ModelDetails(lastModelUpdatedTime, accuracy);
