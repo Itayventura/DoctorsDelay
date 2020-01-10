@@ -13,6 +13,8 @@ import java.sql.Timestamp;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 /**
@@ -102,8 +104,12 @@ public class RequestHandler {
         if (!db.doctorExists(request.getDoctorsName())) {
             response.setErrorCode(Communication.S2C.Response.ErrorCode.DOCTOR_NOT_FOUND);
         } else {
-            List<Appointment> appointments = db.getUserFutureAppointments(clientId);
-            if (appointments == null || appointments.isEmpty()){
+            List<Appointment> appointments = db.getUserFutureAppointments(clientId)
+                    .stream()
+                    .filter(appointment -> appointment.getDoctorsName() != null &&
+                            appointment.getDoctorsName().equals(request.getDoctorsName()))
+                    .collect(Collectors.toList());
+            if (appointments.isEmpty()){
                 response.setErrorCode(Communication.S2C.Response.ErrorCode.NO_DATA);
             } else {
                 appointments.forEach(appointment ->
@@ -142,6 +148,8 @@ public class RequestHandler {
     }
 
     private LocalDateTime epochToDateTime(long milliSinceEpoch) {
+        if (milliSinceEpoch == 0)
+            return LocalDateTime.now();
         return LocalDateTime.ofInstant(Instant.ofEpochMilli(milliSinceEpoch), ZoneId.of("Israel"));
     }
 
