@@ -27,10 +27,8 @@ public class DbConnectionImpl{
 
     public static Connection getConnection() throws SQLException
     {
-        if (dataSource == null){
+        if (dataSource == null)
             instance = new DbConnectionImpl();
-            dataSource.getConnection();
-        }
         return dataSource.getConnection();
     }
 

@@ -280,15 +280,4 @@ public class DelaysHandlerTest {
         Handler.printHeadline("get Delays Test finished successfully");
 
     }
-
-
-    @Test
-    public void nineOnesTestTwo(){
-        Handler.printHeadline("test start");
-        DelaysHandler nordauDelaysHandler = new DelaysHandler("nordau");
-        List<Delay> delays = nordauDelaysHandler.getReports(LocalDateTime.now().minusMinutes(5),LocalDateTime.now());
-        for (Delay delay: delays)
-            System.out.println(delay.toString());
-        Handler.printHeadline("test finished");
-    }
 }
