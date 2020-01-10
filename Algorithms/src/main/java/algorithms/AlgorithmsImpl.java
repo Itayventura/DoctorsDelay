@@ -178,13 +178,14 @@ public class AlgorithmsImpl implements Algorithms {
             throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
         }
 
-        Duration duration = Duration.between(LocalDateTime.now().minusHours(1), meetingDateTime);
+        Duration duration = Duration.between(LocalDateTime.now(), meetingDateTime);
 
         if(isMeetingTimePassed(duration) || !isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
         {
             logger.info("Invalid data time: Prediction request time has passed.");
             throw new AlgorithmException(AlgorithmException.Reason.INVALID_TIME_REQUEST);
         }
+
     }
 
     protected Boolean isMeetingTimePassed(Duration duration)
