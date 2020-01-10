@@ -185,4 +185,15 @@ public class AppointmentsHandlerTest {
         System.out.println(lastAppointmentAfterRemove.toString());
 
     }
+
+    @Test
+    public void nineOnesTest(){
+        Handler.printHeadline("test start");
+        Appointment appointment = appointmentsHandler.getLastAppointment(111111111);
+       if (appointment != null)
+            System.out.println(appointment.toString());
+        Handler.printHeadline("test finished");
+    }
+
+
 }

@@ -229,8 +229,6 @@ def flow():
     for variable in numeric_variables:
         data[variable] = data[variable].astype(np.int64)
 
-    for variable in categorical_variables:
-        data[variable] = data[variable].astype(np.str)
     
     #Creating new 'delayCategorial' column based on 'delay' column.
     data['delayCategorial'] = data['delay']
