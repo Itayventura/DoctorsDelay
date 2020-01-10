@@ -100,6 +100,7 @@ public class AlgorithmsImpl implements Algorithms {
             }
 
             accuracy_model = httpCom.BuildModel();
+            lastModelUpdatedTime = LocalDateTime.now();
 
             saveModelDetailsIntoFile(accuracy_model, LocalDateTime.now(),MODEL_DETAILS_PATH);
             logger.info("Python script run and build successfully a model in: " + MODEL_PATH);
@@ -178,7 +179,7 @@ public class AlgorithmsImpl implements Algorithms {
             throw new AlgorithmException(AlgorithmException.Reason.DOCTOR_NOT_EXISTS);
         }
 
-        Duration duration = Duration.between(LocalDateTime.now(), meetingDateTime);
+        Duration duration = Duration.between(LocalDateTime.now().minusMinutes(2), meetingDateTime);
 
         if(isMeetingTimePassed(duration) || !isMeetingTimeInDoctorWorkRange(doctorName, meetingDateTime))
         {
