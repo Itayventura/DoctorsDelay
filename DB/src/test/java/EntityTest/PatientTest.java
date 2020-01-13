@@ -1,5 +1,6 @@
 package EntityTest;
 
+import db.DataBaseImpl;
 import entities.Entity;
 import entities.Patient;
 import handlers.Handler;
@@ -7,6 +8,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PatientTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     @Test
     public void compactPatientTest(){

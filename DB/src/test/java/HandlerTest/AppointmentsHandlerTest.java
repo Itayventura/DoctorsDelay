@@ -1,5 +1,6 @@
 package HandlerTest;
 
+import db.DataBaseImpl;
 import entities.Appointment;
 import entities.Entity;
 import handlers.AppointmentsHandler;
@@ -13,6 +14,10 @@ import java.util.List;
 
 
 public class AppointmentsHandlerTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     static class GetUserFutureAppointments extends Thread {
         private int patientId;

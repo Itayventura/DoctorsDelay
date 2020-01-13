@@ -1,5 +1,6 @@
 package EntityTest;
 
+import db.DataBaseImpl;
 import entities.Delay;
 import entities.Entity;
 import handlers.Handler;
@@ -13,6 +14,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 public class DelayTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     private int patientID;
     private String ts;

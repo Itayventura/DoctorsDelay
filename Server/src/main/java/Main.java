@@ -30,6 +30,7 @@ public class Main {
                 listeningPort = Integer.parseInt(cmd.getOptionValue(listeningPortArg));
             if (cmd.hasOption(numThreadsArg))
                 numThreads = Integer.parseInt(cmd.getOptionValue(numThreadsArg));
+            DataBaseImpl.init();
             server = new Server(listeningPort, numThreads);
             server.start();
         } catch (ParseException e) {
