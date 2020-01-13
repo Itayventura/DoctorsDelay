@@ -50,7 +50,7 @@ def predict():
         return ('No model here to use')
 
 
-@app.route('/buildModel', methods=['POST']) # Your API endpoint URL would consist /predict
+@app.route('/buildModel', methods=['POST']) # Your API endpoint URL would consist /buildModel
 
 def buildModel():
     global model
