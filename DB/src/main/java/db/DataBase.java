@@ -11,12 +11,10 @@ import java.util.List;
 
 public interface DataBase {
 
-    /**
-     * adds the delay to this doctor at current timestamp to db
+    /** adds the delay to doctor's table at current timestamp
      * @param personalId - the user's identity number
      * @param doctorsName - the doctor's name
      * @param delay - the reported delay in minutes
-     * @return a list of reports to the specified doctor, in this date
      */
     void addReport(int personalId, String doctorsName, int delay);
 
@@ -34,12 +32,13 @@ public interface DataBase {
      * @param from start time
      * @param to end time
      * @return a list of reports to the specified doctor, in this time range
+     *          null if doctor doesn't exist
      */
     List<Delay> getReports(String doctorsName, LocalDateTime from, LocalDateTime to);
 
-    /** select from doctors where doctor_name = doctorsName and return new Doctor same as table
+    /** select from doctors where doctor_name = doctorsName and return new Doctor with values same as table
      *
-     * @param doctorsName
+     * @param doctorsName the doctor's name
      * @return Doctor with attributes like in table
      */
     Doctor getDoctor(String doctorsName);
@@ -54,7 +53,7 @@ public interface DataBase {
     List<Appointment> getUserFutureAppointments(int userId);
 
     /**
-     * @param doctorsName
+     * @param doctorsName the doctor's name
      * @return true if doctor exists in HMO doctors db
      */
     boolean doctorExists(String doctorsName);
@@ -65,12 +64,11 @@ public interface DataBase {
      */
     String getUserPassword(int userId);
 
-    /** adds report with report_type = 'feedback' to data base
+    /** adds report with report_type = 'feedback' to data base with timestamp = last user's appointment_time
      *  @param userId        - the user's identity number
      * @param actualDelay   - the actual delay the user experienced
      */
     void feedbackOnEstimate(int userId, int actualDelay);
-    //todo different from interface
 
     /** adds score added to patient with id userId
      *
@@ -88,14 +86,22 @@ public interface DataBase {
     /**
      *
      * @param userId user's id
-     * @return
+     * @return appointment with latest timestamp
      */
     public Appointment getLastAppointment(int userId);
 
+    /**
+     *
+     * @return list of all doctors in doctors' table
+     */
     public List<Doctor> getDoctors();
 
+    /**
+     *
+     * @param doctorsName the doctor's name
+     * @return list of all delays from doctorsName's table
+     */
     public List<Delay> getDelays(String doctorsName);
-
 
     /** prints all records from tableName in database */
     void printTable(String tableName);

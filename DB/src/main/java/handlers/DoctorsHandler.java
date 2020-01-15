@@ -9,7 +9,6 @@ public class DoctorsHandler extends Handler {
     private static final String sqlSelectAll = "Select * from doctors ";
     private static final String sqlDelete = "Delete from doctors Where doctor_name = '";
     private static final String sqlInsert = "INSERT INTO doctors(doctor_name) VALUES('";
-    private static final String sqlDeleteTestDoctors = "delete from  doctors where doctor_name LIKE '%" + "testDoctor" + "%'";
     private static final int DOCTORS_ATTRIBUTES = 5;
 
     public DoctorsHandler(){
@@ -75,9 +74,4 @@ public class DoctorsHandler extends Handler {
         printTable(sqlSelectAll);
     }
 
-
-//todo are these methods relevant?
-    public void deleteTestDoctors() {
-        repository.delete(sqlDeleteTestDoctors);
-    }
 }

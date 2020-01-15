@@ -221,9 +221,9 @@ public class DataBaseImplTest {
     public void getLubaDelaysTest(){
         Handler.printHeadline("get Luba Delays Test");
         System.out.println("List<Delay> delays = db.getDelays(\"Luba\");\n" +
-                "Assert.assertEquals(26208, delays.size());\n");
+                "Assert.assertEquals(26280, delays.size());\n");
         List<Delay> delays = db.getDelays("Luba");
-        Assert.assertEquals(26208, delays.size());
+        Assert.assertEquals(26280, delays.size());
         Handler.printHeadline("get Luba Delays Test finished successfully");
     }
 

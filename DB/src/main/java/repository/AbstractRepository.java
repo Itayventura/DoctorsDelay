@@ -4,12 +4,17 @@ import entities.Entity;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 /** T is {Doctor, Delay, Appointment, Patient} */
 public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
     private static final Logger logger = Logger.getLogger(AppointmentsRepository.class);
+
+    SimpleDateFormat sdf = new SimpleDateFormat(entities.Entity.TIMESTAMP_FORMAT);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(entities.Entity.TIMESTAMP_FORMAT);
 
     /** execute the query and return list of all records from table
      *  this method is for internal use - in order to print table

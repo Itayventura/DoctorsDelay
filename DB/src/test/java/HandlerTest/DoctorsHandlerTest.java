@@ -40,6 +40,10 @@ public class DoctorsHandlerTest {
 
         for (int i = 0; i < doctors.size(); i++){
             Assert.assertEquals(doctors.get(i).getName(), threads.get(i).getDoctor().getName());
+            Assert.assertEquals(doctors.get(i).getType(), threads.get(i).getDoctor().getType());
+            Assert.assertEquals(doctors.get(i).getStartTime(), threads.get(i).getDoctor().getStartTime());
+            Assert.assertEquals(doctors.get(i).getEndTime(), threads.get(i).getDoctor().getEndTime());
+            Assert.assertEquals(doctors.get(i).getInterval(), threads.get(i).getDoctor().getInterval());
         }
     }
 

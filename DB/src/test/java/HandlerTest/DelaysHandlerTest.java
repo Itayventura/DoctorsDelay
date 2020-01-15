@@ -274,9 +274,9 @@ public class DelaysHandlerTest {
     public void getDelaysTest(){
         Handler.printHeadline("get Delays Test");
         System.out.println("List<Delay> delays = delaysHandler.getDelays(\"Luba\");\n" +
-                "Assert.assertEquals(26208, delays.size());\n");
+                "Assert.assertEquals(26280, delays.size());\n");
         List<Delay> delays = delaysHandler.getDelays();
-        Assert.assertEquals(26208, delays.size());
+        Assert.assertEquals(26280, delays.size());
         Handler.printHeadline("get Delays Test finished successfully");
 
     }

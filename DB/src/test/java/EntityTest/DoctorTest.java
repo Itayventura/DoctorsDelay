@@ -75,4 +75,5 @@ public class DoctorTest {
         Assert.assertEquals(interval, doctor.getInterval());
         Handler.printHeadline("informative Doctor Test finished successfully");
     }
+
 }

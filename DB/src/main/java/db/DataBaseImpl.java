@@ -52,10 +52,6 @@ public class DataBaseImpl implements DataBase {
         doctorsHandler = new DoctorsHandler();
         patientsHandler = new PatientsHandler();
         doctorsDelaysHandler = new HashMap<>();
-        List<Doctor> doctors = getDoctors();
-        for (Doctor doctor: doctors) {
-            doctorsDelaysHandler.put(doctor.getName(), new DelaysHandler(doctor.getName()));
-        }
     }
 
     @Override
@@ -130,6 +126,9 @@ public class DataBaseImpl implements DataBase {
 
     @Override
     public boolean doctorExists(String doctorsName) {
+        if(doctorsDelaysHandler.isEmpty()){
+            initializeDoctorsDelaysHandler();
+        }
         return doctorsDelaysHandler.containsKey(doctorsName);
     }
 
@@ -180,9 +179,18 @@ public class DataBaseImpl implements DataBase {
     }
 
     public DelaysHandler getDelayHandler(String doctorsName) {
+        if(doctorsDelaysHandler.isEmpty()){
+            initializeDoctorsDelaysHandler();
+        }
         return doctorsDelaysHandler.get(doctorsName);
     }
 
+    private void initializeDoctorsDelaysHandler() {
+        List<Doctor> doctors = getDoctors();
+        for (Doctor doctor: doctors) {
+            doctorsDelaysHandler.put(doctor.getName(), new DelaysHandler(doctor.getName()));
+        }
+    }
 
 
 }
