@@ -1,5 +1,6 @@
 package EntityTest;
 
+import db.DataBaseImpl;
 import entities.Appointment;
 import handlers.Handler;
 import org.junit.Assert;
@@ -8,6 +9,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AppointmentTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     private String appointment_time;
     private String patientId;

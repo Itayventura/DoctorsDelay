@@ -1,5 +1,6 @@
 package EntityTest;
 
+import db.DataBaseImpl;
 import entities.Doctor;
 import handlers.Handler;
 import org.junit.Assert;
@@ -9,6 +10,10 @@ import org.junit.Test;
 import java.time.LocalTime;
 
 public class DoctorTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     @BeforeClass
     public static void setUpClass(){

@@ -1,16 +1,22 @@
 package DbTest;
 
+import db.DataBase;
 import db.DataBaseImpl;
 import entities.*;
 import handlers.Handler;
 import org.junit.*;
 
+import javax.xml.crypto.Data;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class DataBaseImplTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     private static DataBaseImpl db = new DataBaseImpl();
     private static String[] realDoctors;
