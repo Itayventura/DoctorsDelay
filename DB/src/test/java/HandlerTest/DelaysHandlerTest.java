@@ -1,5 +1,6 @@
 package HandlerTest;
 
+import db.DataBaseImpl;
 import entities.Delay;
 import handlers.DelaysHandler;
 import handlers.Handler;
@@ -14,6 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DelaysHandlerTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     static class AddReport extends Thread {
         private Delay delay;

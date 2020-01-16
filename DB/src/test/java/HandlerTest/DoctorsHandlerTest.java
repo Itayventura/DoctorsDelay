@@ -1,5 +1,6 @@
 package HandlerTest;
 
+import db.DataBaseImpl;
 import entities.Doctor;
 import handlers.DoctorsHandler;
 import handlers.Handler;
@@ -10,6 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorsHandlerTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     static class GetDoctor extends Thread {
         private String doctorsName;

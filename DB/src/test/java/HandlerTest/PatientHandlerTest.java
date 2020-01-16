@@ -1,5 +1,6 @@
 package HandlerTest;
 
+import db.DataBaseImpl;
 import entities.Patient;
 import handlers.Handler;
 import handlers.PatientsHandler;
@@ -11,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatientHandlerTest {
+
+    static {
+        DataBaseImpl.init();
+    }
 
     static class GetPatient extends Thread {
         private int patientId;

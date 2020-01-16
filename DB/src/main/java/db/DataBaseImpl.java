@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DataBaseImpl implements DataBase {
 
@@ -18,12 +19,16 @@ public class DataBaseImpl implements DataBase {
     private AppointmentsHandler appointmentsHandler;
     private DoctorsHandler doctorsHandler;
     private PatientsHandler patientsHandler;
+    private static AtomicBoolean initiated = new AtomicBoolean(false);
 
     private static Process mySqlTask;
     private static final String DB = "\\DB";
     private static final String mySql = "\\MySQLServer\\bin\\mysqld";
 
-    static {
+    public static void init() {
+        if (initiated.get())
+            return;
+        initiated.set(true);
         try {
             String path = System.getProperty("user.dir");
             String substring = path.length() > 2 ? path.substring(path.length() - 2) : null;
@@ -32,6 +37,7 @@ public class DataBaseImpl implements DataBase {
                     path += DB;
                 path += mySql;
                 mySqlTask = Runtime.getRuntime().exec(path);
+                logger.info("started mySql task");
             }
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 @Override
