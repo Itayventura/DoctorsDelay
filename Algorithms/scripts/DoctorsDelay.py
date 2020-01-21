@@ -9,10 +9,21 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 import joblib
+from xml.dom import minidom
+import os
 
 
-path = r"doctorsReports.csv"
-model_path = r"model.pkl"
+
+def getModelPath():
+        relativeModelPath = r'../../config.xml'
+        config_path = (os.path.abspath(relativeModelPath))
+        xmlFileParser = minidom.parse(config_path)
+        entries = xmlFileParser.getElementsByTagName('entry')
+        modelPath = str(entries[0].firstChild.data).replace('\\','/')
+        return modelPath
+        
+path = r'doctorsReports.csv'
+model_path = getModelPath()
 model_columns_path = r"model_columns.pkl"
 
 
@@ -148,9 +159,9 @@ def random_forest(X_train,X_test,y_train,y_test):
             
     from sklearn.ensemble import RandomForestClassifier
     
-    #Build RandomForest classifier.
-    random_forest_classifier = RandomForestClassifier(n_jobs=1,max_depth = 3, random_state=0,n_estimators=500)
-    
+    #Build RandomForest classifier.    
+    random_forest_classifier = RandomForestClassifier(n_jobs=10,max_depth = 13, random_state=0,n_estimators=300)
+
     #Learn and build the model.
     random_forest_classifier.fit(X_train, y_train)
     
@@ -205,7 +216,7 @@ def search_and_build_model(X_train,X_test,y_train,y_test, number_of_possible_pre
         
 
 def save_model(model):
-    joblib.dump(model,model_path)
+    joblib.dump(model,open(model_path,'wb'))
     print("model saved")
 
 
@@ -255,7 +266,7 @@ def flow():
     
     #save lables of x_train culomns for future prediction.
     model_columns = list(X_train.columns)
-    joblib.dump(model_columns, model_columns_path)
+    joblib.dump(model_columns, open(model_columns_path,'wb'))
     [model_columns_path]
     
     #build appropriate model.
@@ -265,3 +276,4 @@ def flow():
     save_model(model)
 
     return accuracy
+

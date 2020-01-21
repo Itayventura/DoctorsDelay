@@ -12,18 +12,20 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Properties;
 
 public class AlgorithmsImpl implements Algorithms {
     private static final Logger logger = Logger.getLogger(AlgorithmsImpl.class);
     private static LocalDateTime lastModelUpdatedTime;
     protected static double accuracy_model = 0;
 
-
-    private final String MODEL_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\model.pkl");
     private final String CSV_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\doctorsReports.csv");
-    private final String MODEL_DETAILS_PATH = "ModelDetailsFile.txt";
+    private final String MODEL_DETAILS_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\ModelDetailsFile.txt");
+    private final String CONFIG_PATH = new File("").getAbsolutePath().concat("\\config.xml");
+    private String modelPath;
     private DataBase db;
     private ModelHandler httpCom;
 
@@ -36,7 +38,32 @@ public class AlgorithmsImpl implements Algorithms {
         lastModelUpdatedTime = modelDetails.getLastModelUpdatedTime();
         accuracy_model = modelDetails.getModelAccuracy();
 
+        readConfig();
+
         logger.info("Algorithms is initialized");
+    }
+
+    private void readConfig()
+    {
+        try
+        {
+            FileInputStream inputStream = new FileInputStream(CONFIG_PATH);
+            Properties props = new Properties();
+            props.loadFromXML(inputStream);
+
+            modelPath = props.getProperty("model_path");
+
+            inputStream.close();
+
+        }
+        catch (FileNotFoundException ex)
+        {
+            logger.error("path model not exist. please check configuration file.");
+        }
+        catch (IOException ex)
+        {
+            // I/O error
+        }
     }
 
     public AlgorithmsImpl()
@@ -87,7 +114,7 @@ public class AlgorithmsImpl implements Algorithms {
         }
 
 
-        if (!isModelAlreadyExist(MODEL_PATH) || shouldModelBeUpdated(this.lastModelUpdatedTime))
+        if (!isModelAlreadyExist(modelPath) || shouldModelBeUpdated(this.lastModelUpdatedTime))
         {
             try
             {
@@ -103,7 +130,7 @@ public class AlgorithmsImpl implements Algorithms {
             lastModelUpdatedTime = LocalDateTime.now();
 
             saveModelDetailsIntoFile(accuracy_model, LocalDateTime.now(),MODEL_DETAILS_PATH);
-            logger.info("Python script run and build successfully a model in: " + MODEL_PATH);
+            logger.info("Python script run and build successfully a model in: " + modelPath);
         }
 
         //ask estimation from python by http request.
@@ -196,6 +223,8 @@ public class AlgorithmsImpl implements Algorithms {
 
     protected Boolean isMeetingTimeInDoctorWorkRange(String doctorName, LocalDateTime meetingDateTime)
     {
+        LocalTime x = db.getDoctor(doctorName).getStartTime();
+        LocalTime y = db.getDoctor(doctorName).getEndTime();
         return !(Duration.between(db.getDoctor(doctorName).getStartTime(), meetingDateTime.toLocalTime()).isNegative()
                 || Duration.between(meetingDateTime.toLocalTime(), db.getDoctor(doctorName).getEndTime()).isNegative());
     }
