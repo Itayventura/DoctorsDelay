@@ -62,7 +62,7 @@ public class AlgorithmsImpl implements Algorithms {
         }
         catch (IOException ex)
         {
-            // I/O error
+            logger.error("config.xml file not exist");
         }
     }
 
@@ -223,8 +223,6 @@ public class AlgorithmsImpl implements Algorithms {
 
     protected Boolean isMeetingTimeInDoctorWorkRange(String doctorName, LocalDateTime meetingDateTime)
     {
-        LocalTime x = db.getDoctor(doctorName).getStartTime();
-        LocalTime y = db.getDoctor(doctorName).getEndTime();
         return !(Duration.between(db.getDoctor(doctorName).getStartTime(), meetingDateTime.toLocalTime()).isNegative()
                 || Duration.between(meetingDateTime.toLocalTime(), db.getDoctor(doctorName).getEndTime()).isNegative());
     }
