@@ -4,11 +4,15 @@ import entities.*;
 import handlers.*;
 import org.apache.log4j.Logger;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DataBaseImpl implements DataBase {
@@ -22,32 +26,43 @@ public class DataBaseImpl implements DataBase {
     private static AtomicBoolean initiated = new AtomicBoolean(false);
 
     private static Process mySqlTask;
-    private static final String DB = "\\DB";
-    private static final String mySql = "\\MySQLServer\\bin\\mysqld";
+    private static final String CONFIG_PATH = new File("").getAbsolutePath();
+    private static final String CONFIG_XML = "\\config.xml";
+
+    public static void main(String[]args){init();}
 
     public static void init() {
         if (initiated.get())
             return;
         initiated.set(true);
         try {
-            String path = System.getProperty("user.dir");
-            String substring = path.length() > 2 ? path.substring(path.length() - 2) : null;
-            if (substring != null) {
-                if (!substring.equals("DB"))
-                    path += DB;
-                path += mySql;
-                mySqlTask = Runtime.getRuntime().exec(path);
-                logger.info("started mySql task");
+            String config_path;
+            if (CONFIG_PATH.substring(CONFIG_PATH.length()-2).equals("DB")){
+                config_path = CONFIG_PATH.substring(0, CONFIG_PATH.length()-2).concat(CONFIG_XML);
             }
-            Runtime.getRuntime().addShutdownHook(new Thread() {
-                @Override
-                public void run() {
-                    logger.info("Closing mysql process");
-                    mySqlTask.destroy();
-                }
-            });
-        } catch(IOException e){
-            String errorMessage = "Couldn't start mysql from path " + System.getProperty("user.dir") + mySql;
+            else {
+                config_path = CONFIG_PATH.concat(CONFIG_XML);
+            }
+
+            FileInputStream inputStream = new FileInputStream(config_path);
+            Properties props = new Properties();
+            props.loadFromXML(inputStream);
+
+            String path = props.getProperty("db_path");
+            mySqlTask = Runtime.getRuntime().exec(path);
+            logger.info("started mySql task");
+            inputStream.close();
+
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                logger.info("Closing mysql process");
+                mySqlTask.destroy();
+            }));
+
+        } catch (FileNotFoundException ex) {
+            logger.error("path model not exist. please check configuration file.");
+        }
+        catch(IOException e){
+            String errorMessage = "Couldn't start mysql from path ";// + path;
             logger.error(errorMessage, e);
             throw new RuntimeException("errorMessage", e);
         }

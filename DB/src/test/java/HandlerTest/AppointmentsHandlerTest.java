@@ -94,7 +94,7 @@ public class AppointmentsHandlerTest {
             }
         }
         for(GetUserFutureAppointments thread: threads)
-            Assert.assertEquals(1,thread.getAppointments().size());
+            Assert.assertEquals(7,thread.getAppointments().size());
     }
 
     @Test
@@ -108,11 +108,8 @@ public class AppointmentsHandlerTest {
         for(Appointment appointment:list)
             System.out.println(appointment.toString());
 
-        System.out.println("Assert.assertEquals(1,list.size());");
-        Assert.assertEquals(1,list.size());
-
-        System.out.println("Assert.assertEquals(2030, list.get(0).getAppointmentDateTime().getYear());\n");
-        Assert.assertEquals(2030, list.get(0).getAppointmentDateTime().getYear());
+        System.out.println("Assert.assertEquals(7,list.size());");
+        Assert.assertEquals(7,list.size());
 
         Handler.printHeadline("getUserFutureAppointmentsTest finished successfully");
     }

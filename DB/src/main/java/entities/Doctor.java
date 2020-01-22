@@ -7,10 +7,10 @@ import java.util.List;
 public class Doctor extends Entity{
     private String name;
 
-    //todo add more doctorTypes
     public enum DoctorType {
         FAMILY,
-        GYNECOLOG
+        GYNECOLOGIST,
+        PEDIATRICIAN
     }
 
     /** this constructor is used whenever selection from "doctors" is made */
@@ -38,10 +38,10 @@ public class Doctor extends Entity{
         return null;
     }
 
-    //todo add more doctorTypes
     private DoctorType toDoctorType(String type){
         if (type.equals("family")) return DoctorType.FAMILY;
-        if (type.equals("gynecolog")) return DoctorType.GYNECOLOG;
+        if (type.equals("gynecologist")) return DoctorType.GYNECOLOGIST;
+        if (type.equals("pediatrician")) return DoctorType.PEDIATRICIAN;
         return null;
     }
 
