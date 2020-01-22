@@ -6,6 +6,7 @@ import handlers.Handler;
 import handlers.PatientsHandler;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -306,6 +307,7 @@ public class PatientHandlerTest {
         Handler.printHeadline("Add Patient Test finished successfully");
     }
 
+    @Ignore("Used to get information")
     @Test
     public void printTable(){
         patientsHandler.printTable();

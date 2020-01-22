@@ -5,6 +5,7 @@ import entities.Doctor;
 import handlers.DoctorsHandler;
 import handlers.Handler;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -87,6 +88,7 @@ public class DoctorsHandlerTest {
         Handler.printHeadline("Add Doctor Test finished successfully");
     }
 
+    @Ignore("Used to get information")
     @Test
     public void printTable(){
         System.out.println("doctorsHandler.printTable();");
