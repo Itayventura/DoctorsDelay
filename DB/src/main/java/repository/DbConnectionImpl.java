@@ -10,7 +10,7 @@ import java.sql.SQLException;
  *  can handle 100 statements at a time!
  *  this class implemented as a singleton design pattern
  */
-public class DbConnectionImpl{
+class DbConnectionImpl{
 
     private static BasicDataSource dataSource;
     private static DbConnectionImpl instance;
@@ -25,9 +25,9 @@ public class DbConnectionImpl{
         dataSource = ds;
     }
 
-    public static Connection getConnection() throws SQLException
+    static Connection getConnection() throws SQLException
     {
-        if (dataSource == null)
+        if (instance == null)
             instance = new DbConnectionImpl();
         return dataSource.getConnection();
     }

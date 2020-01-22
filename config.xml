@@ -3,5 +3,5 @@
 <properties>
 <comment>host settings</comment>
 <entry key="model_path">C:\Users\shiranpilas\Desktop\model.pkl</entry>
-<entry key="db_path">for_itay</entry>
+<entry key="db_path">C:\Users\Itay\Desktop\MySQLServer\bin\mysqld</entry>
 </properties>
