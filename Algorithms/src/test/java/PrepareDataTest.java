@@ -14,21 +14,22 @@ public class PrepareDataTest
     @Test
     public void createCSVFileDoctorsReports_csvFileCreated_withExpectedRowsNumber_csvFileExist()
     {
-        String csvPath = "scripts/doctorsReports.csv";
+        String csvPathTemp = "doctorsReportsTemp.csv";
+        File file = new File(csvPathTemp);
         PrepareData prepareData = new PrepareData();
         int expectedLines = 19;
 
         try
         {
-            prepareData.createCSVFileDoctorsReports(csvPath, new DatabaseMocker());
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(csvPath));
+            prepareData.createCSVFileDoctorsReports(csvPathTemp, new DatabaseMocker());
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(csvPathTemp));
             String input;
             int count = 0;
             while((input = bufferedReader.readLine()) != null)
             {
                 count++;
             }
-
+            file.delete();
             Assert.assertEquals(expectedLines, count);
         }
         catch(IOException ex)
