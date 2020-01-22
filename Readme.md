@@ -18,7 +18,6 @@
 6. To be able the Algorithms make estimations, the api python should be up. To do so, go to
 	Algorithms\scripts and run ApiRunner.bat.
 7. Now you are ready to make some predictions :) !
-
 8. unzip MySQLServer
 9. go to config.xml in this project and change the path to mysqld file in your 
      	computer(absolute path). at the moment, the path is relevant if you unzip MySQLServer in Desktop, and your user is "Itay"

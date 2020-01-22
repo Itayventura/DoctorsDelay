@@ -20,11 +20,12 @@ public class AlgorithmsImplTest
         Assert.assertFalse(algorithms.isModelAlreadyExist(notExistsPath));
     }
 
+
     @Test
     public void isModelAlreadyExist_modelExist_true()
     {
         AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
-        String existsPath = "scripts\\model.pkl";
+        String existsPath = "scripts\\model_columns.pkl";
         Assert.assertTrue(algorithms.isModelAlreadyExist(existsPath));
     }
 
