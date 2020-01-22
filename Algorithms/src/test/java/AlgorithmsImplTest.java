@@ -8,7 +8,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class AlgorithmsImplTest
 {
@@ -50,7 +52,7 @@ public class AlgorithmsImplTest
         AlgorithmsImpl algorithms = new AlgorithmsImpl(new DatabaseMocker(), new HttpCommunicationsMocker());
         try
         {
-            algorithms.checkRequestValidation("Dolittle", LocalDateTime.now().plusMinutes(60));
+            algorithms.checkRequestValidation("Dolittle", LocalDateTime.of(LocalDate.now().plusDays(2), LocalTime.of(11,00).plusMinutes(60)));
         }
         catch (Algorithms.AlgorithmException e)
         {
@@ -125,7 +127,7 @@ public class AlgorithmsImplTest
                 new HttpCommunicationsMocker(expectedEstimationType, expectedAccuracy));
         try
         {
-            DelayEstimation estimatedDelay = algorithms.getEstimatedDelay("Dolittle", LocalDateTime.now().plusMinutes(30));
+            DelayEstimation estimatedDelay = algorithms.getEstimatedDelay("Dolittle", LocalDateTime.of(LocalDate.now().plusDays(2), LocalTime.of(11,00).plusMinutes(30)));
             Assert.assertEquals(estimatedDelay.getTypeRange().getEstimationType(), expectedEstimationType);
             Assert.assertEquals(estimatedDelay.getEstimationAccuracyPercentage(), expectedAccuracy);
         }
