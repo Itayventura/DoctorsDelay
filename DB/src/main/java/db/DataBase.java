@@ -16,7 +16,6 @@ public interface DataBase {
      * @param personalId - the user's identity number
      * @param doctorsName - the doctor's name
      * @param delay - the reported delay in minutes
-     * @return a list of reports to the specified doctor, in this date
      */
     void addReport(int personalId, String doctorsName, int delay);
 
@@ -39,7 +38,7 @@ public interface DataBase {
 
     /** select from doctors where doctor_name = doctorsName and return new Doctor same as table
      *
-     * @param doctorsName
+     * @param doctorsName doctor's name
      * @return Doctor with attributes like in table
      */
     Doctor getDoctor(String doctorsName);
@@ -54,7 +53,7 @@ public interface DataBase {
     List<Appointment> getUserFutureAppointments(int userId);
 
     /**
-     * @param doctorsName
+     * @param doctorsName doctor's name
      * @return true if doctor exists in HMO doctors db
      */
     boolean doctorExists(String doctorsName);
@@ -70,31 +69,40 @@ public interface DataBase {
      * @param actualDelay   - the actual delay the user experienced
      */
     void feedbackOnEstimate(int userId, int actualDelay);
-    //todo different from interface
 
     /** adds score added to patient with id userId
      *
      * @param userId id of the patient
      * @param scoreAdded score added to patient's score
      */
-    public void addScore(int userId, int scoreAdded);
+    void addScore(int userId, int scoreAdded);
 
     /**
      * @param userId id of patient
      * @return patient's score
      */
-    public int getScore(int userId);
+    int getScore(int userId);
 
     /**
      *
      * @param userId user's id
-     * @return
+     * @return last appointment of patient
      */
-    public Appointment getLastAppointment(int userId);
+    Appointment getLastAppointment(int userId);
 
-    public List<Doctor> getDoctors();
 
-    public List<Delay> getDelays(String doctorsName);
+    /**
+     *
+     * @return list of all doctors from DB
+     */
+    List<Doctor> getDoctors();
+
+    /**
+     *
+     * @param doctorsName doctor's name
+     * @return lit all delays related to doctor
+     */
+    List<Delay> getDelays(String doctorsName);
 
 
     /** prints all records from tableName in database */

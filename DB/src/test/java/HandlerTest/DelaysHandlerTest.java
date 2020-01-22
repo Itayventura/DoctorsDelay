@@ -4,10 +4,7 @@ import db.DataBaseImpl;
 import entities.Delay;
 import handlers.DelaysHandler;
 import handlers.Handler;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -270,6 +267,7 @@ public class DelaysHandlerTest {
     }
 
     /**this method works but there are many records in the table so only the latest are viewed*/
+    @Ignore("Used to get information")
     @Test
     public void LubaPrintTable(){
         delaysHandler.printTable();

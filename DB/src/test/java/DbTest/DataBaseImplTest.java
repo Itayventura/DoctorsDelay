@@ -270,6 +270,7 @@ public class DataBaseImplTest {
         Handler.printHeadline("MosheGetDayReportTest finished successfully");
     }
 
+    @Ignore("Used to get information")
     @Test
     public void printTable(){
         db.printTable("Nordau");
@@ -291,6 +292,7 @@ public class DataBaseImplTest {
         System.out.println(substring.equals("DB"));
     }
 
+    @Ignore("Used to get information")
     @Test
     public void TestAllDoctors(){
         Handler.printHeadline("TestAllDoctors");
