@@ -11,6 +11,7 @@ import traceback
 import sys
 import pandas as pd
 import numpy as np
+from xml.dom import minidom 
 import DoctorsDelay
 import os.path
 from os import path
@@ -18,6 +19,17 @@ from os import path
 global model
 global model_columns
 global model_flag
+
+def getModelPath():
+        relativeModelPath = r'../../config.xml'
+        config_path = (os.path.abspath(relativeModelPath))
+        xmlFileParser = minidom.parse(config_path)
+        entries = xmlFileParser.getElementsByTagName('entry')
+        modelPath = str(entries[0].firstChild.data).replace('\\','/')
+        return modelPath
+        
+model_path = getModelPath()
+
 
 # API definition
 app = Flask(__name__)
@@ -60,7 +72,7 @@ def buildModel():
     print("Build Model. Please wait for few minutes")
     accuracy = DoctorsDelay.flow()
     
-    model = joblib.load("model.pkl") # Load "model.pkl"
+    model = joblib.load(model_path) # Load "model.pkl"
     model_columns = joblib.load("model_columns.pkl") # Load "model_columns.pkl"
     model_flag = 1
     print("model was built and loaded")
@@ -77,9 +89,9 @@ def setupModel():
     global model_columns
     global model_flag
 
-    if path.exists('model.pkl'):
+    if path.exists(model_path):
 
-        model = joblib.load("model.pkl") # Load "model.pkl"
+        model = joblib.load(model_path) # Load "model.pkl"
         print ('Model loaded')
 
         model_columns = joblib.load("model_columns.pkl") # Load "model_columns.pkl"

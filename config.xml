@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>host settings</comment>
+<entry key="model_path">C:\Users\shiranpilas\Desktop\model.pkl</entry>
+<entry key="db_path">for_itay</entry>
+</properties>
