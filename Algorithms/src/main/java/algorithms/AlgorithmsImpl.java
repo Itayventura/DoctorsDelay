@@ -175,7 +175,7 @@ public class AlgorithmsImpl implements Algorithms {
         {
             if(lastModelUpdatedTime != null)
             {
-                Duration lastUpdatedTimeDuration = Duration.between(LocalDateTime.now().minusMonths(1), lastModelUpdatedTime);
+                Duration lastUpdatedTimeDuration = Duration.between(LocalDateTime.now().minusMonths(3), lastModelUpdatedTime);
                 shouldUpdate = lastUpdatedTimeDuration.isNegative();
             }
             else
