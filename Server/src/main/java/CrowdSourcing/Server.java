@@ -1,3 +1,5 @@
+package CrowdSourcing;
+
 import algorithms.Algorithms;
 import algorithms.AlgorithmsImpl;
 import db.DataBase;
@@ -39,7 +41,7 @@ public class Server {
         this.dbConstructor = dbConstructor;
     }
 
-    void start() throws Exception {
+    public void start() throws Exception {
         logger.info(String.format("Starting server on port=%d", listeningPort));
         serverSocket = new ServerSocket(listeningPort);
         for (;;) {
@@ -53,7 +55,7 @@ public class Server {
         }
     }
 
-    void stop() {
+    public void stop() {
         try {
             if (serverSocket != null)
                 serverSocket.close();
@@ -64,7 +66,6 @@ public class Server {
         try {
             if (!pool.awaitTermination(100, TimeUnit.MICROSECONDS)) {
                 logger.warn("Still waiting...");
-                System.exit(0);
             }
         } catch (InterruptedException e) {
             logger.warn("Server was interrupted when trying to exit");

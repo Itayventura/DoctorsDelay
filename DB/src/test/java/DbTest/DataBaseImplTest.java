@@ -153,6 +153,7 @@ public class DataBaseImplTest {
         return b;
     }
 
+    @Ignore("not used")
     @Test
     public void getDoctorsTest(){
         Handler.printHeadline("Get Doctors test");

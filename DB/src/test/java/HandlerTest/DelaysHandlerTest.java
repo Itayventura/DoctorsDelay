@@ -59,6 +59,7 @@ public class DelaysHandlerTest {
 
     }
 
+    @Ignore("long")
     @Test
     public void LubaGetReportsTest() {
         Handler.printHeadline("Luba get Reports Test");
@@ -75,6 +76,7 @@ public class DelaysHandlerTest {
         Handler.printHeadline("Luba Test finished successfully");
     }
 
+    @Ignore("long")
     @Test
     public void LubaAddReportTest(){
         Handler.printHeadline("Luba add Report Test");
@@ -174,7 +176,7 @@ public class DelaysHandlerTest {
         Handler.printHeadline("Luba add Report Test current timestamp finished successfully");
     }
 
-
+    @Ignore("long")
     @Test
     public void LubaAddReportListTest(){
         Handler.printHeadline("Luba add Report List Test");
