@@ -43,7 +43,13 @@
     ```sh
     $ cd Server/
     ...
-    $ mvn exec:java -Dexec.mainClass="CrowdSourcing.Main"
+    $ mvn clean package assembly:single
+    ...
+    $ cd target/
+    ...
+    $ java -jar Server-1.0-SNAPSHOT-jar-with-dependencies.jar
     ```
 
 7. Run Client from android studio emulator
+
+8. Closing server with ctrl+c
