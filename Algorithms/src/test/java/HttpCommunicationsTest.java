@@ -1,5 +1,6 @@
 import estimation.DelayEstimation;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import estimation.HttpCommunications;
 
@@ -53,6 +54,7 @@ public class HttpCommunicationsTest
         Assert.assertEquals(delayEstimation.getTypeRange().getEstimationType(), DelayEstimation.EstimationType.Large);
     }
 
+    @Ignore("too slow")
     @Test
     public void buildModel_accuracyIsReturned()
     {
@@ -71,6 +73,7 @@ public class HttpCommunicationsTest
         Assert.assertNotNull(delayEstimation);
     }
 
+    @Ignore("too slow")
     @Test
     public void httpRequestsCreate_4differentConnections_NoError()
     {

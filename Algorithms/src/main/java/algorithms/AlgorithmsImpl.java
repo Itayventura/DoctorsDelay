@@ -24,8 +24,8 @@ public class AlgorithmsImpl implements Algorithms {
 
     private final String CSV_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\doctorsReports.csv");
     private final String MODEL_DETAILS_PATH = new File("").getAbsolutePath().concat("\\Algorithms\\scripts\\ModelDetailsFile.txt");
-    private final String CONFIG_PATH = new File("").getAbsolutePath().concat("\\config.xml");
-    private String modelPath;
+    private static final String CONFIG_PATH = new File("").getAbsolutePath();
+    private static final String CONFIG_XML = "\\config.xml";    private String modelPath;
     private DataBase db;
     private ModelHandler httpCom;
 
@@ -47,7 +47,14 @@ public class AlgorithmsImpl implements Algorithms {
     {
         try
         {
-            FileInputStream inputStream = new FileInputStream(CONFIG_PATH);
+            String config_path;
+            if (CONFIG_PATH.endsWith("Algorithms")){
+                config_path = CONFIG_PATH.substring(0, CONFIG_PATH.length()-11).concat(CONFIG_XML);
+            }
+            else {
+                config_path = CONFIG_PATH.concat(CONFIG_XML);
+            }
+            FileInputStream inputStream = new FileInputStream(config_path);
             Properties props = new Properties();
             props.loadFromXML(inputStream);
 
