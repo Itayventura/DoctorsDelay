@@ -1,3 +1,5 @@
+import CrowdSourcing.Main;
+import CrowdSourcing.Server;
 import generated.Communication;
 import mockers.AlgorithmsMocker;
 import mockers.ClientMocker;

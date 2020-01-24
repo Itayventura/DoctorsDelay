@@ -1,8 +1,7 @@
-import algorithms.AlgorithmsImpl;
+package CrowdSourcing;
+
 import db.DataBaseImpl;
 import org.apache.commons.cli.*;
-
-import java.io.IOException;
 
 /**
  * A simple API to activate our server.
@@ -11,8 +10,8 @@ import java.io.IOException;
 
 public class Main {
     private static final String listeningPortArg = "listeningPort";
-    static int listeningPort = 80;
-    static int numThreads = 4;
+    public static int listeningPort = 80;
+    public static int numThreads = 4;
     private static final String numThreadsArg = "numThreads";
     private static Options options = createOptions();
 

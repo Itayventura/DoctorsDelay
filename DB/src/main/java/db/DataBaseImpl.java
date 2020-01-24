@@ -24,10 +24,9 @@ public class DataBaseImpl implements DataBase {
     private DoctorsHandler doctorsHandler;
     private PatientsHandler patientsHandler;
     private static AtomicBoolean initiated = new AtomicBoolean(false);
+    private static final String CONFIG_XML = "\\config.xml";
 
     private static Process mySqlTask;
-    private static final String CONFIG_PATH = new File("").getAbsolutePath();
-    private static final String CONFIG_XML = "\\config.xml";
 
     public static void main(String[]args){init();}
 
@@ -36,15 +35,7 @@ public class DataBaseImpl implements DataBase {
             return;
         initiated.set(true);
         try {
-            String config_path;
-            if (CONFIG_PATH.substring(CONFIG_PATH.length()-2).equals("DB")){
-                config_path = CONFIG_PATH.substring(0, CONFIG_PATH.length()-2).concat(CONFIG_XML);
-            }
-            else {
-                config_path = CONFIG_PATH.concat(CONFIG_XML);
-            }
-
-            FileInputStream inputStream = new FileInputStream(config_path);
+            FileInputStream inputStream = new FileInputStream(getConfigPath());
             Properties props = new Properties();
             props.loadFromXML(inputStream);
 
@@ -66,6 +57,13 @@ public class DataBaseImpl implements DataBase {
             logger.error(errorMessage, e);
             throw new RuntimeException("errorMessage", e);
         }
+    }
+
+    public static String getConfigPath() {
+        String p = new File("").getAbsolutePath();
+        while(!p.endsWith("DoctorsDelay"))
+            p = p.substring(0, p.length()-1);
+        return p.concat(CONFIG_XML);
     }
 
     public DataBaseImpl(){
