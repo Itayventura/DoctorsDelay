@@ -64,7 +64,6 @@ public class Server {
         try {
             if (!pool.awaitTermination(100, TimeUnit.MICROSECONDS)) {
                 logger.warn("Still waiting...");
-                System.exit(0);
             }
         } catch (InterruptedException e) {
             logger.warn("Server was interrupted when trying to exit");
