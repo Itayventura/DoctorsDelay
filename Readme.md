@@ -10,15 +10,15 @@
  - [x] maven (+JAVA_HOME set to jdk)
 
 ## Installation
-
-1. Run installation script:
-    - Go to DoctorsDelay/Prerequisites and double click Installation-Script.bat
-    
-2. Clone the repository:
+1. Clone the repository:
 
     ```sh
     $ git clone https://github.com/michaldeutch/DoctorsDelay.git
     ```
+   
+2. Run installation script:
+    - Go to DoctorsDelay/Prerequisites and double click Installation-Script.bat
+    
 3. Configure project resources:
     
     - Open DoctorsDelay/config.xml
